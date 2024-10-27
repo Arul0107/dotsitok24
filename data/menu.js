@@ -14,17 +14,8 @@ export const menuItems = [
     
   },
   {
-    title: "Solutions",
-    href: "#",
-    subMenu: [
-      {
-        title: "Project Page",
-        href: "/project",
-        // subMenu: [
-        //   { title: "Project", href: "/project" },
-        // ],
-      }
-    ],
+    title: "Solutions & industry ",
+    href: "/project",
   },
   
   {

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import TextSlider from "@/components/homes/home-2/TextSlider";
 
 export default function ProjectDetails({ projectItem }) {
   return (
@@ -8,7 +9,9 @@ export default function ProjectDetails({ projectItem }) {
         <div className="project-details-wrapper">
           <div className="row">
             <div className="col-lg-12">
+              <TextSlider/>
               <div className="project-details-items">
+                {/* Project Image */}
                 <div
                   className="details-image wow fadeInUp"
                   data-wow-delay=".3s"
@@ -17,9 +20,11 @@ export default function ProjectDetails({ projectItem }) {
                     alt="img"
                     src={projectItem.imgSrc}
                     width="450"
-                    height="550"
+                    height="450"
                   />
                 </div>
+
+                {/* Project Title and Description */}
                 <div className="row g-4 justify-content-between">
                   <div className="col-lg-7">
                     <div className="details-content pt-5">
@@ -27,16 +32,23 @@ export default function ProjectDetails({ projectItem }) {
                         {projectItem.title}
                       </h3>
                       <p className="wow fadeInUp" data-wow-delay=".9s">
-                        Nulla faucibus malesuada. In placerat feugiat eros ac
-                        tempor. Integer euismod massa sapien, et consequat enim
-                        laoreet et. Nulla sit amet nisi dapibus, gravida turpis
-                        sit amet, accumsan nisl. Fusce vel semper risus. Morbi
-                        congue eros sagittis, sodales turpis venenatis, iaculis
-                        dui. Proin ac purus sed nibh dapibus neque. scelerisque
-                        sed quis ante.
+                        {projectItem.description ||
+                          "Default description for the project. This text can be dynamically replaced based on the project data."}
                       </p>
+                      <h4 className="wow fadeInUp" data-wow-delay="1.2s">
+                        <a
+                          href={projectItem.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "#0070f3", fontWeight: "bold" }}
+                        >
+                          Know more...
+                        </a>
+                      </h4>{" "}
                     </div>
                   </div>
+
+                  {/* Project Info */}
                   <div className="col-lg-4">
                     <div
                       className="project-catagory wow fadeInUp"
@@ -45,16 +57,20 @@ export default function ProjectDetails({ projectItem }) {
                       <h3>Project Info:</h3>
                       <ul>
                         <li>
-                          Client:
-                          <span>Ralph Edwards</span>
+                          Client:{" "}
+                          <span>{projectItem.client || "Default Client"}</span>
                         </li>
                         <li>
-                          Category:
-                          <span>IT Management</span>
+                          Category:{" "}
+                          <span>
+                            {projectItem.category || "Default Category"}
+                          </span>
                         </li>
                         <li>
-                          Location:
-                          <span>Landon</span>
+                          Location:{" "}
+                          <span>
+                            {projectItem.location || "Default Location"}
+                          </span>
                         </li>
                         <li>
                           Share:
@@ -68,100 +84,69 @@ export default function ProjectDetails({ projectItem }) {
                     </div>
                   </div>
                 </div>
+
+                {/* Challenge Section */}
                 <div
                   className="details-content pt-3 wow fadeInUp"
                   data-wow-delay=".9s"
                 >
                   <h3>Our Challenge</h3>
                   <p>
-                    Pellentesque egestas rutrum nibh facilisis ultrices.
-                    Phasellus in magna ut orci malesuada sollicitudin. Aenean
-                    faucibus scelerisque convallis. Quisque interdum mauris id
-                    nunc molestie, ac tincidunt erat gravida. Nullam dui libero,
-                    mollis ac quam et, venenatis tincidunt quam. Proin nec
-                    volutpat ligula, id porttitor augue. Proin id volutpat
-                    massa. Vivamus tincidunt nunc justo, ac aliquam ex molestie
-                    id.
+                    {projectItem.challenge ||
+                      "Default challenge description for the project. Customize this based on the JSON data."}
                   </p>
                 </div>
+
+                {/* Features List */}
                 <div className="row g-4 pt-5">
-                  <div className="col-lg-3 col-md-6">
-                    <ul className="list wow fadeInUp" data-wow-delay="1.2s">
-                      <li>
-                        <i className="fa-regular fa-circle-check" />
-                        Branding and design Identity
-                      </li>
-                      <li>
-                        <i className="fa-regular fa-circle-check" />
-                        Web site Marketing Solutions
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="col-lg-3 col-md-6">
-                    <ul className="list wow fadeInUp" data-wow-delay="1.4s">
-                      <li>
-                        <i className="fa-regular fa-circle-check" />
-                        Branding and design Identity
-                      </li>
-                      <li>
-                        <i className="fa-regular fa-circle-check" />
-                        Web site Marketing Solutions
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="col-lg-3 col-md-6">
-                    <ul className="list wow fadeInUp" data-wow-delay="1.6s">
-                      <li>
-                        <i className="fa-regular fa-circle-check" />
-                        Branding and design Identity
-                      </li>
-                      <li>
-                        <i className="fa-regular fa-circle-check" />
-                        Web site Marketing Solutions
-                      </li>
-                    </ul>
-                  </div>
+                  {projectItem.features?.map((feature, index) => (
+                    <div key={index} className="col-lg-3 col-md-6">
+                      <ul
+                        className="list wow fadeInUp"
+                        data-wow-delay={`${1.2 + index * 0.2}s`}
+                      >
+                        {feature.items.map((item, i) => (
+                          <li key={i}>
+                            <i className="fa-regular fa-circle-check" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
+
+                {/* Result Section */}
                 <div
                   className="details-content pt-5 wow fadeInUp"
                   data-wow-delay="1.9s"
                 >
                   <h3>The Result of Project</h3>
                   <p>
-                    Pellentesque egestas rutrum nibh facilisis ultrices.
-                    Phasellus in magna ut orci malesuada sollicitudin. Aenean
-                    faucibus scelerisque convallis. Quisque interdum mauris id
-                    nunc molestie, ac tincidunt erat gravida. Nullam dui libero,
-                    mollis ac quam et, venenatis tincidunt quam. Proin nec
-                    volutpat ligula, id porttitor augue. Proin id volutpat
-                    massa. Vivamus tincidunt nunc justo, ac aliquam ex molestie
-                    id.
+                    {projectItem.result ||
+                      "Default result description for the project. Customize this based on the JSON data."}
                   </p>
-                </div>   
+                </div>
+
+                {/* Additional Images */}
                 <div className="row g-4 pt-5">
-                  <div className="col-lg-6 col-md-6">
-                    <div className="thumb wow fadeInUp" data-wow-delay="2s">
-                      <Image
-                        alt="img"
-                        src="/assets/img/project/projectThumb2_7.png"
-                        width="570"
-                        height="360"
-                      />
+                  {projectItem.additionalImages?.map((imageSrc, idx) => (
+                    <div key={idx} className="col-lg-6 col-md-6">
+                      <div
+                        className="thumb wow fadeInUp"
+                        data-wow-delay={`${2 + idx * 0.4}s`}
+                      >
+                        <Image
+                          alt="img"
+                          src={imageSrc}
+                          width="570"
+                          height="360"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="col-lg-6 col-md-6">
-                    <div className="thumb wow fadeInUp" data-wow-delay="2.4s">
-                      <Image
-                        alt="img"
-                        src="/assets/img/project/projectThumb2_8.png"
-                        width="570"
-                        height="360"
-                      />
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
-             
             </div>
           </div>
         </div>

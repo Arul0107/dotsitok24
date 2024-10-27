@@ -175,7 +175,7 @@ export default function About() {
         channel="youtube"
         youtube={{ mute: 0, autoplay: 0 }}
         isOpen={isOpen}
-        videoId="f2Gzr8sAGB8"
+        videoId="OGABwkJ_23g"
         onClose={() => setOpen(false)}
       />
     </>

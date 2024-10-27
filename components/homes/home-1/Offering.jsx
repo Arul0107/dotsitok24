@@ -33,7 +33,7 @@ export default function Offering() {
               >
                 <div className="content">
                   <h3 className="title">
-                    <Link scroll={false} href={`/service-1`}>
+                    <Link scroll={false} href={`/service-details/1`}>
                       {box.title}
                     </Link>
                   </h3>

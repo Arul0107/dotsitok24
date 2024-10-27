@@ -159,7 +159,7 @@ export default function Footer2() {
                       <li className="text-white">
                         <i className="fa-thin fa-envelope" />
                       </li>
-                      <li className="text-white">Operations@dotsito.com</li>
+                      <li className="text-white">operations@dotsito.com</li>
                     </ul>
                     <ul className="ps-0">
                       <li className="text-white">

@@ -10,12 +10,13 @@ import Offering from "@/components/homes/home-1/Offering";
 import Pricing from "@/components/homes/home-1/Pricing";
 import Process from "@/components/homes/home-1/Process";
 import Projects from "@/components/homes/home-1/Projects";
-import Services from "@/components/homes/home-1/Services";
-import Services2 from "@/components/homes/home-1/Services2";
-import Team from "@/components/homes/home-1/Team";
 import Testimonials from "@/components/homes/home-1/Testimonials";
 import VideoBox from "@/components/homes/home-1/VideoBox";
-// import ProjectDetails from "@/components/otherPages/project/ProjectDetails";
+import Screenshoots from "@/components/homes/home-3/Screenshoots";
+import TextSlider from "@/components/homes/home-2/TextSlider";
+import Services from "@/components/homes/home-1/Services";
+import Loader from "@/app/Loader";
+  // import ProjectDetails from "@/components/otherPages/project/ProjectDetails";
 // import ProjectWorldMap from "@/components/otherPages/ProjectWorldMap";
 // import MapComponent from "@/components/otherPages/MapComponent";
 export const metadata = {
@@ -25,18 +26,21 @@ export const metadata = {
 export default function Home1() {
   return (
     <>
-      <HeaderTop />
+    <Loader>
       <Header1 />
       <main className="main position-relative" id="mains">
         <Hero />
-        <Services />
+        {/* <Services />  */}
+        <TextSlider/>
+
         <About />
-        <Services2 />
         <Offering />
         <VideoBox />
         {/* <Team /> */}
         <Projects />
         <Process />
+
+        <Screenshoots/>
         <Facts />
         {/* <Pricing /> */}
         <Testimonials />
@@ -44,6 +48,7 @@ export default function Home1() {
         <Cta />
       </main>
       <Footer1 />
+      </Loader>
     </>
   );
 }

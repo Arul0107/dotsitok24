@@ -12,22 +12,22 @@ export default function About() {
       <section className="about-area space fix position-reltive">
         <div className="about-wrap style1">
           
-          {/* <div className="shape1_1 d-xl-block d-none">
+        <div className="shape1_1 d-xl-block d-none">
             <Image
               alt="shape"
               src="/assets/img/shape/aboutShape1_1.png"
               width="270"
               height="733"
             />
-          </div> */}
-          {/* <div className="shape1_2 movingX d-xl-block d-none">
+          </div>
+         <div className="shape1_2 movingX d-xl-block d-none">
             <Image
               alt="shape"
               src="/assets/img/shape/aboutShape1_2.png"
               width="188"
               height="275"
             />
-          </div> */}
+          </div> 
           <div className="container">
             <div className="about-wrapper style1">
               <div
@@ -145,7 +145,7 @@ export default function About() {
         channel="youtube"
         youtube={{ mute: 0, autoplay: 0 }}
         isOpen={isOpen}
-        videoId="f2Gzr8sAGB8"
+        videoId="OGABwkJ_23g"
         onClose={() => setOpen(false)}
       />
     </>

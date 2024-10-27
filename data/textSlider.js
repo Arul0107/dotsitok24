@@ -1,6 +1,6 @@
 export const textSlides = [
   {
-    text: "Cyber Security",
+    text: "Servicenow",
     icon: "/assets/img/icon/starIcon3.png",
     customClass: "text-custom-storke",
   },
@@ -14,10 +14,16 @@ export const textSlides = [
     icon: "/assets/img/icon/starIcon3.png",
     customClass: "text-custom-storke",
   },
+ 
   {
-    text: "Data Security",
+    text: "Dotsito Technologies ",
     icon: "/assets/img/icon/starIcon3.png",
     customClass: "",
+  },
+  {
+    text: "Dotspot ",
+    icon: "/assets/img/icon/starIcon3.png",
+    customClass: "text-custom-storke",
   },
   // Add more text slides here if needed
 ];

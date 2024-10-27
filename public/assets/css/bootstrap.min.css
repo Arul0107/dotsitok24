@@ -5630,7 +5630,7 @@ fieldset:disabled .btn {
     float: left;
     padding-right: .5rem;
     color: #6c757d;
-    content: var(--bs-breadcrumb-divider, "https://html.themeholy.com/")
+    content: var(--bs-breadcrumb-divider)
 }
 
 .breadcrumb-item.active {

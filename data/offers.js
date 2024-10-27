@@ -1,12 +1,12 @@
 export const offerBoxes = [
   {
-    title: "Website",
-    icon: "/assets/img/icon/offering1_1.png",
+    title: "Jira",
+    icon: "/assets/img/icon/jira.png",
     delay: ".3s",
   },
   {
-    title: "Android",
-    icon: "/assets/img/icon/offering1_2.png",
+    title: "ORACLE",
+    icon: "/assets/img/icon/oracle.png",
     delay: ".6s",
   },
   {
@@ -21,11 +21,11 @@ export const offerBoxes = [
   },
   {
     title: "Power Bi",
-    icon: "/assets/img/icon/offering1_5.png",
+    icon: "/assets/img/icon/power.png",
     delay: "1.3s",
   },
   {
-    title: "Sas",
+    title: "Saas",
     icon: "/assets/img/icon/offering1_6.png",
     delay: "1.6s",
   },

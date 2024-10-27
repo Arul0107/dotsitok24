@@ -5,7 +5,7 @@ import { serviceCategories } from "@/data/services"; // Adjust the path as neces
 import Faq1 from "../faq/Faq1";
 import ModalVideo from "react-modal-video";
 
-export default function ServiceDetails() {
+export default function   ServiceDetails() {
   const [isOpen, setOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(serviceCategories[0]); // Default to the first service
 
@@ -154,7 +154,7 @@ export default function ServiceDetails() {
         channel="youtube"
         youtube={{ mute: 0, autoplay: 0 }}
         isOpen={isOpen}
-        videoId="7249321973166587905"
+        videoId="OGABwkJ_23g"
         onClose={() => setOpen(false)}
       />
     </>

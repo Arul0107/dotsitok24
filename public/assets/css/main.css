@@ -3840,7 +3840,7 @@ textarea.is-invalid {
   li
   a:hover
   i {
-  color: var(--theme-color2);
+  color: var(--white-color2);
 }
 .widget.widget_nav_menu.footer-widget .checklist {
   margin-top: 25px;
@@ -4527,6 +4527,7 @@ textarea.is-invalid {
 .header-layout1 .menu-area .header-logo {
   padding-top: 15px;
   padding-bottom: 15px;
+  position:relative;
   /* Medium devices */
 }
 .header-layout1 .menu-area .header-logo a img {
@@ -4536,13 +4537,23 @@ textarea.is-invalid {
 .header-layout1 .menu-area .header-logo:before {
   position: absolute;
   content: "";
-  top: 0;
-  left: 0;
-  width: 457px;
-  height: 109px;
-
-  -webkit-clip-path: polygon(0 0,421.5px 0,457px 109px,0 109px,0 0);  clip-path: polygon(0px 0px, 421.5px 0px, 457px 109px, 0px 109px, 0px 0px);
-  z-index: 1;
+  top: -1px;
+  left: 280px !important;
+  width: 250px;
+  height: 150px;
+  transform: rotate(-0.375deg);
+  background: var(--theme-color);
+  clip-path: polygon(
+    0px 0px,
+    17.8104px -0.00791562px,
+    52.0001px 109px,
+    34.0001px 109px,
+    0px 0px
+  );
+  -webkit-transform: rotate(-0.375deg);
+  -moz-transform: rotate(-0.375deg);
+  -ms-transform: rotate(-0.375deg);
+  -o-transform: rotate(-0.375deg);
   /* Extra large devices */
   /* Medium Large devices */
   /* Medium Large devices */
@@ -4568,7 +4579,7 @@ textarea.is-invalid {
 }
 @media (max-width: 1199px) {
   .header-layout1 .menu-area .header-logo:before {
-    left: 0;
+    left: -109;
   }
 }
 @media (max-width: 767px) {
@@ -4590,7 +4601,7 @@ textarea.is-invalid {
   position: absolute;
   content: "";
   top: -1px;
-  left: 436px;
+  left: 280px !important;
   width: 250px;
   height: 150px;
   transform: rotate(-0.375deg);
@@ -4646,7 +4657,7 @@ textarea.is-invalid {
 }
 @media (max-width: 375px) {
   .header-layout1 .menu-area .header-logo:after {
-    left: 182px;
+    left: 213px;
   }
 }
 @media (max-width: 991px) {
@@ -6160,7 +6171,7 @@ textarea.is-invalid {
   margin-top: -165px;
 }
 .hero-1 .hero-slider1 .swiper-slide {
-  height: 965px !important;
+  height: 555px ;
   z-index: 5;
   /* Small devices */
   /* Extra small devices */
@@ -11980,7 +11991,7 @@ textarea.is-invalid {
   padding: 82px 30px 32px;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
-  border-bottom: 8px solid #2d2878 ;
+  border-bottom: 8px solid #306aff ;
 }
 
 /*------------------- 4.22. Project  -------------------*/
@@ -12330,7 +12341,7 @@ textarea.is-invalid {
   letter-spacing: -0.36px;
 }
 .offer-box .content .title a:hover {
-  color:white !important;
+  color:var(--white-color);
 }
 .offer-box .icon {
   position: absolute;

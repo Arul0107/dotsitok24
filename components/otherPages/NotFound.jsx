@@ -12,8 +12,8 @@ export default function NotFound() {
               <div className="error-image">
                 <Image
                   src="/assets/img/bg/error.png"
-                  width={896}
-                  height={539}
+                  width={500}
+                  height={500}
                   alt="img"
                 />
               </div>

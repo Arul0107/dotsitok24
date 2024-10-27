@@ -31,22 +31,37 @@ export default function Projects() {
     <section className="all-project-area mx-auto space-top pb-425">
       <div className="container">
         {/* Gallery Title */}
-        <h2 className="text-center mb-2 fadeIn">Filter by Industry</h2>
-        <h5 className="text-center mb-4 text-gray fadeIn">
-          You will find yourself working in a true partnership that results in an incredible
-          experience and an end product that is the best.
-        </h5>
+        <InView triggerOnce threshold={0.5}>
+          {({ inView, ref }) => (
+            <h2 ref={ref} className={`text-center mb-2 ${inView ? "fadeIn" : ""}`}>
+              Filter by Industry
+            </h2>
+          )}
+        </InView>
+
+        <InView triggerOnce threshold={0.5}>
+          {({ inView, ref }) => (
+            <h5 ref={ref} className={`text-center mb-4 text-gray ${inView ? "fadeIn" : ""}`}>
+              <p>Experience a true partnership<br />Delivering an exceptional journey and the finest end product.</p>
+            </h5>
+          )}
+        </InView>
 
         {/* Filter Buttons with Icons */}
         <div className="filter-buttons mb-4 fadeInUp">
           {allCategories.map((category, index) => (
-            <button
-              key={index}
-              className={`filter-btn ${category === selectedCategory ? "active" : ""}`}
-              onClick={() => setSelectedCategory(category)}
-            >
-              <i className={categoryIcons[category] || "fa-solid fa-folder"}></i> {category}
-            </button>
+            <InView triggerOnce key={index} threshold={0.5}>
+              {({ inView, ref }) => (
+                <button
+                  ref={ref}
+                  className={`filter-btn ${category === selectedCategory ? "active" : ""} ${inView ? "slideInLeft" : ""}`}
+                  onClick={() => setSelectedCategory(category)}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <i className={categoryIcons[category] || "fa-solid fa-folder"}></i> {category}
+                </button>
+              )}
+            </InView>
           ))}
         </div>
 
@@ -64,8 +79,8 @@ export default function Projects() {
                     <div className="project-img">
                       <Image
                         src={item.imgSrc}
-                        width={450}
-                        height={450}
+                        width={200}
+                        height={200}
                         alt="project image"
                       />
                     </div>
@@ -102,32 +117,24 @@ export default function Projects() {
         }
         .filter-btn {
           padding: 10px 20px;
-          background-color: #f5f5f5;
+          background-color: transparent;
           border: none;
           cursor: pointer;
-          transition: background-color 0.3s ease;
+          transition: border-bottom 0.3s ease;
           display: flex;
           align-items: center;
           gap: 8px;
           font-size: 0.9rem;
-          border-radius: 8px;
+          border-radius: 0;
+          position: relative;
         }
         .filter-btn.active {
-          background-color: #007bff;
-          color: white;
+          border-bottom: 3px solid #007bff;
+          color: #007bff;
         }
-        .filter-btn:hover {
-          background-color: #007bff;
-          color: white;
-        }
-        .text-center {
-          text-align: center;
-        }
-        h2, h5 {
-          font-size: 2rem;
-          margin-bottom: 1.5rem;
-        }
-        .fadeIn, .fadeInUp {
+        
+        /* Animation styles */
+        .fadeIn, .fadeInUp, .slideInLeft {
           opacity: 0;
           animation-fill-mode: forwards;
           animation-duration: 0.8s;
@@ -139,26 +146,35 @@ export default function Projects() {
         .fadeInUp {
           animation-name: fadeInUp;
         }
+        .slideInLeft {
+          animation-name: slideInLeft;
+        }
+        
+        /* Keyframes */
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInLeft {
+          from { opacity: 0; transform: translateX(-30px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
         .visible {
           opacity: 1;
         }
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
+
+        /* Typography */
+        .text-center {
+          text-align: center;
         }
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        h2, h5 {
+          font-size: 2rem;
+          margin-bottom: 1.5rem;
         }
         @media (max-width: 768px) {
           h2 {
@@ -172,3 +188,4 @@ export default function Projects() {
     </section>
   );
 }
+  

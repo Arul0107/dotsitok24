@@ -6,6 +6,7 @@ import Cta from "@/components/common/Cta";
 import ProjectDetails from "@/components/otherPages/project/ProjectDetails";
 import Link from "next/link";
 import { allProjects } from "@/data/projects";
+import ChatGPTWidget from "@/app/ChatGPTWidget";
 export const metadata = {
   title:
     "Project Details || Dotsito Technologies",
@@ -16,20 +17,35 @@ export default function Page({ params }) {
     allProjects.filter((elm) => elm.id == params.id)[0] || allProjects[0];
   return (
     <>
-      <HeaderTop />
       <Header1 />
       <main className="main position-relative" id="mains">
         <div className="breadcrumb-wrapper">
-          <div
+        <div
             className="breadcumb"
-            data-bg-src=""
-            style={{ backgroundImage: "url(/assets/img/hero/breadcumbBg.png)" }}
+            style={{
+              backgroundImage: "url(/assets/img/hero/about.png)",
+              position: "relative",
+              height: "300px", // Set height as needed
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           >
+            {/* Overlay Layer */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(0, 0, 0, 0.5)", // Black overlay with 50% opacity
+                zIndex: 1,
+              }}
+            />
             <div className="container">
               <div className="page-heading">
                 <h1 className="wow fadeInUp" data-wow-delay=".3s">
-                  {projectItem.title}
-                </h1>
+Our-Services                </h1>
                 <ul
                   className="breadcrumb-items wow fadeInUp"
                   data-wow-delay=".5s"
@@ -43,13 +59,14 @@ export default function Page({ params }) {
                   <li>
                     <i className="fas fa-chevrons-right" />
                   </li>
-                  <li>Project Details</li>
+                  <li>Our-Services </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <ProjectDetails projectItem={projectItem} />
+        <ChatGPTWidget/>
         <Cta />
       </main>
       <Footer1 />

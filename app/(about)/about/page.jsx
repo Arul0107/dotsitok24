@@ -1,33 +1,48 @@
 import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/headers/Header1";
-import HeaderTop from "@/components/headers/HeaderTop";
-
 import Cta from "@/components/common/Cta";
 import About from "@/components/homes/home-1/About";
 import Offering from "@/components/homes/home-1/Offering";
 import VideoBox from "@/components/homes/home-1/VideoBox";
-import Team from "@/components/homes/home-2/Team";
 import AboutCta from "@/components/otherPages/AboutCta";
 import Testimonials from "@/components/homes/home-2/Testimonials";
 import Link from "next/link";
-import Hero from "@/components/homes/home-3/Hero";
+import ChatGPTWidget from "@/app/ChatGPTWidget";
+
 export const metadata = {
   title: "About || Dotsito Technologies",
   description: "Dotsito Technologies",
 };
+
 export default function Page() {
   return (
     <>
-      <HeaderTop />
       <Header1 />
       <main className="main position-relative" id="mains">
-        <div className="breadcrumb-wrapper">
+        <div className="breadcrumb-wrapper" style={{ position: "relative" }}>
           <div
             className="breadcumb"
-            data-bg-src=""
-            style={{ backgroundImage: "url(/assets/img/hero/breadcumbBg.png)" }}
+            style={{
+              backgroundImage: "url(/assets/img/hero/about.png)",
+              position: "relative",
+              height: "400px", // Set height as needed
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           >
-            <div className="container">
+            {/* Overlay Layer */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(0, 0, 0, 0.5)", // Black overlay with 50% opacity
+                zIndex: 1,
+              }}
+            />
+            <div className="container" style={{ position: "relative", zIndex: 2 }}>
               <div className="page-heading">
                 <h1 className="wow fadeInUp" data-wow-delay=".3s">
                   About Us
@@ -38,8 +53,7 @@ export default function Page() {
                 >
                   <li>
                     <Link scroll={false} href={`/`}>
-                      {" "}
-                      Home{" "}
+                      Home
                     </Link>
                   </li>
                   <li>
@@ -51,15 +65,13 @@ export default function Page() {
             </div>
           </div>
         </div>
-        {/* <Hero/> */}
         <About />
         <Offering />
         <VideoBox />
-        {/* <Team /> */}
         <AboutCta />
         <Testimonials />
+        <ChatGPTWidget/>
         <div className="pb-300"></div>
-
         <Cta />
       </main>
       <Footer1 />

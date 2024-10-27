@@ -1,7 +1,5 @@
 export const footerLinks = [
   { href: "/about", text: "DOTSITO About" },
-  { href: "/service-1", text: "Our Services" },
-  { href: "/blog-details/1", text: "Our Blogs" },
-  { href: "/faq", text: "FAQ’S" },
+  { href: "/service-details/1", text: "Our Services" },
   { href: "/contact", text: "Contact Us" },
 ];

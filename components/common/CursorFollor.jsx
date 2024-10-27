@@ -16,8 +16,8 @@ export default function CursorFollor() {
         posX += (mouseX - posX) / 9;
         posY += (mouseY - posY) / 9;
 
-        follower.style.left = posX - 12 + "px";
-        follower.style.top = posY - 12 + "px";
+        follower.style.left = posX - 24 + "px";
+        follower.style.top = posY - 24 + "px";
 
         requestAnimationFrame(animateFollower);
       }

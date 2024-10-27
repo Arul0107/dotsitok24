@@ -78,7 +78,7 @@ export default function MobileNav() {
           <Link scroll={false} href="/">
             <Image
               alt="techo"
-              src="/assets/img/logo-dark.png"
+              src="/assets/img/logo-white.png"
               width="199"
               height="42"
             />

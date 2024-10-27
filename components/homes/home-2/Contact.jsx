@@ -61,7 +61,7 @@ export default function Contact() {
                       <div className="form-clt">
                         <label>Email Address*</label>
                         <div className="contact__from-input mb-20">
-                          <input type="text" placeholder="Operations@dotsito.com" />
+                          <input type="text" placeholder="operations@dotsito.com" />
                         </div>
                       </div>
                     </div>

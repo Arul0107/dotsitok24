@@ -7,11 +7,11 @@ const screenshots = [
   "/assets/img/screenshots/screenshots1_1.png",
   "/assets/img/screenshots/screenshots1_2.png",
   "/assets/img/screenshots/screenshots1_3.png",
-  "/assets/img/screenshots/screenshots1_4.png",
-  "/assets/img/screenshots/screenshots1_5.png",
-  "/assets/img/screenshots/screenshots1_6.png",
-  "/assets/img/screenshots/screenshots1_7.png",
+  "/assets/img/screenshots/screenshots1_1.png",
   "/assets/img/screenshots/screenshots1_2.png",
+  "/assets/img/screenshots/screenshots1_3.png",
+  "/assets/img/screenshots/screenshots1_1.png",
+  "/assets/img/screenshots/screenshots1_1.png",
   "/assets/img/screenshots/screenshots1_3.png",
   "/assets/img/screenshots/screenshots1_4.png",
   "/assets/img/screenshots/screenshots1_5.png",
@@ -34,7 +34,7 @@ export default function Screenshoots() {
         className="app-screenshot-wrap space fix"
         data-bg-src=""
         style={{
-          backgroundImage: "url(/assets/img/bg/appScreenshotBg1_1.png)",
+          backgroundImage: "url(/assets/img/bg/offeringBg1_1.png)",
         }}
       >
         <div className="container">
