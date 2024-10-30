@@ -11,7 +11,7 @@ export const offerBoxes = [
   },
   {
     title: "Dotspot",
-    icon: "/assets/img/icon/offering1_3.png",
+    icon: "/assets/img/icon/dotspot.png",
     delay: ".9s",
   },
   {
@@ -21,12 +21,12 @@ export const offerBoxes = [
   },
   {
     title: "Power Bi",
-    icon: "/assets/img/icon/power.png",
+    icon: "/assets/img/icon/powerbi.png",
     delay: "1.3s",
   },
   {
     title: "Saas",
-    icon: "/assets/img/icon/offering1_6.png",
+    icon: "/assets/img/icon/saascrt.png",
     delay: "1.6s",
   },
 ];

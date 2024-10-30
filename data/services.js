@@ -322,14 +322,12 @@ export const serviceCategories = [
       "E-commerce Solutions"
     ],
     contact: {
-      phone: "+208-555-0112",
-      title: "Need Help with Web Development?",
+      phone: "+91 4257 299473",
+      title: "Stay together and wins together",
       images:"/assets/img/help.png"
     },
     openingHours: [
-      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 4.00 PM" },
-      { iconClass: "fa-regular fa-clock", text: "Sun: 09.00 AM - 4.00 PM" },
-      { iconClass: "fa-regular fa-clock", text: "Friday: Closed" },
+      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 6.00 PM" },
       { iconClass: "fa-regular fa-clock", text: "Emergency: 24 hours" },    ],
     images: [
 
@@ -355,14 +353,12 @@ export const serviceCategories = [
       "E-commerce Solutions"
     ],
     contact: {
-      phone: "+208-555-0112",
+      phone: "+91 4257 299473",
       title: "Need Help with Web Development?",
       images:"/assets/img/help.png"
     },
     openingHours: [
-      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 4.00 PM" },
-      { iconClass: "fa-regular fa-clock", text: "Sun: 09.00 AM - 4.00 PM" },
-      { iconClass: "fa-regular fa-clock", text: "Friday: Closed" },
+      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 6.00 PM" },
       { iconClass: "fa-regular fa-clock", text: "Emergency: 24 hours" },    ],
     images: [
 
@@ -393,9 +389,7 @@ export const serviceCategories = [
       title: "Need Help with App Development?"
     },
     openingHours: [
-      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Sun: 09.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Friday: Closed" },
+      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 6.00 PM" },
   { iconClass: "fa-regular fa-clock", text: "Emergency: 24 hours" },
     ],
     images: [
@@ -428,9 +422,7 @@ export const serviceCategories = [
       title: "Need Help with App Development?"
     },
     openingHours: [
-      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Sun: 09.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Friday: Closed" },
+      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 6.00 PM" },
   { iconClass: "fa-regular fa-clock", text: "Emergency: 24 hours" },
     ],
     images: [
@@ -462,9 +454,7 @@ export const serviceCategories = [
       title: "Need Help with App Development?"
     },
     openingHours: [
-      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Sun: 09.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Friday: Closed" },
+      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 6.00 PM" },
   { iconClass: "fa-regular fa-clock", text: "Emergency: 24 hours" },
     ],
     images: [
@@ -495,9 +485,7 @@ export const serviceCategories = [
       title: "Need Help with App Development?"
     },
     openingHours: [
-      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Sun: 09.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Friday: Closed" },
+      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 6.00 PM" },
   { iconClass: "fa-regular fa-clock", text: "Emergency: 24 hours" },
     ],
     images: [
@@ -528,9 +516,7 @@ export const serviceCategories = [
       title: "Need Help with App Development?"
     },
     openingHours: [
-      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Sun: 09.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Friday: Closed" },
+      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 6.00 PM" },
   { iconClass: "fa-regular fa-clock", text: "Emergency: 24 hours" },
     ],
     images: [
@@ -561,9 +547,7 @@ export const serviceCategories = [
       title: "Need Help with App Development?"
     },
     openingHours: [
-      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Sun: 09.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Friday: Closed" },
+      { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 6.00 PM" },
   { iconClass: "fa-regular fa-clock", text: "Emergency: 24 hours" },
     ],
     images: [
@@ -577,8 +561,6 @@ export const serviceCategories = [
 ];
 
 export const hours = [
-  { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Sun: 09.00 AM - 4.00 PM" },
-  { iconClass: "fa-regular fa-clock", text: "Friday: Closed" },
+  { iconClass: "fa-regular fa-clock", text: "Mon - Sat: 10.00 AM -.00 PM" },
   { iconClass: "fa-regular fa-clock", text: "Emergency: 24 hours" },
 ];

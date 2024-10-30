@@ -1,32 +1,24 @@
 export const testimonialsData = [
   {
     id: 1,
-    imgSrc: "/assets/img/testimonial/testiThumb1_1.png",
-    name: "Kathryn Murphy",
-    designation: "Web Designer",
-    text: "Techo has completely transformed our web development process. The user-friendly interface and powerful features make building and maintaining our website a breeze. The customer support team is always responsive and helpful, ensuring we get the most out of their platform. Highly recommended!",
+    imgSrc: "/assets/img/testimonial/rhag.png",
+    name: "Rhagesh sivakumar",
+    text: "Dotsito Technologies offers exceptional opportunities for career advancement in IT. The collaborative environment and supportive leadership make it the perfect place to grow professionally. Highly recommend for anyone looking to take their IT career to the next level.",
   },
   {
     id: 2,
-    imgSrc: "/assets/img/testimonial/testiThumb1_2.png",
-    name: "Albert Flores",
-    designation: "Medical Assistant",
-    text: "I have been a customer of Best Computer Hub for over a year now, and I am continually impressed by their exceptional service and quality products. Every purchase I've made has been seamless, from ordering online to receiving the items on time. The product descriptions are accurate",
+    imgSrc: "/assets/img/testimonial/abi.png",
+    name: "ᏗᏰiᏁᏋSᏂ . S",
+    text: "I am starting my career as an intern. Now I am working in real-time projects. It's very useful to me to acquire more knowledge in ServiceNow. Special thanks to Dotsito family.",
   },
   {
     id: 3,
-    imgSrc: "/assets/img/testimonial/testiThumb1_1.png",
-    name: "Kathryn Murphy",
+    imgSrc: "/assets/img/testimonial/nit.png",
+    name: "Nithya Shree.J",
     designation: "Web Designer",
-    text: "Techo has completely transformed our web development process. The user-friendly interface and powerful features make building and maintaining our website a breeze. The customer support team is always responsive and helpful, ensuring we get the most out of their platform. Highly recommended!",
+    text: "As I started my intern in Dotsito technology, I learned a lot of new development activities, so it's great place to work.",
   },
-  {
-    id: 4,
-    imgSrc: "/assets/img/testimonial/testiThumb1_2.png",
-    name: "Albert Flores",
-    designation: "Medical Assistant",
-    text: "I have been a customer of Best Computer Hub for over a year now, and I am continually impressed by their exceptional service and quality products. Every purchase I've made has been seamless, from ordering online to receiving the items on time. The product descriptions are accurate",
-  },
+ 
   // Add more testimonials as needed
 ];
 

@@ -107,8 +107,10 @@ industry leaders.
                 />
               </div>
               <div className="details">
-                <p>789 Inner Lane, Holy park,</p>
-                <p>California, USA</p>
+                <p> No.115, Old Court Street, Akilandapuram, Kangeyam,
+Tiruppur District, Tamil Nadu-638701,
+</p>
+                <p>India</p>
               </div>
             </div>
             <div className="info-box_text">
@@ -123,12 +125,12 @@ industry leaders.
               <div className="details">
                 <p>
                   <a href="tel:+0123456789" className="info-box_link">
-                    +01 234 567 890
+                    +91 4257 299473,
                   </a>
                 </p>
                 <p>
                   <a href="tel:+09876543210" className="info-box_link">
-                    +09 876 543 210
+                    +914257358130
                   </a>
                 </p>
               </div>
@@ -145,20 +147,12 @@ industry leaders.
               <div className="details">
                 <p>
                   <a
-                    href="mailto:mailinfo00@techo.com"
+                    href="operations@dotsito.com"
                     className="info-box_link"
                   >
-                    mailinfo00@techo.com
-                  </a>
+                    operations@dotsito.com                  </a>
                 </p>
-                <p>
-                  <a
-                    href="mailto:support24@techo.com"
-                    className="info-box_link"
-                  >
-                    support24@techo.com
-                  </a>
-                </p>
+               
               </div>
             </div>
           </div>

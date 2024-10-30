@@ -12,7 +12,7 @@ export default function Header2() {
       <div className="sticky-wrapper">
         {/* Main Menu Area */}
         <div className="menu-area">
-          <div className="container">
+          <div className="container1">
             <div className="row align-items-center justify-content-between">
               <div className="col-auto">
                 <div className="header-logo">

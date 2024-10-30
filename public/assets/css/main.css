@@ -13,8 +13,8 @@
   --white-color: #ffffff;
   --light-color: #bdbdbd;
   --border-color: #e5e5e5;
-  --title-font: "Plus Jakarta Sans", sans-serif;
-  --body-font: "Plus Jakarta Sans", sans-serif;
+  --title-font:  "Plus Jakarta Sans" , sans-serif;
+  --body-font: " "Plus Jakarta Sans" karta Sans" ", sans-serif;
   --icon-font: "Font Awesome 6 Pro";
   --main-container: 1185px;
   --container-gutters: 30px;
@@ -1390,7 +1390,7 @@ textarea.is-invalid {
   color: var(--title-color);
 }
 .gt-btn.style5:before {
-  border-color: transparent transparent transparent var(--theme-color);
+  border-color: transparent transparent transparent var(--white-color);
 }
 .gt-btn.style5:hover {
   color: var(--white-color);
@@ -1811,7 +1811,7 @@ textarea.is-invalid {
 }
 .title-area .title {
   color: var(--title-color);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:  "Plus Jakarta Sans" sans-serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 800;
@@ -1819,7 +1819,7 @@ textarea.is-invalid {
 }
 .title-area .text {
   color: var(--body-color);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:  "Plus Jakarta Sans" , sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -4601,7 +4601,7 @@ textarea.is-invalid {
   position: absolute;
   content: "";
   top: -1px;
-  left: 280px !important;
+  left: 300px !important;
   width: 250px;
   height: 150px;
   transform: rotate(-0.375deg);
@@ -5470,7 +5470,7 @@ textarea.is-invalid {
 
 .blog-text {
   color: var(--body-color);
-  font-family: "Plus Jakarta Sans";
+  font-family:  "Plus Jakarta Sans" ;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -6196,7 +6196,7 @@ textarea.is-invalid {
 }
 .hero-1 .hero-slider1 .hero-inner .hero-style1 .hero-sub-title {
   color: var(--white-color);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:  "Plus Jakarta Sans" , sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -6215,7 +6215,7 @@ textarea.is-invalid {
 .hero-1 .hero-slider1 .hero-inner .hero-style1 .hero-title .title2 {
   display: block;
   color: var(--white-color);
-  font-family: "Plus Jakarta Sans";
+  font-family:  "Plus Jakarta Sans" ;
   font-size: 80px;
   font-style: normal;
   font-weight: 800;
@@ -6227,8 +6227,8 @@ textarea.is-invalid {
   .hero-1 .hero-slider1 .hero-inner .hero-style1 .hero-title .title2 {
     display: block;
     color: var(--white-color);
-    font-family: "Plus Jakarta Sans";
-    font-size: 60px;
+    font-family:  "Plus Jakarta Sans" ;
+    font-size: 40px;
     font-style: normal;
     font-weight: 800;
     line-height: 70px;
@@ -6237,7 +6237,7 @@ textarea.is-invalid {
 }
 .hero-1 .hero-slider1 .hero-inner .hero-style1 .hero-text {
   color: var(--white-color);
-  font-family: "Plus Jakarta Sans";
+  font-family:  "Plus Jakarta Sans" ;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -6314,9 +6314,7 @@ textarea.is-invalid {
   }
 }
 @media (max-width: 991px) {
-  .hero-1 {
-    padding-top: 110px;
-  }
+ 
   .hero-1 .slider-arrow.style2 {
     display: none;
   }
@@ -6417,7 +6415,7 @@ textarea.is-invalid {
 }
 .hero-2 .hero-slider2 .hero-inner .hero-style2 .hero-sub-title {
   color: var(--white-color);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:  "Plus Jakarta Sans" , sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
@@ -6436,7 +6434,7 @@ textarea.is-invalid {
 .hero-2 .hero-slider2 .hero-inner .hero-style2 .hero-title .title2 {
   display: block;
   color: var(--white-color);
-  font-family: "Plus Jakarta Sans";
+  font-family:  "Plus Jakarta Sans" ;
   font-size: 80px;
   font-style: normal;
   font-weight: 800;
@@ -6448,7 +6446,7 @@ textarea.is-invalid {
   .hero-2 .hero-slider2 .hero-inner .hero-style2 .hero-title .title2 {
     display: block;
     color: var(--white-color);
-    font-family: "Plus Jakarta Sans";
+    font-family: " "Plus Jakarta Sans" 
     font-size: 60px;
     font-style: normal;
     font-weight: 800;
@@ -6458,7 +6456,7 @@ textarea.is-invalid {
 }
 .hero-2 .hero-slider2 .hero-inner .hero-style2 .hero-text {
   color: var(--white-color);
-  font-family: "Plus Jakarta Sans";
+  font-family:  "Plus Jakarta Sans" ;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -8183,7 +8181,7 @@ textarea.is-invalid {
 }
 .team-card.style1 .profile-box .title a {
   color: var(--title-color);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:  "Plus Jakarta Sans" , sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -8193,7 +8191,7 @@ textarea.is-invalid {
   padding: 0px 80px 10px;
   color: var(--body-color);
   text-align: center;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:  "Plus Jakarta Sans" , sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -10962,7 +10960,7 @@ textarea.is-invalid {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:  "Plus Jakarta Sans" , sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -10981,7 +10979,7 @@ textarea.is-invalid {
 }
 .service-card.style2 .service-content_text {
   color: var(--body-color);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:  "Plus Jakarta Sans" , sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -10990,7 +10988,7 @@ textarea.is-invalid {
 }
 .service-card.style2 .service-content .link {
   color: var(--body-color);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:  "Plus Jakarta Sans" , sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -11917,7 +11915,7 @@ textarea.is-invalid {
 .process-card.style1 .content .title {
   color: var(--title-color);
   text-align: center;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:  "Plus Jakarta Sans" , sans-serif;
   font-size: 22px;
   font-style: normal;
   font-weight: 700;
@@ -11927,7 +11925,7 @@ textarea.is-invalid {
 .process-card.style1 .content .text {
   color: var(--body-color);
   text-align: center;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:  "Plus Jakarta Sans" , sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -12333,7 +12331,7 @@ textarea.is-invalid {
 .offer-box .content .title a {
   color: var(--white-color);
   text-align: center;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:  "Plus Jakarta Sans" , sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -13452,7 +13450,7 @@ textarea.is-invalid {
 }
 
 .pb-425 {
-  padding-bottom: 425px;
+  padding-bottom: 380px;
   /* Medium devices */
 }
 @media (max-width: 991px) {

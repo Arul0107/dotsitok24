@@ -4,7 +4,7 @@ import "../public/assets/scss/styles.scss";
 import { useEffect } from "react";
 import SiteMenu from "@/components/headers/SiteMenu";
 import ScrollTop from "@/components/common/ScrollTop";
-import CursorFollor from "@/components/common/CursorFollor";
+// import CursorFollor from "@/components/common/CursorFollor";
 import { usePathname } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 import PopupSearch from "@/components/headers/PopupSearch";
@@ -15,17 +15,19 @@ export default function RootLayout({ children }) {
   // Bootstrap JS import (client-side only)
   useEffect(() => {
     if (typeof window !== "undefined") {
-      import("bootstrap/dist/js/bootstrap.esm").then(() => {
-        console.log("Bootstrap JS loaded successfully");
-      });
+      import("bootstrap/dist/js/bootstrap.esm")
+        .then(() => {
+        })
+        .catch((error) => {
+        });
     }
   }, []);
 
   // Sticky header effect
   useEffect(() => {
-    window.addEventListener("scroll", function () {
-      var topPos = window.scrollY || document.documentElement.scrollTop;
-      var stickyWrapper = document.querySelector(".sticky-wrapper");
+    const handleScroll = () => {
+      const topPos = window.scrollY || document.documentElement.scrollTop;
+      const stickyWrapper = document.querySelector(".sticky-wrapper");
 
       if (stickyWrapper) {
         if (topPos > 500) {
@@ -34,7 +36,11 @@ export default function RootLayout({ children }) {
           stickyWrapper.classList.remove("sticky");
         }
       }
-    });
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   // Scroll to top and initialize WOW.js (client-side only)
@@ -45,16 +51,17 @@ export default function RootLayout({ children }) {
         behavior: "instant",
       });
 
-      import("wowjs").then((module) => {
-        const WOW = module.default;
-        const wow = new WOW({
-          mobile: false,
-          live: false,
+      import("wowjs")
+        .then((module) => {
+          const WOW = module.default;
+          const wow = new WOW({
+            mobile: false,
+            live: false,
+          });
+          wow.init();
+        })
+        .catch((error) => {
         });
-        wow.init();
-      }).catch((error) => {
-        console.error("Error loading WOW.js:", error);
-      });
     }
   }, [path]);
 
@@ -82,7 +89,7 @@ export default function RootLayout({ children }) {
           pauseOnHover
         />
         {children}
-        <CursorFollor />
+        {/* <CursorFollor /> */}
         <ScrollTop />
       </body>
     </html>

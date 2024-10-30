@@ -9,18 +9,16 @@ export default function ChatGPTWidget() {
 
   const toggleChat = () => {
     if (isOpen) {
-      // Start closing animation
       setIsAnimating(true);
       setTimeout(() => {
         setIsOpen(false);
         setIsAnimating(false);
-      }, 500); // Match with the animation duration
+      }, 500); // Duration of the close animation
     } else {
       setIsOpen(true);
     }
   };
 
-  // Close chat if clicked outside the widget
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (isOpen && !event.target.closest(".chatgpt-widget-container")) {
@@ -33,12 +31,34 @@ export default function ChatGPTWidget() {
 
   return (
     <>
+      {/* Notification Bubble Above the Chat Icon */}
+      {!isOpen && (
+        <div
+          style={{
+            position: "fixed",
+            bottom: "160px",
+            right: "30px",
+            backgroundColor: "#00FF88",
+            color: "#000000",
+            padding: "8px 12px",
+            borderRadius: "12px",
+            fontSize: "12px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+            zIndex: 1000,
+            whiteSpace: "nowrap",
+            fontWeight: "bold",
+          }}
+        >
+          We are Here
+        </div>
+      )}
+
       {/* Button to toggle the chat widget */}
       <div
         onClick={toggleChat}
         style={{
           position: "fixed",
-          bottom: "80px",
+          bottom: "100px",
           right: "20px",
           width: "60px",
           height: "60px",
@@ -62,21 +82,9 @@ export default function ChatGPTWidget() {
             overflow: "hidden",
             animation: "rotate 6s linear infinite",
           }}
-        >
-          <p
-            style={{
-              position: "absolute",
-              width: "100%",
-              textAlign: "center",
-              fontSize: "12px",
-              color: "#304eff",
-              whiteSpace: "nowrap",
-            }}
-          >
-          </p>
-        </div>
+        ></div>
 
-        {/* Image inside the button */}
+        {/* Image inside the button with green glowing border */}
         <img
           src="/assets/img/icon/bot.png" // Replace with actual image path
           alt="Chat Icon"
@@ -89,8 +97,9 @@ export default function ChatGPTWidget() {
             borderRadius: "50%",
             objectFit: "cover",
             transform: "translate(-50%, -50%)",
-            border: "4px solid #304eff",
-            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+            border: "4px solid transparent",
+            boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.1)",
+            animation: "greenGlow 2s infinite alternate",
           }}
         />
       </div>
@@ -103,7 +112,7 @@ export default function ChatGPTWidget() {
           }`}
           style={{
             position: "fixed",
-            bottom: "80px",
+            bottom: "100px",
             right: "20px",
             width: "320px",
             height: "400px",
@@ -157,6 +166,25 @@ export default function ChatGPTWidget() {
           }
         }
 
+        /* Green glow effect for bright theme */
+        @keyframes greenGlow {
+          0% {
+            box-shadow: 0 0 8px rgba(0, 255, 136, 0.8),
+              0 0 16px rgba(0, 255, 136, 0.8);
+            border-color: rgba(0, 255, 136, 0.8);
+          }
+          50% {
+            box-shadow: 0 0 16px rgba(0, 255, 136, 1),
+              0 0 32px rgba(0, 255, 136, 1);
+            border-color: rgba(0, 255, 136, 1);
+          }
+          100% {
+            box-shadow: 0 0 20px rgba(0, 255, 136, 1.2),
+              0 0 40px rgba(0, 255, 136, 1.2);
+            border-color: rgba(0, 255, 136, 1.2);
+          }
+        }
+
         .chatgpt-widget-container {
           animation-duration: 0.5s;
           animation-fill-mode: forwards;
@@ -175,14 +203,14 @@ export default function ChatGPTWidget() {
           .chatgpt-widget-container {
             width: 90%;
             height: 75%;
-            bottom: 50px;
+            bottom: 80px;
             right: 5%;
             border-radius: 12px;
           }
           div[style*="width: 60px; height: 60px;"] {
             width: 50px !important;
             height: 50px !important;
-            bottom: 15px;
+            bottom: 2 5px;
             right: 10px;
           }
         }

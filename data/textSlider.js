@@ -25,5 +25,10 @@ export const textSlides = [
     icon: "/assets/img/icon/starIcon3.png",
     customClass: "text-custom-storke",
   },
+  {
+    text: "Dotsito Technologies ",
+    icon: "/assets/img/icon/starIcon3.png",
+    customClass: "",
+  },
   // Add more text slides here if needed
 ];

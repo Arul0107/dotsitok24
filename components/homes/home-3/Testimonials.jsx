@@ -46,7 +46,7 @@ export default function Testimonials() {
               </span>{" "}
             </h5>
             <h2 className="title text-center mb-50">
-              What Happy Clients Says About Us?
+              Testimonials from Our Happy Staff
             </h2>
           </div>
           <div className="slider-area">

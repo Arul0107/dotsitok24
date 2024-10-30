@@ -7,6 +7,7 @@ import ServiceDetails from "@/components/otherPages/service/ServiceDetails";
 import Link from "next/link";
 import { allService } from "@/data/services";
 import ChatGPTWidget from "@/app/ChatGPTWidget";
+import Loader from "@/app/Loader";
 export const metadata = {
   title:
     "Service Details|| Dotsito Technologies",
@@ -17,6 +18,7 @@ export default function Page({ params }) {
     allService.filter((elm) => elm.id == params.id)[0] || allService[0];
   return (
     <>
+    <Loader/>
       <Header1 />
       <main className="main position-relative" id="mains">
         <div className="breadcrumb-wrapper">
@@ -47,21 +49,7 @@ export default function Page({ params }) {
                 <h1 className="wow fadeInUp" data-wow-delay=".3s">
                   All Services
                 </h1>
-                <ul
-                  className="breadcrumb-items wow fadeInUp"
-                  data-wow-delay=".5s"
-                >
-                  <li>
-                    <Link scroll={false} href={`/`}>
-                      {" "}
-                      Home{" "}
-                    </Link>
-                  </li>
-                  <li>
-                    <i className="fas fa-chevrons-right" />
-                  </li>
-                  <li>Services Details</li>
-                </ul>
+                
               </div>
             </div>
           </div>

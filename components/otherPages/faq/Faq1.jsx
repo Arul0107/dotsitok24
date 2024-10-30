@@ -13,7 +13,7 @@ export default function Faq1() {
             aria-expanded="true"
             aria-controls="faq1"
           >
-            Where should I incorporate my business?
+            Where is the best place to incorporate my business?
           </button>
         </h5>
         <div
@@ -22,12 +22,11 @@ export default function Faq1() {
           data-bs-parent="#accordion"
         >
           <div className="accordion-body">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't.
+            Choosing the best location for incorporating your business depends on factors like taxes, legal requirements, and where you plan to operate. Many companies choose locations known for business-friendly regulations.
           </div>
         </div>
       </div>
+      
       <div className="accordion-item mb-3 wow fadeInUp" data-wow-delay=".5s">
         <h5 className="accordion-header">
           <button
@@ -38,7 +37,7 @@ export default function Faq1() {
             aria-expanded="false"
             aria-controls="faq2"
           >
-            How long should a business plan be?
+            How detailed should a business plan be?
           </button>
         </h5>
         <div
@@ -47,12 +46,11 @@ export default function Faq1() {
           data-bs-parent="#accordion"
         >
           <div className="accordion-body">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't.
+            A business plan should be detailed enough to outline your objectives, target market, and financial projections. However, it should also be flexible, allowing you to adjust as your business grows.
           </div>
         </div>
       </div>
+      
       <div className="accordion-item mb-3 wow fadeInUp" data-wow-delay=".7s">
         <h5 className="accordion-header">
           <button
@@ -63,7 +61,7 @@ export default function Faq1() {
             aria-expanded="false"
             aria-controls="faq3"
           >
-            What is included in your services?
+            What services are included in your business support packages?
           </button>
         </h5>
         <div
@@ -72,12 +70,11 @@ export default function Faq1() {
           data-bs-parent="#accordion"
         >
           <div className="accordion-body">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't.
+            Our business support packages include everything from startup guidance, compliance assistance, and consulting to help with growth strategies and technology solutions.
           </div>
         </div>
       </div>
+      
       <div className="accordion-item wow fadeInUp" data-wow-delay=".7s">
         <h5 className="accordion-header">
           <button
@@ -88,7 +85,7 @@ export default function Faq1() {
             aria-expanded="false"
             aria-controls="faq4"
           >
-            What type of company is measured?
+            How do I measure my company’s performance?
           </button>
         </h5>
         <div
@@ -97,9 +94,7 @@ export default function Faq1() {
           data-bs-parent="#accordion"
         >
           <div className="accordion-body">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't.
+            Company performance can be measured using various key performance indicators (KPIs), including revenue growth, customer satisfaction, and operational efficiency. Choosing the right KPIs depends on your industry and business goals.
           </div>
         </div>
       </div>

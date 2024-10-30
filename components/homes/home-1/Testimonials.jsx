@@ -44,17 +44,8 @@ export default function Testimonials() {
                 className="title text-start wow fadeInUp"
                 data-wow-delay=".6s"
               >
-                What Happy Clients Says About Us?
+                Testimonials from Our Happy Staff
               </h2>
-            </div>
-            <div className="btn-wrapper">
-              <Link
-                scroll={false}
-                className="gt-btn gt-btn-icon"
-                href={`/testimonial`}
-              >
-                See All Testimonials
-              </Link>
             </div>
           </div>
           <div className="slider-area testimonial-slider1">

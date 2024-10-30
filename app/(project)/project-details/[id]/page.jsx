@@ -7,6 +7,7 @@ import ProjectDetails from "@/components/otherPages/project/ProjectDetails";
 import Link from "next/link";
 import { allProjects } from "@/data/projects";
 import ChatGPTWidget from "@/app/ChatGPTWidget";
+import Loader from "@/app/Loader";
 export const metadata = {
   title:
     "Project Details || Dotsito Technologies",
@@ -17,6 +18,7 @@ export default function Page({ params }) {
     allProjects.filter((elm) => elm.id == params.id)[0] || allProjects[0];
   return (
     <>
+    <Loader/>
       <Header1 />
       <main className="main position-relative" id="mains">
         <div className="breadcrumb-wrapper">
@@ -46,21 +48,7 @@ export default function Page({ params }) {
               <div className="page-heading">
                 <h1 className="wow fadeInUp" data-wow-delay=".3s">
 Our-Services                </h1>
-                <ul
-                  className="breadcrumb-items wow fadeInUp"
-                  data-wow-delay=".5s"
-                >
-                  <li>
-                    <Link scroll={false} href={`/`}>
-                      {" "}
-                      Home{" "}
-                    </Link>
-                  </li>
-                  <li>
-                    <i className="fas fa-chevrons-right" />
-                  </li>
-                  <li>Our-Services </li>
-                </ul>
+               
               </div>
             </div>
           </div>

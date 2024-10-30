@@ -6,7 +6,7 @@ export const slidesData = [
     subtitle: "BEST IT SOLUTION PROVIDER",
     title1: " BETTER SOLUTIONS  ",
     title2: "FOR YOUR BUSSINESS",
-    text: "At DOTSITO, innovation drives us to create cutting-edge SaaS solutions that deliver value. We embrace complexity, constantly refining our offerings to stay industry leaders.",
+    text: "Dotsito delivers superior solutions that empower organizations to achieve their goals. Our innovative ServiceNow integrations and tailored SaaS offerings enhance efficiency and drive growth, ensuring clients thrive in a dynamic landscape.",
   },
   
 ];

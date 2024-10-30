@@ -2,43 +2,48 @@
 
 import { useEffect } from "react";
 
-export default function CursorFollor() {
+export default function CursorFollower() {
   useEffect(() => {
-    if (document.querySelector(".cursor-follower")) {
-      var follower = document.querySelector(".cursor-follower");
+    if (window.innerWidth > 768) {
+      const follower = document.querySelector(".cursor-follower");
 
-      var posX = 0,
-        posY = 0;
-      var mouseX = 0,
-        mouseY = 0;
+      let posX = 0, posY = 0;
+      let mouseX = 0, mouseY = 0;
 
       function animateFollower() {
         posX += (mouseX - posX) / 9;
         posY += (mouseY - posY) / 9;
 
-        follower.style.left = posX - 24 + "px";
-        follower.style.top = posY - 24 + "px";
+        follower.style.left = `${posX}px`;
+        follower.style.top = `${posY}px`;
 
         requestAnimationFrame(animateFollower);
       }
 
-      requestAnimationFrame(animateFollower);
+      // Initialize follower animation
+      animateFollower();
 
-      document.addEventListener("mousemove", function (e) {
+      // Update mouse coordinates on movement
+      document.addEventListener("mousemove", (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
       });
 
-      var sliderAreas = document.querySelectorAll(".slider-area");
-      sliderAreas.forEach(function (sliderArea) {
-        sliderArea.addEventListener("mouseenter", function () {
-          follower.classList.add("d-none");
-        });
-
-        sliderArea.addEventListener("mouseleave", function () {
-          follower.classList.remove("d-none");
-        });
+      // Handle hover effect on interactive elements
+      const interactiveElements = document.querySelectorAll("a, button");
+      interactiveElements.forEach((element) => {
+        element.addEventListener("mouseenter", () => follower.classList.add("active"));
+        element.addEventListener("mouseleave", () => follower.classList.remove("active"));
       });
+
+      // Clean up event listeners on unmount
+      return () => {
+        document.removeEventListener("mousemove", animateFollower);
+        interactiveElements.forEach((element) => {
+          element.removeEventListener("mouseenter", () => follower.classList.add("active"));
+          element.removeEventListener("mouseleave", () => follower.classList.remove("active"));
+        });
+      };
     }
   }, []);
 

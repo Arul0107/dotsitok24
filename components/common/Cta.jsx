@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Cta() {
   return (
     <section
-      className="cta-area mt-n15 mb-n116 wow fadeInUp"
+      className="cta-area mt-n20 mb-n116 wow fadeInUp"
       data-wow-delay=".6s"
     >
       <div className="container">

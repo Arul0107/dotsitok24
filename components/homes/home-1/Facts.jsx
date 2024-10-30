@@ -1,30 +1,87 @@
+"use client";
+import React, { useState, useRef, useEffect } from "react";
 import { counterBoxes } from "@/data/facts";
-import React from "react";
 import Image from "next/image";
-import Counter from "@/components/common/Counter";
 
 export default function Facts() {
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    // Use IntersectionObserver to trigger the animation when the section is visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setInView(true);
+          observer.disconnect(); // Stop observing once triggered
+        }
+      },
+      { threshold: 0.3 } // Trigger when 30% of the component is in view
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
+  // Counter component logic to increment the count gradually until it reaches `max`
+  const Counter = ({ max, animate }) => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+      if (animate && count < max) {
+        const interval = setInterval(() => {
+          setCount((prev) => {
+            if (prev < max) {
+              return prev + 1;
+            } else {
+              clearInterval(interval);
+              return max;
+            }
+          });
+        }, 50); // Slower increment rate for smooth animation
+
+        return () => clearInterval(interval);
+      }
+    }, [animate, count, max]);
+
+    return (
+      <span style={{ fontSize: "2em", color: "#ffffff", fontWeight: "bold" }}>
+        {count}
+      </span>
+    );
+  };
+
   return (
-    <div className="counter-area mt-n150 mb-n116 fix">
-      <div className="container">
-        <div className="counter-wrap">
+    <div
+      ref={sectionRef}
+      className="counter-area"
+      style={{ marginTop: "-150px", marginBottom: "-116px", overflow: "hidden" }}
+    >
+      <div className="container" style={{ padding: "20px" }}>
+        <div className="counter-wrap" style={{ display: "flex", justifyContent: "space-around", flexWrap: "wrap" }}>
           {counterBoxes.map((box, index) => (
             <div
-              className="counter-box style2 wow fadeInUp"
-              data-wow-delay={box.delay}
               key={index}
+              className="counter-box"
+              style={{
+                opacity: inView ? 1 : 0,
+                transform: inView ? "translateY(0)" : "translateY(20px)",
+                transition: "all 0.6s ease-in-out",
+              }}
             >
-              <div className="counter-box_icon">
+              <div style={{ marginBottom: "15px" }}>
                 <Image src={box.icon} width={60} height={60} alt="icon" />
               </div>
-              <div className="counter-box_counter">
-                <div>
-                  <Counter parentClass={"counter-number"} max={box.number} />
-
-                  <span className="plus">+</span>
-                </div>
-                <span>{box.label}</span>
+              <div style={{ display: "flex", alignItems: "center", color: "#ffffff" }}>
+                <Counter max={box.number} animate={inView} />
+                <span style={{ fontSize: "2em", color: "#ffffff", marginLeft: "4px" }}>+</span>
               </div>
+              <span style={{ fontSize: "1em", color: "#ffffff", marginTop: "10px" }}>{box.label}</span>
             </div>
           ))}
         </div>

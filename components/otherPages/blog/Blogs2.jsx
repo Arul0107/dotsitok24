@@ -1,60 +1,62 @@
-import { newsItems } from "@/data/blogs";
+// components/otherPages/job/JobsListing.js
+
+import { jobItems } from "@/data/jobs"; // Make sure jobItems data is imported from the correct file
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Sidebar from "./Sidebar";
 import Pagination from "@/components/common/Pagination";
 
-export default function Blogs2() {
+export default function JobsListing() {
   return (
-    <section className="news-standard fix space-top pb-425">
+    <section className="jobs-listing fix space-top pb-425">
       <div className="container">
         <div className="row g-4">
           <div className="col-12 col-lg-8">
-            <div className="news-standard-wrapper">
-              {newsItems.map((item, index) => (
+            <div className="jobs-listing-wrapper">
+              {jobItems.map((job, index) => (
                 <div
                   key={index}
-                  className="news-standard-items wow fadeInUp"
-                  data-wow-delay={item.delay}
+                  className="job-listing-item wow fadeInUp"
+                  data-wow-delay={job.delay}
                 >
-                  <div className="news-thumb">
+                  <div className="job-thumb">
                     <Image
-                      src={item.imgSrc}
+                      src={job.imgSrc}
                       width={710}
                       height={430}
-                      alt="img"
+                      alt="job"
                     />
-                    <div className="post-date">
+                    <div className="job-date">
                       <h3>
-                        {item.date} <br />
-                        <span>{item.month}</span>
+                        {job.date} <br />
+                        <span>{job.month}</span>
                       </h3>
                     </div>
                   </div>
-                  <div className="news-content">
+                  <div className="job-content">
                     <ul>
                       <li>
-                        <i className="fa-light fa-user" />
-                        {item.user}
+                        <i className="fa-light fa-briefcase" />
+                        {job.position}
                       </li>
                       <li>
-                        <i className="fa-light fa-comments" />
-                        {item.comments}
+                        <i className="fa-light fa-location-dot" />
+                        {job.location}
                       </li>
                     </ul>
                     <h3>
-                      <Link scroll={false} href={`/blog-details`}>
-                        {item.title}
+                      <Link scroll={false} href={`/job-details`}>
+                        {job.title}
                       </Link>
                     </h3>
-                    <p>{item.description}</p>
+                    <p>{job.description}</p>
                     <Link
                       scroll={false}
-                      href={`/blog-details`}
+                      href={`/job-details`}
                       className="gt-btn mt-1"
                     >
-                      Read More
+                      Apply Now
                       <i className="fa-sharp fa-light fa-arrow-right-long" />
                     </Link>
                   </div>

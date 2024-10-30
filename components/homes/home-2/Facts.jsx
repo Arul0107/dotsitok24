@@ -2,6 +2,7 @@ import { counterBoxes } from "@/data/facts";
 import React from "react";
 import Image from "next/image";
 import Counter from "@/components/common/Counter";
+import { Color } from "maplibre-gl";
 
 export default function Facts() {
   return (
@@ -19,8 +20,7 @@ export default function Facts() {
               </div>
               <div className="counter-box_counter">
                 <div>
-                  <Counter parentClass={"counter-number"} max={elm.number} />
-
+                <Counter max={box.number} animate={inView} className="counter-text"/>
                   <span className="plus">+</span>
                 </div>
                 <span>{elm.label}</span>

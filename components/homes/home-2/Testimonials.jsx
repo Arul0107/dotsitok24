@@ -52,7 +52,7 @@ export default function Testimonials() {
               className="title text-center mb-50 wow fadeInUp"
               data-wow-delay=".6s"
             >
-              What Happy Clients Says About Us?
+              Testimonials from Our Happy Staff
             </h2>
           </div>
           <div className="testimonial-card-wrap style2">

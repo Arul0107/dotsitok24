@@ -4,6 +4,7 @@ import { EffectFade } from "swiper/modules";
 import { slidesData } from "@/data/heroSlides";
 import Link from "next/link";
 import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="hero-1" id="hero">
@@ -18,7 +19,7 @@ export default function Hero() {
           <SwiperSlide className="swiper-slide" key={slide.id}>
             <div className="hero-inner">
               <div
-                className="gt-hero-bg hero-color-bg "
+                className="gt-hero-bg hero-color-bg"
                 style={{ backgroundImage: `url(${slide.bgSrc})` }}
               />
               <div className="container">
@@ -40,20 +41,8 @@ export default function Hero() {
                         {slide.subtitle}
                       </h6>
                       <h1 className="hero-title text-white">
-                        <span
-                          className="title1"
-                          data-ani="slideindown"
-                          data-ani-delay="0.3s"
-                        >
-                          {slide.title1}
-                        </span>
-                        <span
-                          className="title2"
-                          data-ani="slideindown"
-                          data-ani-delay="0.4s"
-                        >
-                          {slide.title2}
-                        </span>
+                        <span className="title1">{slide.title1}</span>
+                        <span className="title2">{slide.title2}</span>
                       </h1>
                       <p
                         className="hero-text text-white"
@@ -79,25 +68,18 @@ export default function Hero() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <button data-slider-prev="#heroSlide1" className="slider-arrow style2">
-        <Image
-          alt="img"
-          src="/assets/img/icon/arrowLeft.png"
-          width="20"
-          height="20"
-        />
-      </button>
-      <button
-        data-slider-next="#heroSlide1"
-        className="slider-arrow style2 slider-next"
-      >
-        <Image
-          alt="img"
-          src="/assets/img/icon/arrowRight.png"
-          width="20"
-          height="20"
-        />
-      </button>
+      <Image
+        alt="img"
+        src="/assets/img/icon/arrowLeft.png"
+        width="20"
+        height="20"
+      />
+      <Image
+        alt="img"
+        src="/assets/img/icon/arrowRight.png"
+        width="20"
+        height="20"
+      />
       <div className="scroll-down">
         <a href="#service-area" className="hero-scroll-wrap">
           <i className="fal fa-long-arrow-left" />

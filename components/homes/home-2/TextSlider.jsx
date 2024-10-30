@@ -13,8 +13,7 @@ export default function TextSlider() {
                 className={`textWrapper-textslide ${slide.customClass}`}
                 key={index}
               >
-                <Image src={slide.icon} width={50} height={54} alt="img" />
-                {slide.text}
+               {slide.text}
               </div>
             ))}
           </div>
@@ -23,8 +22,7 @@ export default function TextSlider() {
               <div
                 className={`textWrapper-textslide ${slide.customClass}`}
                 key={index}
-              >
-                <Image src={slide.icon} width={50} height={54} alt="img" />
+              > 
                 {slide.text}
               </div>
             ))}

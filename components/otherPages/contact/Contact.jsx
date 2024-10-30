@@ -55,7 +55,7 @@ export default function Contact() {
                 >
                   <div className="contact-info-area-2">
                     <div className="contact-info-items">
-                      <div className="icon">
+                      <div className="">
                         <svg
                           width={30}
                           height={30}
@@ -76,12 +76,12 @@ export default function Contact() {
                       <div className="content">
                         <p>Call Us 7/24</p>
                         <h3>
-                          <a href="tel:+2085550112">+208-555-0112</a>
+                          <a href="tel:+208-555-0112">+91 4257 299473</a>
                         </h3>
                       </div>
                     </div>
                     <div className="contact-info-items">
-                      <div className="icon">
+                      <div className="">
                         <svg
                           width={30}
                           height={30}
@@ -107,13 +107,13 @@ export default function Contact() {
                         <p>Make a Quote</p>
                         <h3>
                           <a href="mailto:infotech@gmail.com">
-                            Infotech@gmail.com
+                            operations@dotsito.com{" "}
                           </a>
                         </h3>
                       </div>
                     </div>
                     <div className="contact-info-items border-none">
-                      <div className="icon">
+                      <div className="">
                         <svg
                           width={32}
                           height={32}
@@ -137,7 +137,10 @@ export default function Contact() {
                       </div>
                       <div className="content">
                         <p>Location</p>
-                        <h3>4517 Washington ave.</h3>
+                        <h3>
+                          No.115, Old Court Street, Akilandapuram, Kangeyam,
+                          Tiruppur District, Tamil Nadu-638701,
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -171,8 +174,8 @@ export default function Contact() {
                           width="28"
                           height="12"
                         />
-                      </span>{' '}
-                      Contact us{' '}
+                      </span>{" "}
+                      Contact us{" "}
                       <span>
                         <Image
                           alt="icon"
@@ -184,9 +187,7 @@ export default function Contact() {
                     </h5>
                     <h2 className="title mb-50">Ready to Get Started?</h2>
                     <p>
-                      Nullam varius, erat quis iaculis dictum, eros urna varius
-                      eros, ut blandit felis odio in turpis. Quisque rhoncus,
-                      eros in auctor ultrices,
+                      We celebrate our employees as family. Providing best-of-breed knowledge enviroment to enquire at operations@dotsito.com to chase your dreams.
                     </p>
                   </div>
                   <form

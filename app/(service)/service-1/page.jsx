@@ -16,6 +16,7 @@ export const metadata = {
 export default function Page() {
   return (
     <>
+    <Loader/>
       <Header1 />
       <main className="main position-relative" id="mains">
         <div className="breadcrumb-wrapper">
@@ -46,21 +47,7 @@ export default function Page() {
                 <h1 className="wow fadeInUp" data-wow-delay=".3s">
                   Services 01
                 </h1>
-                <ul
-                  className="breadcrumb-items wow fadeInUp"
-                  data-wow-delay=".5s"
-                >
-                  <li>
-                    <Link scroll={false} href={`/`}>
-                      {" "}
-                      Home{" "}
-                    </Link>
-                  </li>
-                  <li>
-                    <i className="fas fa-chevrons-right" />
-                  </li>
-                  <li>Services 01</li>
-                </ul>
+                
               </div>
             </div>
           </div>

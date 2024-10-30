@@ -13,7 +13,7 @@ const categoryIcons = {
   "Technology": "fa-solid fa-laptop-code",
   "ServiceNow": "fa-solid fa-chart-line",
   "Tools": "fa-solid fa-tools",
-  "Managemant": "fa-solid fa-graduation-cap",
+  "Management": "fa-solid fa-graduation-cap",
 };
 
 // Get unique categories from projectItems
@@ -39,13 +39,7 @@ export default function Projects() {
           )}
         </InView>
 
-        <InView triggerOnce threshold={0.5}>
-          {({ inView, ref }) => (
-            <h5 ref={ref} className={`text-center mb-4 text-gray ${inView ? "fadeIn" : ""}`}>
-              <p>Experience a true partnership<br />Delivering an exceptional journey and the finest end product.</p>
-            </h5>
-          )}
-        </InView>
+       
 
         {/* Filter Buttons with Icons */}
         <div className="filter-buttons mb-4 fadeInUp">
@@ -79,9 +73,11 @@ export default function Projects() {
                     <div className="project-img">
                       <Image
                         src={item.imgSrc}
-                        width={200}
-                        height={200}
+                        width={350} // Fixed width
+                        height={200} // Adjust height as needed within card
                         alt="project image"
+                        quality={100}
+                        layout="responsive"
                       />
                     </div>
                     <div className="fancy-box style2">
@@ -168,6 +164,31 @@ export default function Projects() {
           opacity: 1;
         }
 
+        /* Project card styling */
+        .project-card {
+          width: 350px;
+          height: 350px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+          transform: scale(1.05);
+        }
+
+        .project-img {
+          width: 100%;
+          height: 200px;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
         /* Typography */
         .text-center {
           text-align: center;
@@ -188,4 +209,3 @@ export default function Projects() {
     </section>
   );
 }
-  

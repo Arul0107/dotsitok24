@@ -40,6 +40,8 @@
     @include sm {
         grid-template-columns: repeat(1, 1fr);
         gap: 30px;
+        top: 90px;
+        bottom: 20px;
         border-top-right-radius: 200px;
         border-bottom-right-radius: 0px;
         border-top-left-radius: 200px;
@@ -57,7 +59,7 @@
         place-content: center;
         place-items: center;
         gap: 35px;
-        padding: 80px 66px;
+        padding: 50px 66px;
         border-top-right-radius: 500px;
         border-bottom-right-radius: 500px;
         border-top-left-radius: 500px;

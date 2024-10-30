@@ -80,9 +80,7 @@ export default function About() {
                     We Can Clients with the About Solution
                   </h2>
                   <p className="text">
-                    It is a long established fact that a reader will be
-                    distracted the readable content of a page when looking at
-                    layout the point.
+                     Dotsito is a leading ServiceNow integrator, we are enhancing operational efficiency and drive growth. Our expert team offers implementation, consulting, and managed services to maximize ServiceNow’s potential across various industries.
                   </p>
                 </div>
                 <div className="fancy-box-wrapper">

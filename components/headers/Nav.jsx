@@ -5,24 +5,25 @@ import { usePathname } from "next/navigation";
 
 export default function Nav() {
   const pathname = usePathname();
+  
   const isMenuActive = (menu = menuItems[3]) => {
     let isActive = false;
     if (menu.href !== "#") {
-      if (pathname.split("/")[1] == menu.href?.split("/")[1]) {
+      if (pathname.split("/")[1] === menu.href?.split("/")[1]) {
         isActive = true;
       }
     }
     if (menu.subMenu) {
       menu.subMenu.forEach((el) => {
-        if (el.href != "#") {
-          if (pathname.split("/")[1] == el.href?.split("/")[1]) {
+        if (el.href !== "#") {
+          if (pathname.split("/")[1] === el.href?.split("/")[1]) {
             isActive = true;
           }
         }
         if (el.subMenu) {
-          el.subMenu.map((elm) => {
-            if (elm.href != "#") {
-              if (pathname.split("/")[1] == elm.href?.split("/")[1]) {
+          el.subMenu.forEach((elm) => {
+            if (elm.href !== "#") {
+              if (pathname.split("/")[1] === elm.href?.split("/")[1]) {
                 isActive = true;
               }
             }
@@ -32,6 +33,7 @@ export default function Nav() {
     }
     return isActive;
   };
+
   return (
     <>
       {menuItems.map((item, index) => (
@@ -41,8 +43,11 @@ export default function Nav() {
         >
           <Link
             scroll={false}
-            className={`${isMenuActive(item) ? "menuActive" : ""}`}
             href={item.href}
+            style={{
+              color: isMenuActive(item) ? "#4660ff" : "inherit",
+              fontWeight: isMenuActive(item) ? "bold" : "normal",
+            }}
           >
             {item.title}
           </Link>
@@ -55,8 +60,11 @@ export default function Nav() {
                 >
                   <Link
                     scroll={false}
-                    className={`${isMenuActive(subItem) ? "menuActive" : ""}`}
                     href={subItem.href}
+                    style={{
+                      color: isMenuActive(subItem) ? "#304eff" : "inherit",
+                      fontWeight: isMenuActive(subItem) ? "bold" : "normal",
+                    }}
                   >
                     {subItem.title}
                   </Link>
@@ -66,10 +74,11 @@ export default function Nav() {
                         <li key={subSubIndex}>
                           <Link
                             scroll={false}
-                            className={`${
-                              isMenuActive(subSubItem) ? "menuActive" : ""
-                            }`}
                             href={subSubItem.href}
+                            style={{
+                              color: isMenuActive(subSubItem) ? "#304eff" : "inherit",
+                              fontWeight: isMenuActive(subSubItem) ? "bold" : "normal",
+                            }}
                           >
                             {subSubItem.title}
                           </Link>
