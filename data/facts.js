@@ -13,13 +13,13 @@ export const counterBoxes = [
   },
   {
     icon: "/assets/img/icon/counterIcon1_1.png",
-    number: 250,
+    number:22,
     label: "Skilled Experts",
     delay: ".9s",
   },
   {
     icon: "/assets/img/icon/counterIcon1_1.png",
-    number: 200,
+    number: 100,
     label: "Media Posts",
     delay: "1s",
   },
