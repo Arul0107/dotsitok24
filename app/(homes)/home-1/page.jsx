@@ -23,7 +23,7 @@ export const metadata = {
 export default function Home1() {
   return (
     <>
-      <Loader>
+      {/* <Loader> */}
         <Header1 />
         <main className="main position-relative" id="mains">
           <Hero />
@@ -36,10 +36,10 @@ export default function Home1() {
           <Cta />
         </main>
         <Footer1 />
-      </Loader>
+      {/* </Loader> */}
       
       {/* Cookie Consent */}
-      <CookieConsent />
+      {/* <CookieConsent /> */}
     </>
   );
 }
