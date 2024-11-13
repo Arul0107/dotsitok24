@@ -16,10 +16,8 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       import("bootstrap/dist/js/bootstrap.esm")
-        .then(() => {
-        })
-        .catch((error) => {
-        });
+        .then(() => {})
+        .catch((error) => {});
     }
   }, []);
 
@@ -32,8 +30,6 @@ export default function RootLayout({ children }) {
       if (stickyWrapper) {
         if (topPos > 500) {
           stickyWrapper.classList.add("sticky");
-        } else {
-          stickyWrapper.classList.remove("sticky");
         }
       }
     };
@@ -60,8 +56,7 @@ export default function RootLayout({ children }) {
           });
           wow.init();
         })
-        .catch((error) => {
-        });
+        .catch((error) => {});
     }
   }, [path]);
 
@@ -72,6 +67,16 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
           rel="stylesheet"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin
+        ></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        ></link>
       </head>
       <body>
         <SiteMenu />

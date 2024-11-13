@@ -8,10 +8,10 @@
   border: none;
   text-transform: uppercase;
   text-align: center;
-  background: linear-gradient(90deg, #000000 0%, #000000 100.82%);
-  color: $white-color;
+  background: linear-gradient(90deg, #2463cf 0%, #2463cf 100.82%);
+  color: white;
   font-family: $body-font;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1;
   padding: 20px 16px 20px 25px;
@@ -709,6 +709,7 @@
     -moz-transition: background 0.4s ease;
     -ms-transition: background 0.4s ease;
     -o-transition: background 0.4s ease;
+    background-color: #2463cf;
 
     &:hover {
       background: linear-gradient(90deg, #000000 0%, #000000 123.82%);

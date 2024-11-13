@@ -1,6 +1,6 @@
 export const menuItems = [
   {
-    title: "Home",
+    title: "About Us",
     href: "/",
     
   },
@@ -11,7 +11,12 @@ export const menuItems = [
     
   },
   {
-    title: "Solutions & industry ",
+    title: "Insights",
+    href: "/project",
+     
+  },
+  {
+    title: "Solutions",
     href: "/project",
      
   },

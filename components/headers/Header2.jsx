@@ -9,7 +9,7 @@ import { activePopupSearch } from "@/utlis/togglePopupSearch";
 export default function Header2() {
   return (
     <header className="gt-header header-layout2">
-      <div className="sticky-wrapper">
+      <div className="sticky-wrapper sticky">
         {/* Main Menu Area */}
         <div className="menu-area">
           <div className="container1">

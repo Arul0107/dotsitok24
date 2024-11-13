@@ -8,16 +8,16 @@ import { activeSideMenu } from "@/utlis/toggleSideMenu";
 export default function Header1() {
   return (
     <header className="gt-header header-layout1 theme-background">
-      <div className="sticky-wrapper">
+      <div className="sticky-wrapper sticky">
         <div className="menu-area">
-          <div className="container">
+          <div className="container" style={{maxWidth:"98%"}}>
             <div className="row align-items-center justify-content-between">
               {/* Logo Section */}
               <div className="col-auto">
                 <div className="header-logo">
                   <Link scroll={false} href={`/`}>
                     <Image
-                      src="/assets/img/logo-white.png"
+                      src="/assets/img/DotsitoName.png"
                       width={200}    // Smaller logo size for mobile
                       height={200}
                       alt="Dotsito"
@@ -29,30 +29,16 @@ export default function Header1() {
 
               {/* Desktop Navigation */}
               <div className="col-auto d-none d-xl-inline-block">
-                <nav className="main-menu">
-                  <ul>
-                    <Nav />
-                  </ul>
-                </nav>
+                
               </div>
 
               {/* Contact and Sidebar Toggle */}
               <div className="col-auto d-flex align-items-center justify-content-end header-right">
-                <Link
-                  scroll={false}
-                  href={`/contact`}
-                  className="gt-btn gt-btn-icon theme-button d-none d-xl-inline-block"
-                  style={{
-                    backgroundColor: "#0d0d0d",
-                    color: "#ffffff",
-                    padding: "10px 20px",
-                    borderRadius: "5px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  GET IN TOUCH
-                </Link>
-
+              <nav className="main-menu">
+                  <ul>
+                    <Nav />
+                  </ul>
+                </nav>
                 {/* Mobile Menu Toggle */}
                 <button
                   type="button"

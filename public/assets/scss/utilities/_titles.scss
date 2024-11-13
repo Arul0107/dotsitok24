@@ -12,13 +12,17 @@
     }
  }
 
+ .profile-wrapper{
+    padding: 0 0 50px 0 !important;
+ }
+
  .title-area {
-     max-width: 645px; 
+     max-width: 100%; 
 
      .subtitle {
          text-align: center;
          font-family: "Kumbh Sans", sans-serif;
-         font-size: 16px;
+         font-size: 24px;
          font-style: normal;
          font-weight: 700;
          line-height: 28px;
@@ -31,20 +35,22 @@
      }
 
      .title {
-         color: $title-color;
+         color: black;
          font-family: "Plus Jakarta Sans", sans-serif;
-         font-size: 40px;
+         font-size: 30px;
          font-style: normal;
-         font-weight: 800;
+         font-weight: 600;
          line-height: 50px;
+         padding: 50px 0 50px 0 !important;
      }
 
      .text {
-         color: $body-color;
+         color: black;
          font-family: "Plus Jakarta Sans", sans-serif;
-         font-size: 16px;
+         font-size: 24px;
          font-style: normal;
          font-weight: 400;
-         line-height: 28px;
+         line-height: 2;
+         padding: 50px 0 50px 0 !important;
      }
  }

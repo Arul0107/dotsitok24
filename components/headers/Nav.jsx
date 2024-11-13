@@ -39,16 +39,19 @@ export default function Nav() {
       {menuItems.map((item, index) => (
         <li
           key={index}
-          className={item.subMenu ? "menu-item-has-children" : ""}
+          className={isMenuActive(item) ? "menuselected" : ""}      
         >
           <Link
             scroll={false}
             href={item.href}
             style={{
-              color: isMenuActive(item) ? "#4660ff" : "inherit",
-              fontWeight: isMenuActive(item) ? "bold" : "normal",
+              color:isMenuActive(item) ? "white" : "",
+              textTransform:"capitalize",
+              padding:"50px",
+              fontSize:"20px"
             }}
           >
+           
             {item.title}
           </Link>
           {item.subMenu && (
@@ -57,17 +60,18 @@ export default function Nav() {
                 <li
                   key={subIndex}
                   className={subItem.subMenu ? "menu-item-has-children" : ""}
-                >
+                >                 
                   <Link
                     scroll={false}
                     href={subItem.href}
                     style={{
-                      color: isMenuActive(subItem) ? "#304eff" : "inherit",
-                      fontWeight: isMenuActive(subItem) ? "bold" : "normal",
+                      color:isMenuActive(subItem) ? "white" : "",
+                      textTransform:"capitalize",
                     }}
                   >
                     {subItem.title}
                   </Link>
+                  
                   {subItem.subMenu && (
                     <ul className="sub-menu">
                       {subItem.subMenu.map((subSubItem, subSubIndex) => (
@@ -76,8 +80,8 @@ export default function Nav() {
                             scroll={false}
                             href={subSubItem.href}
                             style={{
-                              color: isMenuActive(subSubItem) ? "#304eff" : "inherit",
-                              fontWeight: isMenuActive(subSubItem) ? "bold" : "normal",
+                              color:isMenuActive(subSubItem) ? "white" : "",
+                              textTransform:"capitalize",
                             }}
                           >
                             {subSubItem.title}

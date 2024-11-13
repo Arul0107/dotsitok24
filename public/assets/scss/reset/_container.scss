@@ -12,9 +12,9 @@
   .container-md,
   .container-sm,
   .container {
-    max-width: calc(var(--main-container) + var(--container-gutters));
-    padding-left: calc(var(--container-gutters) / 2);
-    padding-right: calc(var(--container-gutters) / 2);
+    max-width:calc(var(--main-container) + var(--container-gutters));
+    /* padding-left: calc(var(--container-gutters) / 2);
+     padding-right: calc(var(--container-gutters) / 2); */
   }
 
   .container-xxl.px-0,

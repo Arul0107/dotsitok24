@@ -25,9 +25,10 @@ export default function Page({ params }) {
         <div
             className="breadcumb"
             style={{
-              backgroundImage: "url(/assets/img/hero/about.png)",
+              backgroundImage: "url(/assets/img/bg/image.png)",
+              animation: "scalein 20s infinite",
               position: "relative",
-              height: "400px", // Set height as needed
+              height: "600px", // Set height as needed
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -44,11 +45,11 @@ export default function Page({ params }) {
                 zIndex: 1,
               }}
             />
-            <div className="container">
-              <div className="page-heading">
-                <h1 className="wow fadeInUp" data-wow-delay=".3s">
-                  All Services
-                </h1>
+            <div className="container" style={{maxWidth:"98%"}}>
+              <div className="page-heading" style={{paddingTop:"100px"}}>
+                <h3 className="wow fadeInUp" data-wow-delay=".3s" style={{color:"white",fontSize:"36px",fontWeight:"500"}}>
+                  Services Offerings
+                </h3>
                 
               </div>
             </div>

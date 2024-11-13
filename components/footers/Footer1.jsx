@@ -68,7 +68,7 @@ export default function Footer1() {
         <div className="container">
           <div className="footer-layout style1">
             <div className="row">
-              <div className="col-xl-3 col-md-6 col-12">
+              <div className="col-xl-3 col-md-6 col-12" style={{width:"33%"}}>
                 <div
                   className="widget footer-widget wow fadeInUp"
                   data-wow-delay=".6s"
@@ -88,7 +88,7 @@ export default function Footer1() {
                   </div>
                 </div>
               </div>
-              <div className="col-xl-2 col-md-6 col-12">
+              <div className="col-xl-2 col-md-6 col-12" style={{width:"33%"}}>
                 <div
                   className="widget widget_nav_menu footer-widget wow fadeInUp"
                   data-wow-delay="1s"
@@ -109,7 +109,7 @@ export default function Footer1() {
                 </div>
               </div>
             
-              <div className="col-xl-3 col-md-6 col-12">
+              <div className="col-xl-3 col-md-6 col-12" style={{width:"33%"}}>
                 <div
                   className="widget widget_nav_menu footer-widget wow fadeInUp"
                   data-wow-delay="1.6s"

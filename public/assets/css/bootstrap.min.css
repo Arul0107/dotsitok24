@@ -635,8 +635,8 @@ progress {
     width: 100%;
     padding-right: var(--bs-gutter-x, .75rem);
     padding-left: var(--bs-gutter-x, .75rem);
-    margin-right: auto;
-    margin-left: auto
+    margin-right: 2%;
+    margin-left: 2%;
 }
 
 @media (min-width:576px) {
@@ -8235,7 +8235,7 @@ fieldset:disabled .btn {
     -webkit-box-align: center !important;
     -webkit-align-items: center !important;
     -ms-flex-align: center !important;
-    align-items: center !important
+    align-items: center !important;
 }
 
 .align-items-baseline {
