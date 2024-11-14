@@ -51,9 +51,9 @@
 
   .gt-menu-area {
     width: 100%;
-    max-width: 310px;
+    max-width: 60%;
     background-color: #fff;
-    border-right: 3px solid $theme-color;
+    // border-right: 3px solid $theme-color;
     height: 100%;
     position: relative;
     left: -110%;
@@ -79,8 +79,8 @@
 .gt-mobile-menu {
   overflow-y: scroll;
   max-height: calc(100vh - 200px);
-  padding-bottom: 40px;
-  margin-top: 33px;
+  // padding-bottom: 40px;
+  // margin-top: 33px;
   text-align: left;
 
   ul {
@@ -147,7 +147,7 @@
           right: 0;
           top: 50%;
           font-weight: 400;
-          font-size: 12px;
+          font-size: 20px;
           width: 25px;
           height: 25px;
           line-height: 25px;
@@ -194,7 +194,7 @@
   }
 
   > ul {
-    padding: 0 40px;
+    // padding: 0 40px;
 
     > li {
       &:last-child {
@@ -269,12 +269,12 @@
 }
 
 @media (max-width: 400px) {
-  .gt-menu-wrapper .gt-menu-area {
-    width: 100%;
-    max-width: 270px;
-  }
+  // .gt-menu-wrapper .gt-menu-area {
+  //   width: 100%;
+  //   max-width: 40%;
+  // }
 
-  .gt-mobile-menu > ul {
-    padding: 0 20px;
-  }
+  // .gt-mobile-menu > ul {
+  //   padding: 0 20px;
+  // }
 }

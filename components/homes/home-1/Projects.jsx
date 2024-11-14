@@ -36,11 +36,11 @@ const colorArr = [
 
 export default function Projects() {
   const swiperContainerRef = useRef(null);
-  const [visibleCount, setVisibleCount] = useState(5);
+  const [visibleCount, setVisibleCount] = useState(3);
 
   // Function to load more cards
   const loadMore = () => {
-    setVisibleCount((prevCount) => prevCount + 5);
+    setVisibleCount((prevCount) => prevCount + 3);
   };
 
   useEffect(() => {
@@ -105,7 +105,7 @@ export default function Projects() {
                 </h2>
               </div>
             </div>
-            <div>
+            <div style={{textAlign:"center"}}>
               {/* <h2>Case Studies</h2> */}
               <div className="card-list">
                 {projects1.slice(0, visibleCount).map((study, index) => (
@@ -113,21 +113,22 @@ export default function Projects() {
                     <div
                       className="project-img caseborderleft"
                       style={{
-                        backgroundImage: `url(/assets/img/hero/image.png)`,
+                        backgroundImage: `url(/assets/img/case-studies/image${index+1}.png)`,
+                        backgroundRepeat:"no-repeat",
+                        backgroundSize:"cover",
                         borderLeft: `15px solid ${colorArr[index]}`,
                         paddingBottom: "100px",
                         height: "400px",
                         width: "auto",
                       }}
                     ></div>
-                    <div style={{ border: "1px solid #ddd", padding: "20px" }}>
+                    <div style={{ border: "1px solid #ddd", padding: "20px",textAlign:"left"}}>
                       <h4 style={{ paddingTop: "15px", paddingLeft: "15px" }}>
                         {study.title}
                       </h4>
                       <a
                         style={{ paddingLeft: "15px" }}
                         href={`/project-details/${study.id}`}
-                        target="_blank"
                         rel="noopener noreferrer"
                       >
                         Read More

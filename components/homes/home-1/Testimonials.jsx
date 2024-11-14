@@ -3,13 +3,18 @@ import { testimonialsData } from "@/data/testimonials";
 import { Navigation } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
+import arrowRight from "../../../public/assets/img/icon/arrowRight.png";
+import arrowLeft from "../../../public/assets/img/icon/arrowLeft.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Testimonials() {
   return (
     <section className="testimonial-area space fix">
-      <div className="container">
+      <div
+        className="container"
+        style={{ maxWidth: "100%", textAlign: "center" }}
+      >
         <div className="testimonial-wrap style1">
           <div className="section-bg">
             <Image
@@ -20,35 +25,16 @@ export default function Testimonials() {
             />
           </div>
           <div className="title-wrap mb-50">
-            <div className="title-area text-start">
-              <h6 className="text-start wow fadeInUp" data-wow-delay=".3s">
-                <span className="me-1">
-                  <Image
-                    alt="icon"
-                    src="/assets/img/icon/titleIcon.png"
-                    width="28"
-                    height="12"
-                  />
-                </span>{' '}
-                Testimonials{' '}
-                <span className="ms-1">
-                  <Image
-                    alt="icon"
-                    src="/assets/img/icon/titleIcon.png"
-                    width="28"
-                    height="12"
-                  />
-                </span>
-              </h6>
+            <div className="title-area text-start" style={{ maxWidth: "100%" }}>
               <h2
                 className="title text-start wow fadeInUp"
                 data-wow-delay=".6s"
               >
-                Testimonials from Our Happy Staff
+                Why Our Clients Love Us
               </h2>
             </div>
           </div>
-          <div className="slider-area testimonial-slider1">
+          <div className="slider-area testimonial-slider1" style={{width:"98%"}}>
             <Swiper
               loop={true}
               spaceBetween={30}
@@ -81,45 +67,40 @@ export default function Testimonials() {
               {testimonialsData.map((testimonial) => (
                 <SwiperSlide key={testimonial.id}>
                   <div className="testimonial-card style1">
-                    <div className="profile-box">
-                      <div className="testi-thumb">
-                        <Image
-                          src={testimonial.imgSrc}
-                          width={100}
-                          height={100}
-                          alt="thumb"
-                        />
-                      </div>
-                      <div className="testi-content">
+                  <div className="profile-box">
+                  {/* <div className="quote">
+                      <Image
+                        alt="icon"
+                        src="/assets/img/icon/quoteIcon.png"
+                        width="25"
+                        height="17"
+                      />
+                    </div> */}
+                  <p className="text">{testimonial.text}</p>
+                   
+     
+                 </div> 
+                    <div className="testi-content" style={{paddingLeft:"40px",textAlign:"right",marginRight:"40px",paddingBottom:"40px"}}>
                         <h3 className="title">{testimonial.name}</h3>
                         <div className="designation">
                           {testimonial.designation}
                         </div>
-                        <ul className="star-wrap">
-                          {Array(5)
-                            .fill()
-                            .map((_, index) => (
-                              <li key={index}>
-                                <Image
-                                  alt="icon"
-                                  src="/assets/img/icon/starIcon.png"
-                                  width="20"
-                                  height="20"
-                                />
-                              </li>
-                            ))}
-                        </ul>
+                        {/* <ul className="star-wrap">
+                    {Array(5)
+                      .fill()
+                      .map((_, index) => (
+                        <li key={index}>
+                          <Image
+                            alt="icon"
+                            src="/assets/img/icon/starIcon.png"
+                            width="20"
+                            height="20"
+                          />
+                        </li>
+                      ))}
+                  </ul> */}
                       </div>
-                    </div>
-                    <p className="text">{testimonial.text}</p>
-                    <div className="quote">
-                      <Image
-                        alt="icon"
-                        src="/assets/img/icon/quoteIcon.png"
-                        width="50"
-                        height="37"
-                      />
-                    </div>
+                    
                   </div>
                 </SwiperSlide>
               ))}
@@ -128,7 +109,7 @@ export default function Testimonials() {
           <button className="slider-arrow snbp2 style2 d-lg-block d-none">
             <Image
               alt="img"
-              src="/assets/img/icon/arrowLeft.png"
+              src={arrowLeft}
               width="20"
               height="20"
             />
@@ -136,7 +117,7 @@ export default function Testimonials() {
           <button className="slider-arrow  snbn2 style2 slider-next d-lg-block d-none">
             <Image
               alt="img"
-              src="/assets/img/icon/arrowRight.png"
+              src= {arrowRight}
               width="20"
               height="20"
             />

@@ -11,7 +11,7 @@ export default function Credible() {
         {credibleCards.map((card, index) => (
       <div
         className={`blog-wrap style1 space-top pb-425 margin${card.contentAlign}`}
-        style={{ backgroundImage: "url(/assets/img/credible/image"+(index+1)+".png)",borderTop:"5px solid",borderColor:colorArr[index]}}
+        style={{ background: "url(/assets/img/credible/image"+(index+1)+".png) no-repeat center center fixed",borderTop:"5px solid",borderColor:colorArr[index], backgroundSize: 'cover'}}
       >
         <div className={`container margin${card.tagAlign}`}>
           <div className={`title-area mx-auto blog-card border${card.tagAlign}`} style={{backgroundColor:colorArr[index],opacity:"0.7"

@@ -34,7 +34,7 @@ export default function Hero() {
                       </h1>
                      
                       <p
-                        className="hero-text text-white"
+                        className="hero-text text-white hero-subtitle"
                         data-ani="slideinup"
                         data-ani-delay="0.5s"
                       >

@@ -36,9 +36,9 @@ export default function Home1() {
           <Projects />      
           <Facts />
           <Testimonials />
-          <Cta />
+          {/* <Cta /> */}
         </main>
-        <Footer1 />
+        {/* <Footer1 /> */}
       {/* </Loader> */}
       
       {/* Cookie Consent */}

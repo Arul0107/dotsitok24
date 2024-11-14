@@ -1,9 +1,28 @@
-import React from "react";
+'use client'; 
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Padding } from "maplibre-gl";
 // import TextSlider from "@/components/homes/home-2/TextSlider";
 
 export default function ProjectDetails({ projectItem }) {
+  const [htmlContent, setHtmlContent] = useState('');
+  console.log(projectItem);
+  
+
+  useEffect(() => {
+    // Fetch the HTML file when the component mounts
+
+    const fetchHtmlFile = async (path) => {
+      const filePath = `/case-studies/${path}.html`
+      
+      const response = await fetch(filePath);
+      const html = await response.text();
+           
+      setHtmlContent(html); // Save the HTML content to state   
+    };
+    fetchHtmlFile(projectItem.path);
+  }, []); 
+
   return (
     <section className="Project-details-section fix space-top pb-425">
       <div
@@ -11,6 +30,8 @@ export default function ProjectDetails({ projectItem }) {
         style={{
           backgroundImage: "url(/assets/img/credible/image1.png)",
           borderTop: "5px solid",
+          // backgroundRepeat: "no-repeat",
+          // backgroundSize: '100% 100%'
         }}
       ></div>
       <div className="container" style={{ maxWidth: "98%" }}>
@@ -33,38 +54,17 @@ export default function ProjectDetails({ projectItem }) {
                   <br></br>
                   <div className="row g-4 pt-5">
                     <div className="col-lg-6 col-md-6" style={{width:"100%",paddingBottom:"3rem"}}>
-                      <div className="thumb wow fadeInUp" style={{backgroundImage:`url(${projectItem.imgSrc})`,backgroundRepeat:"no-repeat",backgroundSize:"100%",height:"300px",borderRadius:"25px"}}>
-                        {/* <Image
-                          alt="img"
-                          src={projectItem.imgSrc}
-                          width="300"
-                          height="100"
-                        /> */}
+                      <div className="thumb wow fadeInUp" style={{backgroundImage:`url(/assets/img/case-studies/image${projectItem.id}.png)`,backgroundRepeat:"no-repeat",backgroundSize:"100%",height:"300px",borderRadius:"25px"}}>
+                        
                       </div>
                     </div>
                   </div>
-                  <h4>Challenges</h4>
-                  <p>
-                    {projectItem.overview ||
-                      "Default challenge description for the project. Customize this based on the JSON data."}
-                  </p>
-                  <h4>Our Approach and Solution</h4>
-                  <p>
-                    {projectItem.whatwedid ||
-                      "Default challenge description for the project. Customize this based on the JSON data."}
-                  </p>
-                </div>
+                  <p dangerouslySetInnerHTML={{ __html: htmlContent }}>
 
-                {/* Result Section */}
-                <div
-                  className="details-content pt-5 wow fadeInUp"
-                  data-wow-delay="1.9s"
-                >
-                  <h4>Outcome</h4>
-                  <p>
-                    {projectItem.outcome ||
-                      "Default result description for the project. Customize this based on the JSON data."}
+                    {/* {projectItem.overview ||
+                      "Default challenge description for the project. Customize this based on the JSON data."} */}
                   </p>
+                 
                 </div>
 
                 {/* Additional Images */}
@@ -86,18 +86,14 @@ export default function ProjectDetails({ projectItem }) {
               >
                 <p className="heading">Customer </p>
                 <p className="content">
-                  Leading European Telecom Service Provider
+                {projectItem.customer}
                 </p>
                 <p className="heading">Industry</p>
-                <p className="content">Telco</p>
+                <p className="content">{projectItem.industry}</p>
                 <p className="heading">Location</p>
-                <p className="content">London</p>
+                <p className="content">{projectItem.location}</p>
                 <p className="heading">Employees</p>
-                <p className="content">10,000+</p>
-                <p className="heading">Products</p>
-                <p className="content">
-                  Superfast broadband, Networked IT services, Cyber security
-                </p>
+                <p className="content">{projectItem.employees}</p>
               </div>
             </div>
           </div>

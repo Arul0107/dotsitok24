@@ -15,11 +15,11 @@ export const menuItems = [
     href: "/project",
      
   },
-  {
-    title: "Solutions",
-    href: "/project",
+  // {
+  //   title: "Solutions",
+  //   href: "/project",
      
-  },
+  // },
   
   {
     title: "Contact Us",

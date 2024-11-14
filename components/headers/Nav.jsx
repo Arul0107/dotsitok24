@@ -47,8 +47,8 @@ export default function Nav() {
             style={{
               color:isMenuActive(item) ? "white" : "",
               textTransform:"capitalize",
-              padding:"50px",
-              fontSize:"20px"
+              padding:"20px",
+              fontSize:"16px"
             }}
           >
            

@@ -9,7 +9,7 @@
 
 @media (max-width: 768px) {
   .responsive-logo {
-    width: 100px; /* Smaller size for screens under 768px */
+    width: 120px; /* Smaller size for screens under 768px */
     height: auto;
   }
 
@@ -24,7 +24,7 @@
 
 @media (max-width: 480px) {
   .responsive-logo {
-    width: 180px; /* Even smaller size for mobile screens */
+    width: 120px; /* Even smaller size for mobile screens */
   }
 }
 
@@ -35,7 +35,7 @@
   }
   
   .responsive-logo {
-    width: 190px; /* Logo size optimized for 320px width */
+    width: 120px; /* Logo size optimized for 320px width */
     height: 50px;
   }
 
@@ -145,4 +145,121 @@
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+
+
+/* Toggle button animation */
+.gt-menu-toggle.open .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  background-color: #000;
+}
+
+.gt-menu-toggle.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.gt-menu-toggle.open .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+  background-color: #000;
+}
+
+/* Line styling */
+.gt-menu-toggle .line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 5px auto;
+  background-color: #333;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+
+/* Overlay styles */
+.menu-overlay {
+  position: fixed;
+  top: 80px; /* Adjust to appear right below the header */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  // height: 50%;
+  background-color: #fff;
+  z-index: 999;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.menu-overlay-list {
+  list-style: none;
+  padding: 0;
+  // text-align: center;
+}
+
+.menu-overlay-list li {
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.5s ease-in-out forwards;
+}
+
+.menu-overlay-list li:nth-child(1) { animation-delay: 0.1s; }
+.menu-overlay-list li:nth-child(2) { animation-delay: 0.2s; }
+.menu-overlay-list li:nth-child(3) { animation-delay: 0.3s; }
+.menu-overlay-list li:nth-child(4) { animation-delay: 0.4s; }
+
+.menu-overlay-list a {
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  display: inline-block;
+  position: relative;
+}
+
+.menu-overlay-list a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff; /* Highlight color */
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.menu-overlay-list a:hover {
+  color: #000; /* Text color on hover */
+}
+
+.menu-overlay-list a:hover::after {
+  width: 100%;
+}
+
+.menu-overlay-list a:hover {
+
+  color: #000;
+}
+
+/* Keyframes for fade-in and slide-up effects */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 768px) {
+  .menu-overlay {
+    display: none;
+  }
 }

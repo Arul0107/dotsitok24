@@ -80,7 +80,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <SiteMenu />
-        <MobileNav />
+        {/* <MobileNav /> */}
         <PopupSearch />
         <ToastContainer
           position="top-right"
