@@ -11,16 +11,16 @@ export default function Credible() {
         {credibleCards.map((card, index) => (
       <div
         className={`blog-wrap style1 space-top pb-425 margin${card.contentAlign}`}
-        style={{ background: "url(/assets/img/credible/image"+(index+1)+".png) no-repeat center center fixed",borderTop:"5px solid",borderColor:colorArr[index], backgroundSize: 'cover'}}
+        style={{ background: "url(/assets/img/credible1/"+(card.imagePath)+") no-repeat center center fixed",borderTop:"5px solid",borderColor:colorArr[index], backgroundSize: 'cover'}}
       >
         <div className={`container margin${card.tagAlign}`}>
           <div className={`title-area mx-auto blog-card border${card.tagAlign}`} style={{backgroundColor:colorArr[index],opacity:"0.7"
           }}>
             <h2
               className="title mb-50 wow fadeInUp align"
-              style={{color:"black"}}
+              style={{color:"black",textAlign:"center"}}
               data-wow-delay=".3s"
-              style={{textAlign:"center"}}
+              // style={{textAlign:"center"}}
             >
               {'"'}{card.tagline} {'"'}
             </h2>
@@ -38,9 +38,9 @@ export default function Credible() {
                   >
                   {card.title}
                   </h3>
-                  <h5 className="blog-text style1">
+                  <p >
                   {card.description}
-                  </h5>
+                  </p>
                   <div className="btn-wrapper" Padding= "0 0 50px 0">
                     <Link scroll={false} href={`/blog-details/${card.id}`}>
                       Read More

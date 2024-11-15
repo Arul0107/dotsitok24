@@ -10,7 +10,7 @@
       const [isOpen, setOpen] = useState(false);
       return (
         <>
-          <section className="about-area fix position-relative">
+          <section className="about-area fix position-relative" style={{background: "url(/assets/img/credible1/teamwork.webp) no-repeat center center fixed",}}>
           <div className="about-inner">
             <div className="about-wrap style1">
               
@@ -43,9 +43,9 @@
                         <span>
                         </span>
                       </h5>
-                      <h2 className="title text-start">
+                      <h3 className="title text-start">
                       We enhance Business Value
-                      </h2>
+                      </h3>
                       <div
                     className="about-thumb-box wow fadeInLeft"
                     data-wow-delay=".4s"
@@ -70,7 +70,7 @@
                     </div>
                     <div className="about-thumb-box line aboutus line jump d-none d-sm-block" />
                   </div>
-                      <p className="text">
+                      <p style={{paddingTop: '50px'}}>
                       We deliver IT services and consulting that empower businesses to embrace change, boost efficiency, and drive sustainable growth, envisioning a world where technology enables organizations to thrive and lead.
                        </p>
                     </div>
