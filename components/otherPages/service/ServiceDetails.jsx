@@ -27,7 +27,7 @@ export default function   ServiceDetails() {
                     data-wow-delay=".6s"
                   >
                     <div className="wid-title">
-                      <h3>All Services</h3>
+                      <h3>Category</h3>
                     </div>
                     <div className="news-widget-categories">
                       <ul>
@@ -39,9 +39,9 @@ export default function   ServiceDetails() {
                           >
                             <a href="#">
                               {item.label}
-                              <span>
+                              {/* <span>
                                 <i className="fa-light fa-arrow-right-long" />
-                              </span>
+                              </span> */}
                             </a>
                           </li>
                         ))}
@@ -88,16 +88,8 @@ export default function   ServiceDetails() {
                 </div>
               </div>
 
-              <div className="col-12 col-lg-8 order-1 order-md-2">
+              <div className="col-12 col-lg-8 order-1 order-md-2 servicedesign">
                 <div className="service-details-items">
-                  <div className="details-image">
-                    <Image
-                      alt="img"
-                      src={selectedService.images[1]}
-                      width="450"
-                      height="450"
-                    />
-                  </div>
                   <div className="details-content">
                     <h3 className="wow fadeInUp" data-wow-delay=".6s">
                       {selectedService.title}
@@ -107,6 +99,15 @@ export default function   ServiceDetails() {
                         {desc}
                       </p>
                     ))}
+
+<div className="details-image" style={{backgroundImage:`url(${selectedService.images[1]})`,backgroundRepeat:"no-repeat",backgroundSize:"100%",height:"300px",borderRadius:"25px"}}>
+                    {/* <Image
+                      alt="img"
+                      src={selectedService.images[1]}
+                      width="450"
+                      height="450"
+                    /> */}
+                  </div>
 
                     <div className="details-video-items wow fadeInUp" data-wow-delay="1.3s">
                       <div className="video-thumb">

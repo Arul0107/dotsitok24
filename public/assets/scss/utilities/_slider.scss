@@ -1,9 +1,16 @@
+
+.swiperleft{
+padding-left: 20px;
+backdrop-filter:blur(5px);
+-webkit-backdrop-filter:blur(5px);
+}
 /* Service area slider */
 .service-wrap.style3 {
     .service-slider1 {
         padding: 0 10px 0;
 
         .swiper-slide {
+            
             &.swiper-slide-active,
             &:hover {
                 .service-card {
@@ -61,13 +68,15 @@
         }
     }
 }
-
+.techhubbottom{
+    padding-bottom: 50px;
+}
 /* Porfolio area slider */
 .project-wrap {
     &.style1 {
-        .project-slider1 {
+        .project-slider1 {            
             .gt-slider {
-                margin-right: -775px;
+                /*margin-right: -775px; */
                 transition: all 0.4s ease-in-out;
                 -webkit-transition: all 0.4s ease-in-out;
                 -moz-transition: all 0.4s ease-in-out;

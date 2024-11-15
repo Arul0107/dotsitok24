@@ -11,7 +11,8 @@ export default function Page() {
   return (
     <Loader>
       <Home1 />
-      <ChatGPTWidget/>  
+      
+      {/* <ChatGPTWidget/>   */}
     </Loader>
   );
 }

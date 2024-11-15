@@ -2,11 +2,24 @@
     # About style here
 ----------------------------------------------*/
 .about-area {
+  /*background-image: url(/assets/img/hero/image.png);*/
+  background-image: url(/assets/img/about/image.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   .shape3_1 {
     position: absolute;
     top: 0;
     left: 0;
   }
+.about-inner{
+ 
+  /*background-color: #155bd5;*/
+  opacity: 0.8;
+  
+ 
+  opacity: 0.8;
+  padding: 150px 0 150px 0;
+}
 
   .shape3_2 {
     position: absolute;
@@ -15,10 +28,12 @@
   }
 }
 
+
 .about-wrap {
+   
   &.style1 {
     position: relative;
-
+ 
     .shape1_1 {
       position: absolute;
       bottom: 76px;
@@ -62,18 +77,25 @@
   }
 }
 
-.about-wrapper {
+.about-thumb-box{
   &.style1 {
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 120px;
     z-index: 5;
     background-color: $white-color;
 
     .about-thumb-box {
       position: relative;
-
+&.text {
+  color: $theme-color;
+  font-family: $title-font;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  text-transform: capitalize;
+}
       &.about-thumb1 {
         display: inline-block;
         border-radius: 8px;
@@ -118,7 +140,7 @@
         top: 0;
         right: 0;
         width: 19px;
-        height: 199px;
+        height: 90%;
         border-radius: 8px;
         background: $theme-color;
       }
@@ -402,7 +424,7 @@
 
     .about-content {
       .title-area {
-        max-width: 613px;
+        max-width: 100%;
       }
 
       .text-title {

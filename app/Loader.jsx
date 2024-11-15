@@ -54,9 +54,12 @@ export default function Loader({ children }) {
         </div>
       )}
       {/* Hide content until loading is complete */}
-      <div style={{ visibility: loading ? "hidden" : "visible" }}>{children}</div>
+      <div className="pagebg" style={{ visibility: loading ? "hidden" : "visible" }}>{children}</div>
 
       <style jsx>{`
+      .pagebg{
+      background-color:white;
+      }
         .loader-overlay {
           position: fixed;
           top: 0;

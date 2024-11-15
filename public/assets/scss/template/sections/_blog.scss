@@ -1,15 +1,35 @@
 /*----------------------------------------------
     # Blog style here
 ----------------------------------------------*/
+.marginleft{
+  padding-left: 2%;    
+  text-align: -webkit-left;
+}
+.marginright{
+  padding-right: 2%;    
+  text-align: -webkit-right;
+}
 .blog-wrap {
+  background-repeat: no-repeat;
+  background-size: 100%;
   &.style1 {
     position: relative;
+    // border-radius: 50px;
+     border-top: 25px solid #FF1D58;
 
     .shape1_1 {
       position: absolute;
       bottom: 0;
       right: 0;
     }
+  }
+  .marginleft{
+    margin-left: 2%;    
+    text-align: -webkit-left;
+  }
+  .marginright{
+    margin-right: 2%;    
+    text-align: -webkit-right;
   }
 
   &.style2 {
@@ -31,10 +51,7 @@
 
 .blog-card-wrap {
   &.style1 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-items: center;
-    gap: 30px;
+    place-items: left;
 
     @include lg {
       grid-template-columns: repeat(2, 1fr);
@@ -68,22 +85,34 @@
   }
 }
 
+.blog-card{
+
+  &.borderright{
+    border-right: 12px solid #2463cf !important;
+  }
+  &.borderleft{
+    border-left: 12px solid #2463cf !important;
+  }
+
+}
 .blog-card {
   &.style1 {
     position: relative;
     padding: 24px;
-    max-width: 370px;
     border-radius: 16px;
     border: 1px solid $border-color;
-    background-color: $white-color;
     -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
     -ms-border-radius: 16px;
     -o-border-radius: 16px;
-
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    
     .blog-card-body {
 
       .btn-wrapper {
+        padding-bottom: 50px;
         a {
           color: $body-color;
           font-family: $title-font;
@@ -430,8 +459,14 @@
 
 .blog-title {
   &.style1 {
-    margin-bottom: 20px;
-
+    color: black;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 50px;
+    padding: 50px 0 50px 0 !important;
+    
     a {
       color: $title-color;
       font-family: $title-font;
@@ -477,12 +512,13 @@
 .blog-text {
   color: $body-color;
   font-family: "Plus Jakarta Sans";
-  font-size: 16px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px;
   margin-top: -5px;
   margin-bottom: 30px;
+  line-height: 2;
 }
 
 .tag-cloud {
@@ -525,7 +561,7 @@
             display: inline-block;
             color: $theme-color;
             font-family: $title-font;
-            font-size: 14px;
+            font-size: 18px;
             font-style: normal;
             font-weight: 400;
             line-height: 26px;

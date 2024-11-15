@@ -74,18 +74,21 @@ export default function MobileNav() {
         <button onClick={closeMobileMenu} className="gt-menu-toggle">
           <i className="fal fa-times"></i>
         </button>
-        <div className="mobile-logo">
+        {/* <div className="mobile-logo">
           <Link scroll={false} href="/">
             <Image
               alt="techo"
               src="/assets/img/logo-white.png"
-              width="199"
-              height="42"
+              width="240"
+              height="50"
+              style={{
+                width: '80%'
+              }}
             />
           </Link>
-        </div>
+        </div> */}
         <div className="gt-mobile-menu">
-          <ul>
+          <ul >
             {menuItems.map((item, index) => (
               <li
                 key={index}
@@ -98,6 +101,9 @@ export default function MobileNav() {
                   onClick={() =>
                     setActiveParent((pre) => (pre == index ? -1 : index))
                   }
+                  style={{
+                    padding: '20px 18px'
+                  }}
                 >
                   {item.title}
                   <span className="gt-mean-expand"></span>

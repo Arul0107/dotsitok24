@@ -1,6 +1,12 @@
 /*----------------------------------------------
     # Widget Sidebar style here
 ----------------------------------------------*/
+.servicedesign {
+
+    border-radius: 25px;
+    border-left: 10px solid royalblue;
+    padding-left: 50px;
+}
 .main-sidebar {
     .single-sidebar-widget {
         padding: 40px 30px;
@@ -26,7 +32,7 @@
                     height: 2px;
                     width: 83px;
                     content: "";
-                    background-color: $theme-color;
+                    background-color: #2463cf;
                 }
             }
         }
@@ -68,7 +74,7 @@
                     -o-border-radius: 8px;
 
                     &:hover {
-                        background: linear-gradient(90deg, #000000 0%, #000000 123.82%);
+                        background-color: #2463cf;
 
                     }
                 }
@@ -116,29 +122,28 @@
                     }
 
                     &:hover {
-                        background: linear-gradient(90deg, #00000000 0%, #000000 123.82%);
-                        color: $white-color;
+                        background-color: #2463cf;
 
                         a {
-                            color: $white-color;
+                            color: white;
                         }
 
                         span {
-                            color: $white-color;
+                            color:white;
                         }
                     }
 
 
                     &.active {
-                        background: linear-gradient(90deg, #000000 0%, #000000 123.82%);
+                        background-color: #2463cf;
                         ;
 
                         a {
-                            color: $white-color;
+                            color: white;
                         }
 
                         span {
-                            color: $white-color;
+                            color: white;
                         }
                     }
                 }
@@ -199,7 +204,7 @@
                             line-height: 24px;
 
                             &:hover {
-                                color: $theme-color2;
+                                background-color: #2463cf;
                             }
                         }
                     }
@@ -234,8 +239,7 @@
                 }
 
                 &:hover {
-                    background:  linear-gradient(90deg, #0000 0%, #000000 123.82%);  
-                    color: $white-color !important;
+                    background-color: #2463cf;
                 }
             }
         }

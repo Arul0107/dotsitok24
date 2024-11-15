@@ -4,10 +4,44 @@ import { Navigation, Autoplay, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import arrowRight from "../../../public/assets/img/icon/arrowRight.png";
+import arrowLeft from "../../../public/assets/img/icon/arrowLeft.png";
+
+const colorArr = [
+  "#8bf0ba",
+  "#94f0f1",
+  "#f2b1d8",
+  "#7acfd6",
+  "#ffdc6a",
+  "#c89666",
+  "#f9c5bd",
+  "#6B7A8F",
+  "#DCC7AA",
+  "#c2dde6",
+  "#acb7ae",
+  "#acddde",
+  "#caf1de",
+  "#E9FF80",
+  "#96C2DB",
+  "#E5EDF1",
+  "#EFFAFD",
+  "#106EBE",
+  "#0FFCBE",
+  "#178582",
+  "#1D63FF",
+  "#FFCE32",
+  "#A0006D",
+];
 
 export default function Projects() {
   const swiperContainerRef = useRef(null);
+  const [visibleCount, setVisibleCount] = useState(4);
+
+  // Function to load more cards
+  const loadMore = () => {
+    setVisibleCount((prevCount) => prevCount + 4);
+  };
 
   useEffect(() => {
     const showArrows = () => {
@@ -53,113 +87,240 @@ export default function Projects() {
 
   return (
     <section className="project-area" style={{ position: "relative" }}>
-      <div
-        className="project-wrap style1 space fix"
-        style={{ backgroundImage: "url(/assets/img/bg/portfolioBg1_1.png)" }}
-      >
-        <div className="container">
-          <div className="title-wrap mb-50">
-            <div className="title-area">
-              <h6
-                className="text-start text-white wow fadeInUp"
-                data-wow-delay=".3s"
-              >
-                <span className="me-1">
-                  <Image
-                    alt="icon"
-                    src="/assets/img/icon/titleIconWhite.png"
-                    width="28"
-                    height="12"
-                  />
-                </span>
-                Recently Work
-                <span className="ms-1">
-                  <Image
-                    alt="icon"
-                    src="/assets/img/icon/titleIconWhite.png"
-                    width="28"
-                    height="12"
-                  />
-                </span>
-              </h6>
-              <h2
-                className="title text-start text-white wow fadeInUp"
-                data-wow-delay=".6s"
-              >
-                Latest Projects & Services by Dotsito
-              </h2>
+      <div className="projectbgv">
+        <div
+          className="project-wrap style1 fix"
+          style={{ paddingBottom: "150px" }}
+        //  style={{backgroundColor:"black",opacity:"0.7"}}
+        //style={{ backgroundImage: "url(/assets/img/project/image.png)",backgroundColor:"black",opacity:"0.7",backgroundRepeat:"no-repeat",backgroundSize:"100%" }}
+        >
+          <div className="container" style={{ maxWidth: "98%" }}>
+            <div className="title-wrap mb-50" style={{ backgroundColor: "aliceblue", borderLeft: "10px solid #2463cf", paddingLeft: "50px" }}>
+              <div className="title-area">
+                <h2
+                  className="title text-start wow fadeInUp"
+                  data-wow-delay=".6s"
+                >
+                  Case Studies
+                </h2>
+              </div>
             </div>
-            <div
-              className="arrow-btn text-end wow fadeInUp"
-              data-wow-delay=".9s"
-              ref={swiperContainerRef}
-            >
-              <button className="slider-arrow style2 snbp1">
-                <Image
-                  alt="img"
-                  src="/assets/img/icon/arrowLeft.png"
-                  width="20"
-                  height="20"
-                />
-              </button>
-              <button className="slider-arrow style2 slider-next snbn1">
-                <Image
-                  alt="img"
-                  src="/assets/img/icon/arrowRight.png"
-                  width="20"
-                  height="20"
-                />
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div
-            className="slider-area project-slider1 wow fadeInUp"
-            data-wow-delay=".3s"
-          >
-            <Swiper
-              className="swiper gt-slider"
-              id="projectSlider1"
-              {...swiperOptions}
-            >
-              {projects1.map((slide) => (
-                <SwiperSlide className="swiper-slide" key={slide.id}>
-                  <div className="project-card style1 img-shine">
-                    <div className="project-img">
-                      <Image
-                        src={slide.imgSrc}
-                        width={465}
-                        height={450}
-                        alt="project image"
-                      />
-                    </div>
-                    <div className="fancy-box style2">
-                      <p>{slide.category}</p>
-                      <h4>
-                        <Link
-                          scroll={false}
-                          href={`/project`}
-                        >
-                          {slide.title}
-                        </Link>
+            <div style={{ textAlign: "center" }}>
+              {/* <h2>Case Studies</h2> */}
+              {/* <div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+                {projects1.slice(0, visibleCount).map((study, index) => (
+                  <div key={index}>
+                    <div
+                      className="project-img caseborderleft"
+                      style={{
+                        backgroundImage: `url(/assets/img/case-studies/image${index+1}.png)`,
+                        backgroundRepeat:"no-repeat",
+                        backgroundSize:"cover",
+                        borderLeft: `15px solid ${colorArr[index]}`,
+                        paddingBottom: "100px",
+                        height: "400px",
+                        width: "auto",
+                      }}
+                    ></div>
+                    <div style={{ border: "1px solid #ddd", padding: "20px",textAlign:"left"}}>
+                      <h4 style={{ paddingTop: "15px", paddingLeft: "15px" }}>
+                        {study.title}
                       </h4>
-                      <Link
-                        scroll={false}
-                        href={`/project`}
-                        className="arrow-icon"
+                      <a
+                        style={{ paddingLeft: "15px" }}
+                        href={`/project-details/${study.id}`}
+                        rel="noopener noreferrer"
                       >
-                        <i className="fa-solid fa-arrow-right"></i>
-                      </Link>
+                        Read More
+                      </a>
                     </div>
                   </div>
-                </SwiperSlide>
-              ))}
-              <div className="swiper-scrollbar"></div>
-            </Swiper>
+                ))}
+              </div> */}
+
+              <div className="card-container">
+                {projects1.slice(0, visibleCount).map((study, index) => (
+                  <div key={index} className="card">
+                    <div
+                      className="card-image-wrapper"
+                      style={{ borderLeft: `15px solid ${colorArr[index]}` }}
+                    >
+                      <Image
+                        src={`/assets/img/case-studies/image${index + 1}.png`}
+                        alt={study.title}
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                    </div>
+                    <div className="card-content">
+                      <p>{study.title}</p>
+                      <a
+                        href={`/project-details/${study.id}`}
+                        rel="noopener noreferrer"
+                      >
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {visibleCount < projects1.length && (
+                <button onClick={loadMore}>Load More</button>
+              )}
+              <style jsx>{`
+                .casethumb {
+                  width: 100%;
+                  border-radius: 15px;
+                }
+                .caseborderleft {
+                  // border-left:10px solid #2463cf !important;
+                }
+                .card-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Ensure uniform height across cards */
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px; /* Fixed height for the image */
+  border-left-width: 15px;
+}
+
+.card-content {
+  padding: 20px;
+  text-align: left;
+  flex: 1; /* Ensures content fills the remaining space */
+}
+
+.card-content h4 {
+  margin: 15px 0 10px;
+}
+
+.card-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Media queries for responsive behavior */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
+  }
+}
+
+                .card-list {
+                  
+                }
+                .card {
+                  
+                }
+                button {
+                  margin-top: 1rem;
+                  padding: 0.5rem 1rem;
+                  background-color: #0070f3;
+                  color: white;
+                  border: none;
+                  border-radius: 5px;
+                  cursor: pointer;
+                }
+                button:hover {
+                  background-color: #005bb5;
+                }
+              `}</style>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+// import { useState } from 'react';
+
+// // Sample data for case studies
+// const caseStudiesData = [
+//   { name: 'Case Study 1', link: '/case-study-1', content: 'Brief description of case study 1...' },
+//   { name: 'Case Study 2', link: '/case-study-2', content: 'Brief description of case study 2...' },
+//   { name: 'Case Study 3', link: '/case-study-3', content: 'Brief description of case study 3...' },
+//   { name: 'Case Study 4', link: '/case-study-4', content: 'Brief description of case study 4...' },
+//   { name: 'Case Study 5', link: '/case-study-5', content: 'Brief description of case study 5...' },
+//   { name: 'Case Study 6', link: '/case-study-6', content: 'Brief description of case study 6...' },
+//   { name: 'Case Study 7', link: '/case-study-7', content: 'Brief description of case study 7...' },
+//   { name: 'Case Study 8', link: '/case-study-8', content: 'Brief description of case study 8...' },
+//   { name: 'Case Study 9', link: '/case-study-9', content: 'Brief description of case study 9...' },
+//   { name: 'Case Study 10', link: '/case-study-10', content: 'Brief description of case study 10...' },
+//   // Add more as needed
+// ];
+
+// export default function CaseStudies() {
+//   const [visibleCount, setVisibleCount] = useState(5);
+
+//   // Function to load more cards
+//   const loadMore = () => {
+//     setVisibleCount(prevCount => prevCount + 5);
+//   };
+
+//   return (
+//     <div>
+//       <h2>Case Studies</h2>
+//       <div className="card-list">
+//         {caseStudiesData.slice(0, visibleCount).map((study, index) => (
+//           <div key={index} className="card">
+//             <h3>{study.name}</h3>
+//             <p>{study.content}</p>
+//             <a href={study.link} target="_blank" rel="noopener noreferrer">Read More</a>
+//           </div>
+//         ))}
+//       </div>
+//       {visibleCount < caseStudiesData.length && (
+//         <button onClick={loadMore}>Load More</button>
+//       )}
+//       <style jsx>{`
+//         .card-list {
+//           display: flex;
+//           flex-wrap: wrap;
+//           gap: 1rem;
+//         }
+//         .card {
+//           width: calc(100% / 2 - 1rem); /* Two cards per row */
+//           padding: 1rem;
+//           border: 1px solid #ddd;
+//           border-radius: 5px;
+//           box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+//         }
+//         button {
+//           margin-top: 1rem;
+//           padding: 0.5rem 1rem;
+//           background-color: #0070f3;
+//           color: white;
+//           border: none;
+//           border-radius: 5px;
+//           cursor: pointer;
+//         }
+//         button:hover {
+//           background-color: #005bb5;
+//         }
+//       `}</style>
+//     </div>
+//   );
+// }

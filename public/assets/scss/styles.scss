@@ -60,3 +60,125 @@ a {
 }.gt-btn-icon{
   text-wrap: nowrap;
 }
+
+// .project-slider1 {
+//   padding: 20px; /* Optional padding around the slider */
+// }
+
+// .swiper {
+//   padding-bottom: 20px; /* Adds space for scrollbar */
+// }
+
+// .swiper-slide {
+//   display: flex;
+//   justify-content: center; /* Center the card inside the slide */
+//   align-items: center;
+// }
+
+// .project-card {
+//   background-color: white;
+//   border: 1px solid #ccc;
+//   border-radius: 15px;
+//   padding: 20px;
+//   // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   // transition: transform 0.3s ease, box-shadow 0.3s ease;
+// }
+
+// .project-card:hover {
+//   // transform: translateY(-5px);
+//   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.001);
+// }
+
+// .project-card-image {
+//   height: 200px;
+//   text-align: center;
+//   margin-bottom: 15px;
+// }
+
+// .project-card-content {
+//   // font-size: 16px;
+//   color: #555;
+//   text-align: center;
+// }
+
+// /* Gap between slides */
+// // .swiper-slide {
+// //   margin-right: 20px; /* Adjust gap between slides */
+// // }
+
+// // .swiper-slide:last-child {
+// //   margin-right: 0; /* Remove margin from last slide */
+// // }
+
+// /* Make Swiper responsive */
+// @media (max-width: 1024px) { /* Tablet */
+//   // .swiper-slide {
+//   //   margin-right: 15px;
+//   // }
+
+//   .project-card {
+//     // padding: 15px;
+//   }
+// }
+
+// @media (max-width: 768px) { /* Mobile */
+//   // .swiper-slide {
+//   //   margin-right: 10px;
+//   // }
+
+//   .project-card {
+//     // padding: 10px;
+//   }
+// }
+
+.project-slider1 {
+  padding: 20px;
+}
+
+.swiper {
+  padding-bottom: 20px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Stretch all slides to the same height */
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%; /* Take full height of the parent swiper-slide */
+}
+
+.project-card-image {
+  height: 200px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.project-card-content {
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) { /* Tablet */
+  .project-card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) { /* Mobile */
+  .project-card {
+    padding: 10px;
+  }
+}

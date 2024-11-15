@@ -1,12 +1,13 @@
 export const slidesData = [
   {
     id: 1,
-    bgSrc: "/assets/img/hero/hero-bg1_1.png",
+    bgSrc: "/assets/img/hero/image.png",
     titleIconSrc: "/assets/img/icon/titleIconWhite.png",
-    subtitle: "BEST IT SOLUTION PROVIDER",
-    title1: " BETTER SOLUTIONS  ",
-    title2: "FOR YOUR BUSSINESS",
-    text: "Dotsito delivers superior solutions that empower organizations to achieve their goals. Our innovative ServiceNow integrations and tailored SaaS offerings enhance efficiency and drive growth, ensuring clients thrive in a dynamic landscape.",
+    subtitle: " Every Dot Tells a Story of Innovation and Creativity",
+    title1: " ",
+    title2: "Revolutionizing the World of Dots with ServiceNow",
+    text: "Innovation is at the core of everything we do at DOTSITO. We continuously push boundaries to craft transformative solutions that provide extraordinary value to our clients.",
+    videoSrc: '/assets/videos/hero2.mp4'
   },
   
 ];

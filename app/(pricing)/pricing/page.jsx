@@ -4,7 +4,7 @@ import HeaderTop from "@/components/headers/HeaderTop";
 
 import Cta from "@/components/common/Cta";
 import Pricing from "@/components/homes/home-3/Pricing";
-import Link from "next/link";
+import f from "next/link";
 export const metadata = {
   title: "Pricing || Dotsito Technologies",
   description: "Dotsito Technologies",

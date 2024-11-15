@@ -57,7 +57,7 @@
         span {
           color: $title-color;
           font-family: $title-font;
-          font-size: 16px;
+          font-size: 24px;
           font-style: normal;
           font-weight: 400;
           line-height: 28px;
@@ -68,6 +68,7 @@
           display: flex;
           height: 56px;
           padding: 25px 20px;
+          font-size: 24px;
           justify-content: center;
           align-items: center;
           gap: 8px;
@@ -168,7 +169,7 @@
   .contact-left-items {
     .contact-info-area-2 {
       padding: 40px 40px 10px;
-      background: linear-gradient(90deg, #000000 0%, #000000 123.82%);
+      background: linear-gradient(90deg, #6B7A8F 0%, #6B7A8F 123.82%);
       border-radius: 16px 16px 0px 0px;
       -webkit-border-radius: 16px 16px 0px 0px;
       -moz-border-radius: 16px 16px 0px 0px;
@@ -257,6 +258,7 @@
 
   .contact-content {
     margin-left: 40px;
+    font-size: 24px;
 
     @include lg {
       margin-left: 0;
@@ -272,7 +274,7 @@
       .form-clt {
         span {
           color: $title-color;
-          font-weight: 600;
+          font-weight: 300;
           text-transform: capitalize;
         }
 

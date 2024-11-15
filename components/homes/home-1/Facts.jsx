@@ -50,7 +50,7 @@ export default function Facts() {
     }, [animate, count, max]);
 
     return (
-      <span style={{ fontSize: "2em", color: "#ffffff", fontWeight: "bold" }}>
+      <span style={{ fontSize: "2em",  fontWeight: "bold" }}>
         {count}
       </span>
     );
@@ -62,8 +62,8 @@ export default function Facts() {
       className="counter-area"
       style={{ marginTop: "-150px", marginBottom: "-116px", overflow: "hidden" }}
     >
-      <div className="container" style={{ padding: "20px" }}>
-        <div className="counter-wrap" style={{ display: "flex", justifyContent: "space-around", flexWrap: "wrap" }}>
+      <div className="container" style={{ padding: "20px",maxWidth:"98%",textAlign:"-webkit-center"}}>
+        <div className="counter-wrap" style={{ display: "flex",width:"100%", justifyContent: "space-around", flexWrap: "wrap" }}>
           {counterBoxes.map((box, index) => (
             <div
               key={index}
@@ -77,11 +77,11 @@ export default function Facts() {
               <div style={{ marginBottom: "15px" }}>
                 <Image src={box.icon} width={60} height={60} alt="icon" />
               </div>
-              <div style={{ display: "flex", alignItems: "center", color: "#ffffff" }}>
+              <div style={{ display: "flex", alignItems: "center" }}>
                 <Counter max={box.number} animate={inView} />
-                <span style={{ fontSize: "2em", color: "#ffffff", marginLeft: "4px" }}>+</span>
+                <span style={{ fontSize: "2em", marginLeft: "4px" }}>+</span>
               </div>
-              <span style={{ fontSize: "1em", color: "#ffffff", marginTop: "10px" }}>{box.label}</span>
+              <span style={{ fontSize: "1em",  marginTop: "10px" }}>{box.label}</span>
             </div>
           ))}
         </div>

@@ -45,10 +45,10 @@ export default function Contact() {
   return (
     <>
       <section className="contact-section fix space">
-        <div className="container">
+        <div className="container" style={{maxWidth:"98%"}}>
           <div className="contact-wrapper-2">
             <div className="row g-4 align-items-center">
-              <div className="col-lg-6">
+              <div className="col-lg-6" style={{width:"30%"}}>
                 <div
                   className="contact-left-items wow fadeInLeft"
                   data-wow-delay=".8s"
@@ -75,9 +75,9 @@ export default function Contact() {
                       </div>
                       <div className="content">
                         <p>Call Us 7/24</p>
-                        <h3>
-                          <a href="tel:+208-555-0112">+91 4257 299473</a>
-                        </h3>
+                        <p>
+                         +91 4257 299473
+                        </p>
                       </div>
                     </div>
                     <div className="contact-info-items">
@@ -105,11 +105,11 @@ export default function Contact() {
                       </div>
                       <div className="content">
                         <p>Make a Quote</p>
-                        <h3>
-                          <a href="mailto:infotech@gmail.com">
+                        <p>
+                          <a href="mailto:operations@dotsito.com" style={{color:"white"}}>
                             operations@dotsito.com{" "}
                           </a>
-                        </h3>
+                        </p>
                       </div>
                     </div>
                     <div className="contact-info-items border-none">
@@ -137,10 +137,10 @@ export default function Contact() {
                       </div>
                       <div className="content">
                         <p>Location</p>
-                        <h3>
+                        <p>
                           No.115, Old Court Street, Akilandapuram, Kangeyam,
                           Tiruppur District, Tamil Nadu-638701,
-                        </h3>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -168,21 +168,10 @@ export default function Contact() {
                   <div className="title-area">
                     <h5 className="subtitle text-start">
                       <span>
-                        <Image
-                          alt="icon"
-                          src="/assets/img/icon/titleIcon.png"
-                          width="28"
-                          height="12"
-                        />
                       </span>{" "}
                       Contact us{" "}
                       <span>
-                        <Image
-                          alt="icon"
-                          src="/assets/img/icon/titleIcon.png"
-                          width="28"
-                          height="12"
-                        />
+            
                       </span>
                     </h5>
                     <h2 className="title mb-50">Ready to Get Started?</h2>
@@ -202,6 +191,7 @@ export default function Contact() {
                       >
                         <div className="form-clt">
                           <span>Your name*</span>
+                          <br></br>
                           <input
                             type="text"
                             name="name"
