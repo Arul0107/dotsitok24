@@ -46,7 +46,7 @@
                 &.slider-next {
                     position: absolute;
                     top: 63%;
-                    right: -3%;
+                    right: 2%;
                     width: 56px;
                     height: 56px;
                     line-height: 36px;
@@ -198,6 +198,7 @@
     &.style1 {
         position: relative;
         border-radius: 16px;
+        
         border-left: 4px solid #2463cf;
         background-color: $white-color;
         box-shadow: 0px 4px 25px 0px rgba(98, 34, 204, 0.08);
@@ -253,7 +254,7 @@
         .text {
             color: $body-color;
             font-family: $title-font;
-            font-size: 24px;
+            font-size: 16px;
             line-height: 2 !important;
             font-style: normal;
             font-weight: 400;

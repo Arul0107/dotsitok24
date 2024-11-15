@@ -1,6 +1,7 @@
 "use client";
 import { testimonialsData } from "@/data/testimonials";
 import { Navigation } from "swiper/modules";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import arrowRight from "../../../public/assets/img/icon/arrowRight.png";
@@ -9,6 +10,43 @@ import arrowLeft from "../../../public/assets/img/icon/arrowLeft.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Testimonials() {
+
+
+  //dynamically change the height of the "Why Our Clients Love Us" card
+  useEffect(() => {
+    const adjustCardHeight = () => {
+      const cards = document.querySelectorAll('.testimonial-card.style1');
+      let maxHeight = 0;
+
+      // Reset heights
+      cards.forEach((card) => {
+        card.style.height = 'auto';
+      });
+
+      // Calculate max height
+      cards.forEach((card) => {
+        if (card.offsetHeight > maxHeight) {
+          maxHeight = card.offsetHeight;
+        }
+      });
+
+      // Apply max height to all cards
+      cards.forEach((card) => {
+        card.style.height = `${maxHeight}px`;
+      });
+    };
+
+    adjustCardHeight();
+    window.addEventListener('resize', adjustCardHeight);
+
+    return () => {
+      window.removeEventListener('resize', adjustCardHeight);
+    };
+  }, []);
+
+
+
+
   return (
     <section className="testimonial-area space fix">
       <div
