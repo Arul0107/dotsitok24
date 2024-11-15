@@ -7,6 +7,7 @@ export const slidesData = [
     title1: " ",
     title2: "Revolutionizing the World of Dots with ServiceNow",
     text: "Innovation is at the core of everything we do at DOTSITO. We continuously push boundaries to craft transformative solutions that provide extraordinary value to our clients.",
+    videoSrc: '/assets/videos/hero2.mp4'
   },
   
 ];

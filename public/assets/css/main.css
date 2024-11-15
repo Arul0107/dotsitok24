@@ -6151,7 +6151,7 @@ textarea.is-invalid {
   position: relative;
   z-index: 4;
   padding-bottom: 165px;
-  margin-top: -1px;
+  /* margin-top: -1px; */
   position: relative;
   clip-path: polygon(
     0% 0%,
@@ -6477,10 +6477,10 @@ textarea.is-invalid {
     padding: 110px 0 160px 0;
   }
 }
-.hero-2 .hero-slider2 .hero-inner .gt-hero-bg {
+/* .hero-2 .hero-slider2 .hero-inner .gt-hero-bg {
   animation: scalein 20s infinite;
   -webkit-animation: scalein 20s infinite;
-}
+} */
 .hero-2 .hero-slider2 .hero-inner .gt-hero-bg:after {
   content: "";
   position: absolute;

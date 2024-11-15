@@ -36,11 +36,11 @@ const colorArr = [
 
 export default function Projects() {
   const swiperContainerRef = useRef(null);
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(4);
 
   // Function to load more cards
   const loadMore = () => {
-    setVisibleCount((prevCount) => prevCount + 3);
+    setVisibleCount((prevCount) => prevCount + 4);
   };
 
   useEffect(() => {
@@ -91,11 +91,11 @@ export default function Projects() {
         <div
           className="project-wrap style1 fix"
           style={{ paddingBottom: "150px" }}
-          //  style={{backgroundColor:"black",opacity:"0.7"}}
-          //style={{ backgroundImage: "url(/assets/img/project/image.png)",backgroundColor:"black",opacity:"0.7",backgroundRepeat:"no-repeat",backgroundSize:"100%" }}
+        //  style={{backgroundColor:"black",opacity:"0.7"}}
+        //style={{ backgroundImage: "url(/assets/img/project/image.png)",backgroundColor:"black",opacity:"0.7",backgroundRepeat:"no-repeat",backgroundSize:"100%" }}
         >
           <div className="container" style={{ maxWidth: "98%" }}>
-            <div className="title-wrap mb-50" style={{backgroundColor:"aliceblue",borderLeft:"10px solid #2463cf",paddingLeft:"50px"}}>
+            <div className="title-wrap mb-50" style={{ backgroundColor: "aliceblue", borderLeft: "10px solid #2463cf", paddingLeft: "50px" }}>
               <div className="title-area">
                 <h2
                   className="title text-start wow fadeInUp"
@@ -105,11 +105,11 @@ export default function Projects() {
                 </h2>
               </div>
             </div>
-            <div style={{textAlign:"center"}}>
+            <div style={{ textAlign: "center" }}>
               {/* <h2>Case Studies</h2> */}
-              <div className="card-list">
+              {/* <div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
                 {projects1.slice(0, visibleCount).map((study, index) => (
-                  <div key={index} className="card">
+                  <div key={index}>
                     <div
                       className="project-img caseborderleft"
                       style={{
@@ -136,7 +136,35 @@ export default function Projects() {
                     </div>
                   </div>
                 ))}
+              </div> */}
+
+              <div className="card-container">
+                {projects1.slice(0, visibleCount).map((study, index) => (
+                  <div key={index} className="card">
+                    <div
+                      className="card-image-wrapper"
+                      style={{ borderLeft: `15px solid ${colorArr[index]}` }}
+                    >
+                      <Image
+                        src={`/assets/img/case-studies/image${index + 1}.png`}
+                        alt={study.title}
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                    </div>
+                    <div className="card-content">
+                      <p>{study.title}</p>
+                      <a
+                        href={`/project-details/${study.id}`}
+                        rel="noopener noreferrer"
+                      >
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
+
               {visibleCount < projects1.length && (
                 <button onClick={loadMore}>Load More</button>
               )}
@@ -148,15 +176,63 @@ export default function Projects() {
                 .caseborderleft {
                   // border-left:10px solid #2463cf !important;
                 }
+                .card-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Ensure uniform height across cards */
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px; /* Fixed height for the image */
+  border-left-width: 15px;
+}
+
+.card-content {
+  padding: 20px;
+  text-align: left;
+  flex: 1; /* Ensures content fills the remaining space */
+}
+
+.card-content h4 {
+  margin: 15px 0 10px;
+}
+
+.card-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Media queries for responsive behavior */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
+  }
+}
+
                 .card-list {
-                  display: flex;
-                  flex-wrap: wrap;
-                  gap: 1rem;
+                  
                 }
                 .card {
-                  width: calc(100% / 3 - 1rem); /* Three cards per row */
-                  padding: 1rem;
-                  border: 0px solid #ddd !important;
+                  
                 }
                 button {
                   margin-top: 1rem;
