@@ -132,11 +132,11 @@ a {
 // }
 
 .project-slider1 {
-  padding: 20px;
+  padding: 0 20px 0 0;
 }
 
 .swiper {
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
 }
 
 .swiper-slide {
@@ -180,5 +180,27 @@ a {
 @media (max-width: 768px) { /* Mobile */
   .project-card {
     padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-wrap {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .title-area {
+    width: 100%;
+    text-align: center;
+  }
+
+  .blog-card-body {
+    padding: 10px; /* Reduce padding for better fit on smaller screens */
+  }
+
+  .title2 {
+    width: 90%;
+    font-size: 24px;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }

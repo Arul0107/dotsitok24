@@ -98,7 +98,7 @@ export default function Projects() {
             <div className="title-wrap mb-50" style={{ backgroundColor: "aliceblue", borderLeft: "10px solid #2463cf", paddingLeft: "50px" }}>
               <div className="title-area">
                 <h2
-                  className="title text-start wow fadeInUp"
+                  className="title2 hero-subtitle"
                   data-wow-delay=".6s"
                 >
                   Case Studies

@@ -10,7 +10,7 @@
       const [isOpen, setOpen] = useState(false);
       return (
         <>
-          <section className="about-area fix position-relative" style={{background: "url(/assets/img/credible1/teamwork.webp) no-repeat center center fixed",}}>
+          <section className="about-area fix position-relative" style={{background: "url(/assets/img/credible1/teamwork.webp) no-repeat ",}}>
           <div className="about-inner">
             <div className="about-wrap style1">
               
@@ -43,7 +43,7 @@
                         <span>
                         </span>
                       </h5>
-                      <h3 className="title text-start">
+                      <h3 className="title text-start" style={{color: '#fff'}}>
                       We enhance Business Value
                       </h3>
                       <div
@@ -62,15 +62,15 @@
                       </div>
                       <div className="about-thumb-box counter-box_counter">
                         <div>
-                          <span className="counter-number">100</span>
-                          <span className="plus">+</span>
+                          <span className="counter-number" >100</span>
+                          <span className="plus" >+</span>
                         </div>
-                        <span>Satisfied Clients</span>
+                        <span >Satisfied Clients</span>
                       </div>
                     </div>
                     <div className="about-thumb-box line aboutus line jump d-none d-sm-block" />
                   </div>
-                      <p style={{paddingTop: '50px'}}>
+                      <p style={{paddingTop: '50px', color: '#fff'}}>
                       We deliver IT services and consulting that empower businesses to embrace change, boost efficiency, and drive sustainable growth, envisioning a world where technology enables organizations to thrive and lead.
                        </p>
                     </div>
@@ -85,11 +85,12 @@
                         </div>
                       ))}
                     </div> */}
-                    <div className="profile-wrapper">
+                    <div className="profile-wrapper" >
                       <Link
                         scroll={false}
                         href={`/contact`}
                         className="gt-btn gt-btn-icon"
+                        style={{color: '#fff',padding: '14px 20px'}}
                       >
                         GET IN TOUCH
                       </Link>
