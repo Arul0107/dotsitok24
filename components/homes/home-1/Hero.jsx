@@ -42,6 +42,7 @@ export default function Hero() {
                   scroll={false}
                   href={`/contact`}
                   className="gt-btn gt-btn-icon"
+                  style={{padding: '14px 20px'}}
                 >
                   EXPLORE MORE
                 </Link>
@@ -53,11 +54,12 @@ export default function Hero() {
       </Swiper>
       {slidesData.map((slide) => (
 
-        <div className="hero-sub-title">
+        <div >
           <h2
             className="title2 hero-subtitle"
             data-ani="slideindown"
             data-ani-delay="0.2s"
+            style={{margin: '20px auto'}}
           >
             {slide.subtitle}
           </h2>

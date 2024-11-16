@@ -117,3 +117,21 @@
     }
   }
 }
+
+.faq-accord-header {
+  font-size: 1.25rem; /* Default for larger screens */
+}
+
+.faq-accord-body {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .faq-accord-header {
+    font-size: 1rem; /* Smaller header on small screens */
+  }
+
+  .faq-accord-body {
+    font-size: 0.9rem; /* Adjust body size for smaller screens */
+  }
+}

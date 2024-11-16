@@ -816,3 +816,86 @@
     }
   }
 }
+
+
+/* General Typography Styles for Responsive Design */
+h3, .wid-title h3, .details-content h3 {
+  font-size: 1.5rem; /* Base font size for small screens */
+  
+  @media (min-width: 768px) {
+    font-size: 1.75rem; /* Medium screens */
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 2rem; /* Large screens */
+  }
+}
+
+p, .details-content p, .faq-accordion .faq-accord-body {
+  font-size: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1.25rem;
+  }
+}
+
+ul li, .faq-accordion .faq-accord-header {
+  font-size: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1.25rem;
+  }
+}
+
+/* Adjust Benefits Title Size */
+.details-video-items .content h4 {
+  font-size: 1.25rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1.75rem;
+  }
+}
+
+
+/* Hide desktop sidebar on small screens */
+.main-sidebar {
+  display: none;
+}
+
+.mobile-dropdown {
+  margin-bottom: 20px;
+}
+
+.mobile-dropdown label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .main-sidebar {
+    display: block;
+  }
+
+  .mobile-dropdown {
+    display: none;
+  }
+}
+

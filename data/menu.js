@@ -1,19 +1,17 @@
 export const menuItems = [
   {
-    title: "About Us",
+    title: "Home",
     href: "/",
     
   },
  
   {
     title: "Services",
-    href: "/service-details/1",
-    
+    href: "/services",
   },
   {
     title: "Insights",
-    href: "/project",
-     
+    href: "/project", 
   },
   // {
   //   title: "Solutions",

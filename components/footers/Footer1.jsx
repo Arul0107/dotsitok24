@@ -43,6 +43,7 @@ export default function Footer1() {
         }
       });
   };
+
   return (
     <footer
       className="footer-area"
@@ -68,14 +69,37 @@ export default function Footer1() {
         <div className="container">
           <div className="footer-layout style1">
             <div className="row">
-              <div className="col-xl-3 col-md-6 col-12" style={{width:"33%"}}>
+              {/* About Section */}
+              {/* <div className="col-xl-4 col-md-6 col-12">
                 <div
                   className="widget footer-widget wow fadeInUp"
                   data-wow-delay=".6s"
                 >
                   <div className="gt-widget-about">
                     <p className="about-text">
-                    DOTSITO IT is a dynamic and innovative technology company
+                      DOTSITO IT is a dynamic and innovative technology company
+                      dedicated to solutions.
+                    </p>
+                    <div className="gt-social style2">
+                      {socialLinks2.map((link, index) => (
+                        <a href={link.href} key={index}>
+                          <i className={link.iconClass} />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div> */}
+
+              <div className="col-xl-4 col-md-6 col-12">
+                <div
+                  className="widget widget_nav_menu footer-widget wow fadeInUp"
+                  data-wow-delay="1s"
+                >
+                  <h3 className="widget_title">So we</h3>
+                  <div className="menu-all-pages-container">
+                    <p style={{ color: '#fff' }}>
+                      DOTSITO IT is a dynamic and innovative technology company
                       dedicated to solutions.
                     </p>
                     <div className="gt-social style2">
@@ -88,7 +112,11 @@ export default function Footer1() {
                   </div>
                 </div>
               </div>
-              <div className="col-xl-2 col-md-6 col-12" style={{width:"33%"}}>
+
+
+
+              {/* Quick Links Section */}
+              <div className="col-xl-4 col-md-6 col-12">
                 <div
                   className="widget widget_nav_menu footer-widget wow fadeInUp"
                   data-wow-delay="1s"
@@ -108,8 +136,9 @@ export default function Footer1() {
                   </div>
                 </div>
               </div>
-            
-              <div className="col-xl-3 col-md-6 col-12" style={{width:"33%"}}>
+
+              {/* Contact Section */}
+              <div className="col-xl-4 col-md-6 col-12">
                 <div
                   className="widget widget_nav_menu footer-widget wow fadeInUp"
                   data-wow-delay="1.6s"
@@ -120,13 +149,17 @@ export default function Footer1() {
                       <li className="text-white">
                         <i className="fa-thin fa-envelope" />
                       </li>
-                      <li className="text-white">operations@dotsito.com</li>
+                      <Link className="text-white" href = "mailto:operations@dotsito.com">operations@dotsito.com</Link>
                     </ul>
                     <ul className="ps-0">
                       <li className="text-white">
                         <i className="fa-light fa-phone-volume" />
                       </li>
-                      <li className="text-white">+91 4257358130  <br />  +91 4257 299473</li>
+                      <li className="text-white">
+                       <Link href="tel:+914257358130" style={{color: 'white'}}>+91 4257358130</Link><br /> 
+                       <Link href="tel:+914257299473" style={{color: 'white'}}>+91 4257299473</Link><br />
+                       {/* +91 4257 299473 */}
+                      </li>
                     </ul>
                     <form
                       ref={form}
@@ -138,28 +171,20 @@ export default function Footer1() {
                         id="email"
                         placeholder="Your email address"
                         required
+                        style={{ width: "250px", fontSize: "12px" }}
                       />
-                      <button type="submit" id="submitButton">
+                      <button
+                        type="submit"
+                        id="submitButton"
+                        style={{
+                          top: "10px",
+                          right: "5px",
+                          padding: "5px 9px",
+                          fontSize: "15px",
+                        }}
+                      >
                         <i className="fa-regular fa-arrow-right-long" />
                       </button>
-                    </form>
-                    <form id="termsForm">
-                      <label className="custom-checkbox">
-                        <input
-                          type="checkbox"
-                          name="agree"
-                          id="agreeCheckbox"
-                        />
-                        <span className="checkmark" />I agree to the{" "}
-                        <Link
-                          scroll={false}
-                          className="text-underline"
-                          href={`/about`}
-                        >
-                          Privacy Policy.
-                        </Link>
-                      </label>
-                      <br />
                     </form>
                   </div>
                 </div>
@@ -168,27 +193,25 @@ export default function Footer1() {
           </div>
         </div>
       </div>
-      <div className="copyright-wrap bg-theme">
-        <div className="container">
-          <div className="copyright-layout">
-            <div className="layout-text wow fadeInUp" data-wow-delay=".3s">
-              <p className="copyright">
-                <i className="fal fa-copyright" /> All Copyright 2024 by
-                <Link scroll={false} href={`/`}>
-                  Dotsito Technologies
-                </Link>
+      <div className="copyright-wrap bg-theme" style={{ padding: '2px 10px' }}>
+        <div className="">
+          <div className="">
+            <div className="" data-wow-delay=".3s" >
+              <p style={{ color: '#fff', textAlign: 'center', margin: 0, padding: '2px' }}>
+                <i className="fal fa-copyright" />
+                {" " + new Date().getFullYear()} All rights reserved. Dotsito Technologies.
               </p>
             </div>
-            <div className="layout-link wow fadeInUp" data-wow-delay=".6s">
+            {/* <div className="layout-link wow fadeInUp" data-wow-delay=".6s">
               <div className="link-wrapper">
                 <Link scroll={false} href={``}>
-                  Terms &amp; Condition{" "}
+                  Terms &amp; Condition
                 </Link>
                 <Link scroll={false} href={``}>
                   Privacy Policy
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

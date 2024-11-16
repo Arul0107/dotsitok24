@@ -6182,13 +6182,13 @@ textarea.is-invalid {
 }
 @media (max-width: 767px) {
   .hero-1 .hero-slider1 .swiper-slide {
-    height: 780px !important;
+    /* height: 780px !important; */
     z-index: 5;
   }
 }
 @media (max-width: 575px) {
   .hero-1 .hero-slider1 .swiper-slide {
-    height: 780px !important;
+    /* height: 780px !important; */
     z-index: 5;
   }
 }
@@ -6335,7 +6335,7 @@ textarea.is-invalid {
     clip-path: none;
   }
   .hero-1 .swiper-slide {
-    height: 780px !important;
+    /* height: 780px !important; */
     z-index: 5;
   }
 }
@@ -6554,13 +6554,13 @@ textarea.is-invalid {
 }
 @media (max-width: 767px) {
   .hero-2 .swiper-slide {
-    height: 780px !important;
+    /* height: 780px !important; */
     z-index: 5;
   }
 }
 @media (max-width: 575px) {
   .hero-2 .swiper-slide {
-    height: 780px !important;
+    /* height: 780px !important; */
     z-index: 5;
   }
 }
@@ -10166,7 +10166,7 @@ textarea.is-invalid {
   gap: 8px;
 }
 .email-input-container #email {
-  width: 270px;
+  /* width: 100%; */
   padding: 23px 16px;
   border-radius: 8px;
   background: var(--white-color);
@@ -10180,10 +10180,10 @@ textarea.is-invalid {
 }
 .email-input-container #submitButton {
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 5px 9px;
+  font-size: 15px;
   border: none;
   border-radius: 8px;
   border-radius: 8px;
@@ -14113,3 +14113,17 @@ textarea.is-invalid {
   }
 } /*# sourceMappingURL=main.css.map */
 
+/* Responsive Footer Layout */
+@media (max-width: 1200px) {
+  .col-xl-4 {
+    flex: 0 0 50%;
+    max-width: 50%; /* Two columns on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%; /* Single column on mobile */
+  }
+}

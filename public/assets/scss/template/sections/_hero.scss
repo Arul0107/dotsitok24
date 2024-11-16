@@ -39,11 +39,11 @@
       // height: 965px !important;  
       z-index: 5;
       @include sm{ 
-          height: 780px !important;
+          // height: 780px !important;
           z-index: 5; 
       }
       @include xs{ 
-        height: 780px !important;
+        // height: 780px !important;
         z-index: 5; 
     }
     }
@@ -255,7 +255,7 @@
   @include sm {
     clip-path: none;
     .swiper-slide {
-      height: 780px !important;
+      // height: 780px !important;
       z-index: 5;
     }
   }
@@ -484,13 +484,13 @@
 
     @include sm{ 
       .swiper-slide {
-        height: 780px !important;
+        // height: 780px !important;
         z-index: 5; 
       }
   }
     @include xs{ 
       .swiper-slide {
-        height: 780px !important;
+        // height: 780px !important;
         z-index: 5; 
       }
     }

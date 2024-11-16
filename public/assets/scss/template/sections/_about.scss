@@ -720,3 +720,25 @@
     }
   }
 }
+
+.about-area {
+  position: relative;
+  background: url(/assets/img/credible1/teamwork.webp) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.about-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity as needed */
+  z-index: 1;
+}
+
+.about-inner {
+  position: relative;
+  z-index: 2; /* Ensures content is above the overlay */
+}
