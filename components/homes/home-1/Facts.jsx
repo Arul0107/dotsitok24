@@ -60,10 +60,10 @@ export default function Facts() {
     <div
       ref={sectionRef}
       className="counter-area"
-      style={{ marginTop: "-150px", marginBottom: "-116px", overflow: "hidden" }}
+      style={{ marginTop: "-150px", marginBottom: "-160px", overflow: "hidden" }}
     >
       <div className="container" style={{ padding: "20px",maxWidth:"98%",textAlign:"-webkit-center"}}>
-        <div className="counter-wrap" style={{ display: "flex",width:"100%", justifyContent: "space-around", flexWrap: "wrap" }}>
+        <div className="counter-wrap" style={{ width:"100%", justifyContent: "space-around", flexWrap: "wrap" }}>
           {counterBoxes.map((box, index) => (
             <div
               key={index}
@@ -77,7 +77,7 @@ export default function Facts() {
               <div style={{ marginBottom: "15px" }}>
                 <Image src={box.icon} width={60} height={60} alt="icon" />
               </div>
-              <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{  alignItems: "center" }}>
                 <Counter max={box.number} animate={inView} />
                 <span style={{ fontSize: "2em", marginLeft: "4px" }}>+</span>
               </div>
