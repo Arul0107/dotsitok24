@@ -5,62 +5,58 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { InView } from "react-intersection-observer";
+import CaseStudies from "@/components/homes/home-1/Projects";
+import { insights, categories } from "@/data/insights";
 
-// Icon mapping based on category
-const categoryIcons = {
-  "All": "fa-solid fa-th",
-  "Technology AI": "fa-solid fa-robot",
-  "Technology": "fa-solid fa-laptop-code",
-  "ServiceNow": "fa-solid fa-chart-line",
-  "Tools": "fa-solid fa-tools",
-  "Management": "fa-solid fa-graduation-cap",
-};
 
-// Get unique categories from projectItems
-const allCategories = ["All", ...new Set(projectItems.map(item => item.category))];
+// const allCategories = [...new Set(projectItems.map(item => item.category))]
 
-export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
+export default function Projects({ exclude }) {
+  const categoriesList = categories.map(category => {
+    return category.title
+  })
+  
+  const [selectedCategory, setSelectedCategory] = useState(exclude?.category || categoriesList[0]);
+  
   // Filter projects based on the selected category
-  const filteredProjects = selectedCategory === "All"
-    ? projectItems
-    : projectItems.filter(item => item.category === selectedCategory);
+  // const filteredProjects = insights.filter(item => item.category === selectedCategory);
 
   return (
-    <section className="all-project-area mx-auto space-top pb-425">
-      <div className="container">
+    <section className="all-project-area mx-auto ">
+      <div className="" style={{marginLeft: '10px'}}>
         {/* Gallery Title */}
-        <InView triggerOnce threshold={0.5}>
+        {/* <InView triggerOnce threshold={0.5}>
           {({ inView, ref }) => (
             <h2 ref={ref} className={`text-center mb-2 ${inView ? "fadeIn" : ""}`}>
               Filter by Industry
             </h2>
           )}
-        </InView>
+        </InView> */}
 
-       
 
-        {/* Filter Buttons with Icons */}
         <div className="filter-buttons mb-4 fadeInUp">
-          {allCategories.map((category, index) => (
+          {!exclude && categories.map((category, index) => (
             <InView triggerOnce key={index} threshold={0.5}>
               {({ inView, ref }) => (
                 <button
                   ref={ref}
-                  className={`filter-btn ${category === selectedCategory ? "active" : ""} ${inView ? "slideInLeft" : ""}`}
-                  onClick={() => setSelectedCategory(category)}
+                  className={`filter-btn ${category.title === selectedCategory ? "active" : ""} ${inView ? "slideInLeft" : ""}`}
+                  onClick={() => setSelectedCategory(category.title)}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <i className={categoryIcons[category] || "fa-solid fa-folder"}></i> {category}
+                  <i className={category.icon || "fa-solid fa-folder"}></i> {category.title}
                 </button>
               )}
             </InView>
           ))}
         </div>
 
+        <CaseStudies insights={insights.filter(insight => {
+          return (insight.category == selectedCategory && insight.id != exclude?.id)
+        })} />
+
         {/* Project Gallery */}
-        <div className="row">
+        {/* <div className="row">
           {filteredProjects.map((item, index) => (
             <InView triggerOnce key={index} threshold={0.3}>
               {({ inView, ref }) => (
@@ -100,7 +96,7 @@ export default function Projects() {
               )}
             </InView>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`

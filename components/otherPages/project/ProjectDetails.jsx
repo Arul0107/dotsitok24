@@ -6,8 +6,6 @@ import { Padding } from "maplibre-gl";
 
 export default function ProjectDetails({ projectItem }) {
   const [htmlContent, setHtmlContent] = useState('');
-  console.log(projectItem);
-  
 
   useEffect(() => {
     // Fetch the HTML file when the component mounts

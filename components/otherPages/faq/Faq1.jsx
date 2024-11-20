@@ -9,17 +9,19 @@ export default function Faq1({ serviceDetails }) {
           className="accordion-item mb-3 wow fadeInUp"
           data-wow-delay=".3s"
         >
-          <h6 className="">
-            <button
+          <h6 className="" >
+            <a
               className="accordion-button collapsed"
               type="button"
+              style={{textAlign: 'left', fontWeight: 'bold'}}
               data-bs-toggle="collapse"
               data-bs-target={`#faq${index}`}
               aria-expanded="false"
               aria-controls={`faq${index}`}
+              
             >
               {question.question}
-            </button>
+            </a>
           </h6>
           <div
             id={`faq${index}`}

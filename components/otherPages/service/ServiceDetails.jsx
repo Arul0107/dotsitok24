@@ -1,8 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { serviceData } from "@/data/services"; 
+import { Collapse, Select } from "antd";
 import Faq1 from "../faq/Faq1";
+import { serviceData } from "@/data/services";
+
+const { Panel } = Collapse;
 
 export default function ServiceDetails() {
   const [isOpen, setOpen] = useState(false);
@@ -12,7 +15,7 @@ export default function ServiceDetails() {
   // Detect screen size
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 320);
     };
 
     handleResize(); // Initial check
@@ -24,38 +27,79 @@ export default function ServiceDetails() {
     setSelectedService(service);
   };
 
-  
+  // Categorize services by category
+  const categorizedServices = serviceData.reduce((acc, item) => {
+    if (item.category) {
+      acc[item.category] = acc[item.category] || [];
+      acc[item.category].push(item);
+    } else {
+      acc["uncategorized"] = acc["uncategorized"] || [];
+      acc["uncategorized"].push(item);
+    }
+    return acc;
+  }, {});
 
   return (
-    <section className="service-details-section pb-425 fix" style={{paddingBottom: '24px', paddingTop: '24px'}}>
+    <section className="service-details-section pb-425 fix" style={{ paddingBottom: "24px", paddingTop: "24px" }}>
       <div className="container">
         <div className="service-details-wrapper">
           <div className="row g-4">
             {/* Sidebar for larger screens */}
             {!isMobile && (
-              <div className="col-12 col-lg-4 order-2 order-md-1">
+              <div className="col-12 col-lg-4 order-1 order-md-1">
                 <div className="main-sidebar">
-                  <div className="single-sidebar-widget">
+                  <div className="single-sidebar-widget" style={{ padding: 0 }}>
                     <div className="wid-title">
-                      <h3>Category</h3>
+                      <h3>Offerings</h3>
                     </div>
                     <div className="news-widget-categories">
-                      <ul>
-                        {serviceData.map((item, index) => (
-                          <li
-                            key={index}
-                            className={item.label === selectedService.label ? "active" : ""}
-                            onClick={() => handleServiceClick(item)}
-                          >
-                            <a>
-                              {item.category_title}
-                              <span>
-                                <i className="fa-light fa-arrow-right-long" />
-                              </span>
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
+                      <Collapse accordion>
+                        {Object.entries(categorizedServices).map(([category, items], index) =>
+                          category !== "uncategorized" ? (
+                            <Panel header={category} key={index}>
+                              <ul style={{ listStyleType: "none", padding: 0 }}>
+                                {items.map((item) => (
+                                  <li
+                                    key={item.label}
+                                    className={item.label === selectedService.label ? "service-list-active" : "service-list"}
+                                    onClick={() => handleServiceClick(item)}
+                                    style={{ background: "white", padding: "0" }}
+                                  >
+                                    <a
+                                      style={{
+                                        color: selectedService.label === item.label ? "blue" : "#000",
+                                        // textDecoration: selectedService.label === item.label ? "underline" : "none",
+                                      }}
+                                    >
+                                      {item.category_title}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </Panel>
+                          ) : (
+                            <ul key="uncategorized" style={{ listStyleType: "none", padding: 0 }}>
+                              {items.map((item) => (
+                                <li
+                                  key={item.label}
+                                  className={item.label === selectedService.label ? "service-list-active" : "service-list"}
+                                  onClick={() => handleServiceClick(item)}
+                                  style={{ background: "white", padding: "0" }}
+                                >
+                                  <a
+                                    style={{
+                                      color: selectedService.label === item.label ? "blue" : "#000",
+                                      textDecoration: selectedService.label === item.label ? "underline" : "none",
+                                    }}
+                                  >
+                                    {item.category_title}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          )
+                        )}
+                      </Collapse>
                     </div>
                   </div>
                 </div>
@@ -65,39 +109,39 @@ export default function ServiceDetails() {
             {/* Dropdown for mobile screens */}
             {isMobile && (
               <div className="col-12">
-                <div className="mobile-dropdown">
-                  <label htmlFor="serviceSelect">Select Category:</label>
-                  <select
-                    id="serviceSelect"
-                    value={selectedService.category_title}
-                    onChange={(e) => {
-                      const selected = serviceData.find((item) => item.category_title === e.target.value);
+                <div className="">
+                  <Select
+                    value={selectedService.label}
+                    onChange={(value) => {
+                      const selected = serviceData.find((item) => item.label === value);
                       setSelectedService(selected);
                     }}
+                    style={{ width: "100%", borderRadius: "8px" }}
                   >
                     {serviceData.map((item) => (
-                      <option key={item} value={item.category_title}>
+                      <Select.Option key={item.label} value={item.label}>
                         {item.category_title}
-                      </option>
+                      </Select.Option>
                     ))}
-                  </select>
+                  </Select>
                 </div>
               </div>
             )}
 
-            <div className="col-12 col-lg-8 order-1 order-md-2 servicedesign" style={{paddingLeft: '20px'}}>
+            {/* Service Details Content */}
+            <div className="col-12 col-lg-8 order-1 order-md-2 servicedesign" style={{ paddingLeft: "20px" }}>
               <div className="service-details-items">
                 <div className="details-content">
                   <h3>{selectedService.category_title}</h3>
-                  <p className="mt-3">{selectedService.category_content}</p>
+                  <p className="mt-3 mb-3">{selectedService.category_content}</p>
                   <div
                     className="details-image"
                     style={{
                       backgroundImage: `url(/assets/img/service/${selectedService.category_image})`,
                       backgroundRepeat: "no-repeat",
-                      backgroundSize: "100% 100%",
+                      backgroundSize: "cover",
                       height: "300px",
-                      borderRadius: "25px",
+                      borderRadius: "18px",
                     }}
                   ></div>
                   <div className="details-video-items">

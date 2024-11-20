@@ -10,7 +10,7 @@
       const [isOpen, setOpen] = useState(false);
       return (
         <>
-          <section className="about-area fix position-relative" style={{background: "url(/assets/img/credible1/teamwork.webp) no-repeat ",}}>
+          <section className="about-area fix position-relative" >
           <div className="about-inner">
             <div className="about-wrap style1">
               
@@ -51,7 +51,7 @@
                     data-wow-delay=".4s"
                   >
                   
-                    <div className="about-thumb-box counter-box style1 movingX">
+                    <div className="about-thumb-box counter-box style1 movingX" style={{minWidth: '250px'}}>
                       <div className="about-thumb-box counter-box_icon">
                         <Image
                           alt="icon"
@@ -60,12 +60,12 @@
                           height="52"
                         />
                       </div>
-                      <div className="about-thumb-box counter-box_counter">
+                      <div className="about-thumb-box counter-box_counter" >
                         <div>
-                          <span className="counter-number" >100</span>
-                          <span className="plus" >+</span>
+                          <a className="counter-number" >100</a>
+                          <a className="plus" >+</a>
                         </div>
-                        <span >Satisfied Clients</span>
+                        <a >Satisfied Clients</a>
                       </div>
                     </div>
                     <div className="about-thumb-box line aboutus line jump d-none d-sm-block" />
@@ -85,14 +85,14 @@
                         </div>
                       ))}
                     </div> */}
-                    <div className="profile-wrapper" >
+                    <div className="profile-wrapper"style={{marginTop: '36px'}} >
                       <Link
                         scroll={false}
                         href={`/contact`}
                         className="gt-btn gt-btn-icon"
-                        style={{color: '#fff',padding: '14px 20px'}}
+                        style={{color: '#fff',padding: '14px 20px', textTransform: 'capitalize'}}
                       >
-                        GET IN TOUCH
+                        Get in Touch
                       </Link>
                       
                     </div>

@@ -119,10 +119,10 @@ export default function Testimonials() {
      
                  </div> 
                     <div className="testi-content" style={{paddingLeft:"40px",textAlign:"right",marginRight:"40px",paddingBottom:"40px"}}>
-                        <h3 className="title">{testimonial.name}</h3>
-                        <div className="designation">
+                        <p style={{padding: 0, margin: 0, fontWeight: 'bold'}}>{testimonial.name}</p>
+                        <small className="designation">
                           {testimonial.designation}
-                        </div>
+                        </small>
                         {/* <ul className="star-wrap">
                     {Array(5)
                       .fill()
@@ -158,6 +158,7 @@ export default function Testimonials() {
               src= {arrowRight}
               width="20"
               height="20"
+              style={{right: '0 !important'}}
             />
           </button>
         </div>

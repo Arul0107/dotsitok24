@@ -472,7 +472,7 @@ select,
 .form-select,
 textarea,
 input {
-  height: 56px;
+  /* height: 56px; */
   padding: 0 20px;
   border: 1px solid var(--border-color);
   color: var(--body-color);
@@ -1236,7 +1236,7 @@ textarea.is-invalid {
   color: var(--white-color);
   font-family: var(--body-font);
   font-size: 16px;
-  font-weight: 700;
+  /* font-weight: 700; */
   line-height: 1;
   padding: 20px 16px 20px 25px;
   min-width: 160px;
@@ -3298,7 +3298,7 @@ textarea.is-invalid {
     # Widget Sidebar style here
 ----------------------------------------------*/
 .main-sidebar .single-sidebar-widget {
-  padding: 40px 30px;
+  /* padding: 40px 30px; */
   background-color: var(--white-color);
   margin-bottom: 30px;
   border-radius: 10px;
@@ -3378,7 +3378,7 @@ textarea.is-invalid {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 24px;
+  /* padding: 20px 24px; */
   color: var(--title-color);
 }
 .main-sidebar .single-sidebar-widget .news-widget-categories ul li a span {
@@ -3768,7 +3768,7 @@ textarea.is-invalid {
 .widget.footer-widget .widget_title:before {
   content: "";
   position: absolute;
-  left: 0;
+  left: auto;
   bottom: 0;
   width: 61px;
   height: 2px;
@@ -8598,7 +8598,7 @@ textarea.is-invalid {
 .testimonial-wrap.style1 .slider-arrow.style2.slider-next {
   position: absolute;
   top: 63%;
-  right: -3%;
+  right: 1px;
   width: 56px;
   height: 56px;
   line-height: 36px;
@@ -9857,7 +9857,7 @@ textarea.is-invalid {
 
 .counter-box.style1 {
   padding: 18px 18px 18px 18px;
-  max-width: 222px;
+  max-width: 260px !important;
   border-radius: 8px;
   border-left: 2px solid var(--theme-color);
   background: var(--white-color);

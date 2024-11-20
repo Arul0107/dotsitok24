@@ -175,12 +175,18 @@ a {
   .project-card {
     padding: 15px;
   }
+  .counter-area{
+    
+    margin-bottom: -140px !important;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 768px) { /* Mobile */
   .project-card {
     padding: 10px;
   }
+  
 }
 
 @media (max-width: 768px) {
@@ -203,4 +209,22 @@ a {
     margin-left: 5%;
     margin-right: 5%;
   }
+
+  .counter-area{
+    margin-top: -150px !important;
+    margin-bottom: -140px !important;
+    overflow: hidden;
+  }
 }
+
+// .container{
+//   margin-left: 1% !important;
+// }
+
+// .service-list-active{
+//   color: rgba(3, 3, 255, 0.616) !important;
+
+// }
+// .service-list:hover{
+//   color: blue !important;
+// }

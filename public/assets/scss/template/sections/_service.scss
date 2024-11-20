@@ -870,32 +870,10 @@ ul li, .faq-accordion .faq-accord-header {
 
 
 /* Hide desktop sidebar on small screens */
-.main-sidebar {
-  display: none;
+// .main-sidebar {
+//   display: none;
+// }
+
+.service-data-select:focus{
+  outline: none !important;
 }
-
-.mobile-dropdown {
-  margin-bottom: 20px;
-}
-
-.mobile-dropdown label {
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-select {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-}
-
-@media (min-width: 768px) {
-  .main-sidebar {
-    display: block;
-  }
-
-  .mobile-dropdown {
-    display: none;
-  }
-}
-

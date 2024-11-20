@@ -12,7 +12,7 @@ export default function Credible() {
         <div
           className={`blog-wrap style1 space-top pb-425 margin${card.contentAlign}`}
           style={{
-            background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/credible1/${card.imagePath}) no-repeat`,
+            background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/credible1/${card.imagePath}) no-repeat center center fixed`,
             borderTop: "5px solid",
             borderColor: colorArr[index],
             backgroundSize: 'cover',
@@ -42,16 +42,16 @@ export default function Credible() {
                 style={{borderColor: '#6b6767'}}
               >
                 <div className="blog-card-body">
-                  <h3 className="blog-title style1"
+                  <h6 className="blog-title style1"
                     style={{ color: '#fff' }}
                   >
                     {card.title}
-                  </h3>
+                  </h6>
                   <p style={{ color: '#fff' }}>
                     {card.description}
                   </p>
                   <div className="btn-wrapper" Padding="0 0 50px 0">
-                    <Link scroll={false} href={`/blog-details/${card.id}`} style={{ color: '#fff' }}>
+                    <Link scroll={false} href={`/insights`} style={{ color: '#fff' }}>
                       Read More
                       <Image
                         alt="icon"

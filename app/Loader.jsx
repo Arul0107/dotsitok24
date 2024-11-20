@@ -40,18 +40,24 @@ export default function Loader({ children }) {
   return (
     <>
       {loading && (
-        <div className="loader-overlay">
-          <div className="content-loading-container">
-            {/* Bouncing ball loader and logo image */}
-            <div className="bouncing-loader">
-              <img src="/assets/img/logo.png" alt="Dotsito Logo" className="logo-image" />
-              <div className="ball ball1"></div>
-              <div className="ball ball2"></div>
-              <div className="ball ball3"></div>
-            </div>
-            <div className="brand-name">{text}</div>
-          </div>
-        </div>
+        // <div className="loader-overlay">
+        //   <div className="content-loading-container">
+        //     {/* Bouncing ball loader and logo image */}
+        //     <div className="bouncing-loader">
+        //       <img src="/assets/img/logo.png" alt="Dotsito Logo" className="logo-image" />
+        //       <div className="ball ball1"></div>
+        //       <div className="ball ball2"></div>
+        //       <div className="ball ball3"></div>
+        //     </div>
+        //     <div className="brand-name">{text}</div>
+        //   </div>
+        // </div>
+        <div className="loader">
+        <div className="center"></div>
+        {Array.from({ length: 8 }, (_, i) => (
+          <div key={i + 1} className={`item item-${i + 1}`}></div>
+        ))}
+      </div>
       )}
       {/* Hide content until loading is complete */}
       <div className="pagebg" style={{ visibility: loading ? "hidden" : "visible" }}>{children}</div>
@@ -65,6 +71,7 @@ export default function Loader({ children }) {
           top: 0;
           left: 0;
           width: 100%;
+          
           height: 100%;
           background-color: #000000; /* Black theme background */
           display: flex;

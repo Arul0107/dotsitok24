@@ -118,15 +118,15 @@ export default function techhubs() {
         // style={{ backgroundImage: "url(/assets/img/project/image.png)",backgroundColor:"black",opacity:"0.7",backgroundRepeat:"no-repeat",backgroundSize:"100%" }}
         >
           <div className="container" style={{ maxWidth: "98%" }}>
-            <div className="title-wrap mb-50" style={{ backgroundColor: "aliceblue", borderLeft: "10px solid #2463cf", paddingLeft: "50px" }}>
+            <div className="title-wrap mb-50" style={{ backgroundColor: "aliceblue", borderLeft: "10px solid #2463cf", paddingLeft: "25px", display: 'block' }}>
               <div className="title-area">
-                <h2
+                <h6
                   className="title text-start wow fadeInUp"
                   data-wow-delay=".6s"
                   color="black !important"
                 >
                   Digital Technology HUB
-                </h2>
+                </h6>
               </div>
 
             </div>
@@ -154,7 +154,7 @@ export default function techhubs() {
                         />
                       </div>
                       <div className="project-card-content">
-                        <p >{slide.overview}</p>
+                        <p style={{textAlign: 'left'}}>{slide.overview}</p>
                       </div>
                     </div>
                   </SwiperSlide>

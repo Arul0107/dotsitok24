@@ -8,6 +8,7 @@ import ScrollTop from "@/components/common/ScrollTop";
 import { usePathname } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 import PopupSearch from "@/components/headers/PopupSearch";
+import { Toaster } from "react-hot-toast";
 
 export default function RootLayout({ children }) {
   const path = usePathname();
@@ -16,8 +17,8 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       import("bootstrap/dist/js/bootstrap.esm")
-        .then(() => {})
-        .catch((error) => {});
+        .then(() => { })
+        .catch((error) => { });
     }
   }, []);
 
@@ -56,7 +57,7 @@ export default function RootLayout({ children }) {
           });
           wow.init();
         })
-        .catch((error) => {});
+        .catch((error) => { });
     }
   }, [path]);
 
@@ -71,18 +72,19 @@ export default function RootLayout({ children }) {
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossorigin
+
         ></link>
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet"
         ></link>
       </head>
+
       <body>
         <SiteMenu />
         {/* <MobileNav /> */}
-        <PopupSearch />
-        <ToastContainer
+        {/* <PopupSearch /> */}
+        {/* <ToastContainer
           position="top-right"
           autoClose={2000}
           hideProgressBar={false}
@@ -92,7 +94,8 @@ export default function RootLayout({ children }) {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-        />
+        /> */}
+        <Toaster />
         {children}
         {/* <CursorFollor /> */}
         <ScrollTop />

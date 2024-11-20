@@ -22,7 +22,7 @@ export default function Header1() {
               {/* Logo Section */}
               <div className="col-auto">
                 <div className="header-logo">
-                  <Link scroll={false} href={`/`}>
+                  <a href={`/`}>
                     <Image
                       src="/assets/img/DotsitoName.png"
                       width={200}
@@ -30,7 +30,7 @@ export default function Header1() {
                       alt="Dotsito"
                       className="logo-header-main theme-logo responsive-logo"
                     />
-                  </Link>
+                  </a>
                 </div>
               </div>
 

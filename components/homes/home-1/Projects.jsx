@@ -1,326 +1,155 @@
 "use client";
-import { projects1 } from "@/data/projects";
-import { Navigation, Autoplay, Scrollbar } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import arrowRight from "../../../public/assets/img/icon/arrowRight.png";
-import arrowLeft from "../../../public/assets/img/icon/arrowLeft.png";
+import Link from "next/link";
+import { useState } from "react";
 
 const colorArr = [
-  "#8bf0ba",
-  "#94f0f1",
-  "#f2b1d8",
-  "#7acfd6",
-  "#ffdc6a",
-  "#c89666",
-  "#f9c5bd",
-  "#6B7A8F",
-  "#DCC7AA",
-  "#c2dde6",
-  "#acb7ae",
-  "#acddde",
-  "#caf1de",
-  "#E9FF80",
-  "#96C2DB",
-  "#E5EDF1",
-  "#EFFAFD",
-  "#106EBE",
-  "#0FFCBE",
-  "#178582",
-  "#1D63FF",
-  "#FFCE32",
-  "#A0006D",
+  "#8bf0ba", "#94f0f1", "#f2b1d8", "#7acfd6", "#ffdc6a", "#c89666",
+  "#f9c5bd", "#6B7A8F", "#DCC7AA", "#c2dde6", "#acb7ae", "#acddde",
+  "#caf1de", "#E9FF80", "#96C2DB", "#E5EDF1", "#EFFAFD", "#106EBE",
+  "#0FFCBE", "#178582", "#1D63FF", "#FFCE32", "#A0006D",
 ];
 
-export default function Projects() {
-  const swiperContainerRef = useRef(null);
-  const [visibleCount, setVisibleCount] = useState(4);
+export default function Projects({ insights }) {
+  const [visibleCount, setVisibleCount] = useState(3);
 
-  // Function to load more cards
+  // Load more cards
   const loadMore = () => {
-    setVisibleCount((prevCount) => prevCount + 4);
+    setVisibleCount((prevCount) => prevCount + 3);
   };
 
-  useEffect(() => {
-    const showArrows = () => {
-      const arrows = document.querySelectorAll(".slider-arrow");
-      arrows.forEach((arrow) => {
-        arrow.style.opacity = "1";
-      });
-    };
-
-    const swiperContainer = swiperContainerRef.current;
-    swiperContainer?.addEventListener("mouseover", showArrows);
-
-    return () => {
-      swiperContainer?.removeEventListener("mouseover", showArrows);
-    };
-  }, []);
-
-  const swiperOptions = {
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: false,
-    },
-    speed: 1000,
-    breakpoints: {
-      0: { slidesPerView: 1 },
-      576: { slidesPerView: 1, centeredSlides: true },
-      768: { slidesPerView: 2 },
-      992: { slidesPerView: 3 },
-      1200: { slidesPerView: 4 },
-    },
-    modules: [Navigation, Autoplay, Scrollbar],
-    navigation: {
-      prevEl: ".snbp1",
-      nextEl: ".snbn1",
-    },
-    scrollbar: {
-      el: ".swiper-scrollbar",
-      draggable: true,
-    },
-  };
+  // Truncate subtitle
+  const truncateText = (text, maxLength) =>
+    text.length > maxLength ? `${text.slice(0, maxLength).trim()}...` : text;
 
   return (
-    <section className="project-area" style={{ position: "relative" }}>
-      <div className="projectbgv">
-        <div
-          className="project-wrap style1 fix"
-          style={{ paddingBottom: "150px" }}
-        //  style={{backgroundColor:"black",opacity:"0.7"}}
-        //style={{ backgroundImage: "url(/assets/img/project/image.png)",backgroundColor:"black",opacity:"0.7",backgroundRepeat:"no-repeat",backgroundSize:"100%" }}
-        >
-          <div className="container" style={{ maxWidth: "98%" }}>
-            <div className="title-wrap mb-50" style={{ backgroundColor: "aliceblue", borderLeft: "10px solid #2463cf", paddingLeft: "50px" }}>
-              <div className="title-area">
-                <h2
-                  className="title2 hero-subtitle"
-                  data-wow-delay=".6s"
-                >
-                  Case Studies
-                </h2>
-              </div>
+    <section className="project-area" style={{ position: "relative", marginBottom: '24px' }}>
+      <div className="project-wrap">
+        <div className="container " style={{ maxWidth: "98%", marginLeft: 'auto' }}>
+          <div style={{ textAlign: "center" }}>
+            <div className="card-container">
+              {insights.slice(0, visibleCount).map((study, index) => (
+                <div key={index} className="card">
+                  <div
+                    className="card-image-wrapper"
+                    style={{ borderLeft: `15px solid ${colorArr[index % colorArr.length]}` }}
+                  >
+                    <Image
+                      src={study.imgSrc}
+                      alt={study.title}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                  <div className="card-content">
+                    <h4 className="card-title">{study.title}</h4>
+                    <p className="card-subtitle">
+                      {truncateText(study.subtitle, 120)}{" "}
+                      <Link href={`/insights/${study.id}`} style={{color: 'blue'}}>Read More</Link>
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div style={{ textAlign: "center" }}>
-              {/* <h2>Case Studies</h2> */}
-              {/* <div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
-                {projects1.slice(0, visibleCount).map((study, index) => (
-                  <div key={index}>
-                    <div
-                      className="project-img caseborderleft"
-                      style={{
-                        backgroundImage: `url(/assets/img/case-studies/image${index+1}.png)`,
-                        backgroundRepeat:"no-repeat",
-                        backgroundSize:"cover",
-                        borderLeft: `15px solid ${colorArr[index]}`,
-                        paddingBottom: "100px",
-                        height: "400px",
-                        width: "auto",
-                      }}
-                    ></div>
-                    <div style={{ border: "1px solid #ddd", padding: "20px",textAlign:"left"}}>
-                      <h4 style={{ paddingTop: "15px", paddingLeft: "15px" }}>
-                        {study.title}
-                      </h4>
-                      <a
-                        style={{ paddingLeft: "15px" }}
-                        href={`/project-details/${study.id}`}
-                        rel="noopener noreferrer"
-                      >
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div> */}
 
-              <div className="card-container">
-                {projects1.slice(0, visibleCount).map((study, index) => (
-                  <div key={index} className="card">
-                    <div
-                      className="card-image-wrapper"
-                      style={{ borderLeft: `15px solid ${colorArr[index]}` }}
-                    >
-                      <Image
-                        src={`/assets/img/case-studies/image${index + 1}.png`}
-                        alt={study.title}
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                    </div>
-                    <div className="card-content">
-                      <p>{study.title}</p>
-                      <a
-                        href={`/project-details/${study.id}`}
-                        rel="noopener noreferrer"
-                      >
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            {visibleCount < insights.length && (
+              <button onClick={loadMore}>Load More</button>
+            )}
 
-              {visibleCount < projects1.length && (
-                <button onClick={loadMore}>Load More</button>
-              )}
-              <style jsx>{`
-                .casethumb {
-                  width: 100%;
-                  border-radius: 15px;
-                }
-                .caseborderleft {
-                  // border-left:10px solid #2463cf !important;
-                }
+            <style jsx>{`
+              .card-container {
+                display: grid;
+                gap: 1rem;
+                grid-template-columns: repeat(3, 1fr); /* Default for desktop */
+              }
+
+              .card {
+                display: flex;
+                flex-direction: column;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              }
+
+              .card-image-wrapper {
+                position: relative;
+                width: 100%;
+                height: 200px;
+              }
+
+              .card-content {
+                padding: 20px;
+                text-align: left;
+              }
+
+              .card-title {
+                font-size: 1.25rem;
+                font-weight: bold;
+                margin-bottom: 10px;
+              }
+
+              .card-subtitle {
+                font-size: 1rem;
+                color: #555;
+                line-height: 1.5;
+              }
+
+              .card-subtitle a {
+                color: #007bff;
+                text-decoration: none;
+              }
+
+              .card-subtitle a:hover {
+                text-decoration: underline;
+              }
+
+              button {
+                margin-top: 1rem;
+                padding: 0.5rem 1rem;
+                background-color: #0070f3;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+              }
+
+              button:hover {
+                background-color: #005bb5;
+              }
+
+              /* Typography Settings */
+              h1,
+              h2,
+              h3,
+              h4,
+              h5,
+              h6 {
+                font-family: "Roboto", sans-serif;
+                font-weight: 700;
+              }
+
+              p {
+                font-family: "Roboto", sans-serif;
+                font-weight: 400;
+              }
+
+              /* Responsive Design */
+              @media (max-width: 992px) {
                 .card-container {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-  justify-content: space-between;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 100%; /* Ensure uniform height across cards */
-}
-
-.card-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 250px; /* Fixed height for the image */
-  border-left-width: 15px;
-}
-
-.card-content {
-  padding: 20px;
-  text-align: left;
-  flex: 1; /* Ensures content fills the remaining space */
-}
-
-.card-content h4 {
-  margin: 15px 0 10px;
-}
-
-.card-content a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-/* Media queries for responsive behavior */
-@media (max-width: 768px) {
-  .card-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
-  }
-}
-
-@media (max-width: 480px) {
-  .card-container {
-    grid-template-columns: 1fr; /* 1 card per row on mobile */
-  }
-}
-
-                .card-list {
-                  
+                  grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets */
                 }
-                .card {
-                  
+              }
+
+              @media (max-width: 576px) {
+                .card-container {
+                  grid-template-columns: 1fr; /* 1 card per row for mobile */
                 }
-                button {
-                  margin-top: 1rem;
-                  padding: 0.5rem 1rem;
-                  background-color: #0070f3;
-                  color: white;
-                  border: none;
-                  border-radius: 5px;
-                  cursor: pointer;
-                }
-                button:hover {
-                  background-color: #005bb5;
-                }
-              `}</style>
-            </div>
+              }
+            `}</style>
           </div>
         </div>
       </div>
     </section>
   );
 }
-
-// import { useState } from 'react';
-
-// // Sample data for case studies
-// const caseStudiesData = [
-//   { name: 'Case Study 1', link: '/case-study-1', content: 'Brief description of case study 1...' },
-//   { name: 'Case Study 2', link: '/case-study-2', content: 'Brief description of case study 2...' },
-//   { name: 'Case Study 3', link: '/case-study-3', content: 'Brief description of case study 3...' },
-//   { name: 'Case Study 4', link: '/case-study-4', content: 'Brief description of case study 4...' },
-//   { name: 'Case Study 5', link: '/case-study-5', content: 'Brief description of case study 5...' },
-//   { name: 'Case Study 6', link: '/case-study-6', content: 'Brief description of case study 6...' },
-//   { name: 'Case Study 7', link: '/case-study-7', content: 'Brief description of case study 7...' },
-//   { name: 'Case Study 8', link: '/case-study-8', content: 'Brief description of case study 8...' },
-//   { name: 'Case Study 9', link: '/case-study-9', content: 'Brief description of case study 9...' },
-//   { name: 'Case Study 10', link: '/case-study-10', content: 'Brief description of case study 10...' },
-//   // Add more as needed
-// ];
-
-// export default function CaseStudies() {
-//   const [visibleCount, setVisibleCount] = useState(5);
-
-//   // Function to load more cards
-//   const loadMore = () => {
-//     setVisibleCount(prevCount => prevCount + 5);
-//   };
-
-//   return (
-//     <div>
-//       <h2>Case Studies</h2>
-//       <div className="card-list">
-//         {caseStudiesData.slice(0, visibleCount).map((study, index) => (
-//           <div key={index} className="card">
-//             <h3>{study.name}</h3>
-//             <p>{study.content}</p>
-//             <a href={study.link} target="_blank" rel="noopener noreferrer">Read More</a>
-//           </div>
-//         ))}
-//       </div>
-//       {visibleCount < caseStudiesData.length && (
-//         <button onClick={loadMore}>Load More</button>
-//       )}
-//       <style jsx>{`
-//         .card-list {
-//           display: flex;
-//           flex-wrap: wrap;
-//           gap: 1rem;
-//         }
-//         .card {
-//           width: calc(100% / 2 - 1rem); /* Two cards per row */
-//           padding: 1rem;
-//           border: 1px solid #ddd;
-//           border-radius: 5px;
-//           box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-//         }
-//         button {
-//           margin-top: 1rem;
-//           padding: 0.5rem 1rem;
-//           background-color: #0070f3;
-//           color: white;
-//           border: none;
-//           border-radius: 5px;
-//           cursor: pointer;
-//         }
-//         button:hover {
-//           background-color: #005bb5;
-//         }
-//       `}</style>
-//     </div>
-//   );
-// }

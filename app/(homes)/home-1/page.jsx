@@ -17,30 +17,50 @@ import VideoBox from "@/components/homes/home-1/VideoBox";
 import CookieConsent from "@/components/CookieConsent"; // Import CookieConsent
 import Services2 from "@/components/homes/home-1/Services2";
 import Team from "@/components/homes/home-1/Team";
+import HeroModule from "@/components/common/HeroModule";
+import { insights } from "@/data/insights";
 
 export const metadata = {
-  title: "Home 1 || Dotsito Technologies",
+  title: "Home || Dotsito Technologies",
   description: "Dotsito Technologies",
 };
 
 export default function Home1() {
   return (
     <>
-      {/* <Loader> */}
+      <Loader>
         <Header1 />
         <main className="main position-relative" id="mains">
-          <Hero />
+          {/* <Hero /> */}
+          <HeroModule title={`Revolutionizing the World of Dots with ServiceNow`} subtitle={`Innovation drives everything we do at DOTSITO. It is where imagination seamlessly blends with expertise to craft groundbreaking solutions that transform visions into reality. By leveraging cutting edge strategies and transformative technology, we deliver unparalleled value to our clients.`} videoPath={`/assets/videos/hero2.mp4`} customButton customButtonLink={`/services`} customText={`Every Dot Tells a Story of Innovation and Creativity`} />
           <About />
-          <Credible/> 
-          <Techhubs/>
-          <Projects />      
+          <Credible />
+          {/* <Techhubs /> */}
+          <div className="container">
+          <div className="title-wrap mb-50 " style={{ backgroundColor: "aliceblue", borderLeft: "10px solid #2463cf", paddingLeft: "25px", display: 'block', maxWidth: '98%' }}>
+            <div className="title-area">
+              <h6
+                className="title text-start wow fadeInUp"
+                data-wow-delay=".6s"
+                color="black !important"
+              >
+                Our Case Studies
+              </h6>
+            </div>
+
+          </div>
+          </div>
+          <Projects insights={insights.filter(insight => (
+            insight.category == 'Case Studies'
+          ))} />
+          <br /><br />
           <Facts />
           <Testimonials />
           {/* <Cta /> */}
         </main>
         <Footer1 />
-      {/* </Loader> */}
-      
+      </Loader>
+
       {/* Cookie Consent */}
       {/* <CookieConsent /> */}
     </>

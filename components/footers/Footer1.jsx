@@ -12,44 +12,44 @@ import React, { useRef } from "react";
 export default function Footer1() {
   const form = useRef();
 
-  const sandMail = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm("service_noj8796", "template_fs3xchn", form.current, {
-        publicKey: "iG4SCmR-YtJagQ4gV",
-      })
-      .then((res) => {
-        if (res.status == 200) {
-          toast.success("Message Sent successfully!", {
-            position: "bottom-left",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
-          form.current.reset();
-        } else {
-          toast.error("Ops Message not Sent!", {
-            position: "bottom-left",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
-        }
-      });
-  };
+  // const sandMail = (e) => {
+  //   e.preventDefault();
+  //   emailjs
+  //     .sendForm("service_noj8796", "template_fs3xchn", form.current, {
+  //       publicKey: "iG4SCmR-YtJagQ4gV",
+  //     })
+  //     .then((res) => {
+  //       if (res.status == 200) {
+  //         toast.success("Message Sent successfully!", {
+  //           position: "bottom-left",
+  //           autoClose: 5000,
+  //           hideProgressBar: false,
+  //           closeOnClick: true,
+  //           pauseOnHover: true,
+  //           draggable: true,
+  //           progress: undefined,
+  //         });
+  //         form.current.reset();
+  //       } else {
+  //         toast.error("Ops Message not Sent!", {
+  //           position: "bottom-left",
+  //           autoClose: 5000,
+  //           hideProgressBar: false,
+  //           closeOnClick: true,
+  //           pauseOnHover: true,
+  //           draggable: true,
+  //           progress: undefined,
+  //         });
+  //       }
+  //     });
+  // };
 
   return (
     <footer
       className="footer-area"
-      style={{ backgroundImage: "url(/assets/img/bg/footerBg1.png)" }}
+      style={{ backgroundImage: "url(/assets/img/bg/footerBg1.png)", textAlign: 'center' }}
     >
-      <div className="widget-area style1 pt-100 pb-80">
+      <div className="widget-area style1 pb-80">
         <div className="shape2_1">
           <Image
             src="/assets/img/shape/footerShape1_1.png"
@@ -95,16 +95,23 @@ export default function Footer1() {
                 <div
                   className="widget widget_nav_menu footer-widget wow fadeInUp"
                   data-wow-delay="1s"
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
                 >
-                  <h3 className="widget_title">So we</h3>
+                  <h6 className="widget_title" >So we</h6>
                   <div className="menu-all-pages-container">
                     <p style={{ color: '#fff' }}>
                       DOTSITO IT is a dynamic and innovative technology company
                       dedicated to solutions.
                     </p>
+                    <br />
                     <div className="gt-social style2">
                       {socialLinks2.map((link, index) => (
-                        <a href={link.href} key={index}>
+                        <a href={link.href} key={index} target="_blank" style={{ cursor: 'pointer' }}>
                           <i className={link.iconClass} />
                         </a>
                       ))}
@@ -116,12 +123,18 @@ export default function Footer1() {
 
 
               {/* Quick Links Section */}
-              <div className="col-xl-4 col-md-6 col-12">
+              <div className="col-xl-4 col-md-6 col-12 flex justify-content-center align-items-center" >
                 <div
                   className="widget widget_nav_menu footer-widget wow fadeInUp"
                   data-wow-delay="1s"
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
                 >
-                  <h3 className="widget_title">Quick Links</h3>
+                  <h6 className="widget_title">Quick Links</h6>
                   <div className="menu-all-pages-container">
                     <ul className="menu">
                       {footerLinks.map((item, index) => (
@@ -138,57 +151,45 @@ export default function Footer1() {
               </div>
 
               {/* Contact Section */}
-              <div className="col-xl-4 col-md-6 col-12">
+              <div className="col-xl-4 col-md-6 col-12 d-flex justify-content-center align-items-center">
                 <div
-                  className="widget widget_nav_menu footer-widget wow fadeInUp"
+                  className="widget widget_nav_menu footer-widget wow fadeInUp d-flex flex-column align-items-center text-center"
                   data-wow-delay="1.6s"
                 >
-                  <h3 className="widget_title">Contact Us</h3>
+                  <h6 className="widget_title">Contact Us</h6>
                   <div className="checklist">
-                    <ul className="ps-0">
-                      <li className="text-white">
+                    <ul className="ps-0" style={{ flexDirection: 'column' }}>
+                      <li className="text-white" style={{ display: 'flex', gap: '12px ', alignItems: 'center', justifyContent: 'center' }}>
+
                         <i className="fa-thin fa-envelope" />
+                        <Link className="text-white" href="mailto:operations@dotsito.com">
+                          operations@dotsito.com
+                        </Link>
+
                       </li>
-                      <Link className="text-white" href = "mailto:operations@dotsito.com">operations@dotsito.com</Link>
-                    </ul>
-                    <ul className="ps-0">
-                      <li className="text-white">
+
+
+                      <li className="text-white" style={{ display: 'flex', gap: '12px ', alignItems: 'center', justifyContent: 'center' }}>
+
                         <i className="fa-light fa-phone-volume" />
+                        <div>
+                          <Link href="tel:+914257358130" style={{ color: "white" }}>
+                            +91 4257358130
+                          </Link>
+                          <br />
+                          <Link href="tel:+914257299473" style={{ color: "white" }}>
+                            +91 4257299473
+                          </Link>
+                        </div>
+
+
                       </li>
-                      <li className="text-white">
-                       <Link href="tel:+914257358130" style={{color: 'white'}}>+91 4257358130</Link><br /> 
-                       <Link href="tel:+914257299473" style={{color: 'white'}}>+91 4257299473</Link><br />
-                       {/* +91 4257 299473 */}
-                      </li>
+
                     </ul>
-                    <form
-                      ref={form}
-                      onSubmit={sandMail}
-                      className="email-input-container"
-                    >
-                      <input
-                        type="email"
-                        id="email"
-                        placeholder="Your email address"
-                        required
-                        style={{ width: "250px", fontSize: "12px" }}
-                      />
-                      <button
-                        type="submit"
-                        id="submitButton"
-                        style={{
-                          top: "10px",
-                          right: "5px",
-                          padding: "5px 9px",
-                          fontSize: "15px",
-                        }}
-                      >
-                        <i className="fa-regular fa-arrow-right-long" />
-                      </button>
-                    </form>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -196,11 +197,11 @@ export default function Footer1() {
       <div className="copyright-wrap bg-theme" style={{ padding: '2px 10px' }}>
         <div className="">
           <div className="">
-            <div className="" data-wow-delay=".3s" >
-              <p style={{ color: '#fff', textAlign: 'center', margin: 0, padding: '2px' }}>
+            <div className="" data-wow-delay=".3s" style={{ textAlign: 'center' }}>
+              <small style={{ color: '#fff', textAlign: 'center', margin: 'auto', padding: '2px' }}>
                 <i className="fal fa-copyright" />
                 {" " + new Date().getFullYear()} All rights reserved. Dotsito Technologies.
-              </p>
+              </small>
             </div>
             {/* <div className="layout-link wow fadeInUp" data-wow-delay=".6s">
               <div className="link-wrapper">

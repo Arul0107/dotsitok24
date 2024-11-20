@@ -4,9 +4,12 @@ import HeaderTop from "@/components/headers/HeaderTop";
 
 import Cta from "@/components/common/Cta";
 import Projects from "@/components/otherPages/project/Projects";
+import Projects1 from "@/components/homes/home-1/Projects";
 import Link from "next/link";
 import ChatGPTWidget from "@/app/ChatGPTWidget";
 import Loader from "@/app/Loader";
+import HeroModule from "@/components/common/HeroModule";
+
 export const metadata = {
   title: "Project || Dotsito Technologies",
   description: "Dotsito Technologies",
@@ -14,45 +17,14 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-    <Loader/>
+    {/* <Loader/> */}
       <Header1 />
       <main className="main position-relative" id="mains">
-        <div className="breadcrumb-wrapper">
-        <div
-            className="breadcumb"
-            style={{
-              backgroundImage: "url(/assets/img/hero/about.png)",
-              position: "relative",
-              height: "400px", // Set height as needed
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            {/* Overlay Layer */}
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                backgroundColor: "rgba(0, 0, 0, 0.5)", // Black overlay with 50% opacity
-                zIndex: 1,
-              }}
-            />
-            <div className="container">
-              <div className="page-heading">
-                <h1 className="wow fadeInUp" data-wow-delay=".3s">
-                  Solutions
-                </h1>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-        <Projects />
-        <ChatGPTWidget/>
-        <Cta />
+        <HeroModule title={'Insights'} subtitle={`Highlighting our past, present, and future insights for continued success.`}videoPath={`/assets/videos/projects.mp4`}/>
+        <Projects />   
+        {/* <Projects1 /> */}
+        {/* <ChatGPTWidget/> */}
+        {/* <Cta /> */}
       </main>
       <Footer1 />
     </>

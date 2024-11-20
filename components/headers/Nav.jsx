@@ -41,8 +41,8 @@ export default function Nav() {
           key={index}
           className={isMenuActive(item) ? "menuselected" : ""}      
         >
-          <Link
-            scroll={false}
+          <a
+            // scroll={false}
             href={item.href}
             style={{
               color:isMenuActive(item) ? "white" : "",
@@ -53,7 +53,7 @@ export default function Nav() {
           >
            
             {item.title}
-          </Link>
+          </a>
           {item.subMenu && (
             <ul className="sub-menu">
               {item.subMenu.map((subItem, subIndex) => (

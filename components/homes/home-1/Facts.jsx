@@ -50,9 +50,9 @@ export default function Facts() {
     }, [animate, count, max]);
 
     return (
-      <span style={{ fontSize: "2em",  fontWeight: "bold" }}>
+      <a style={{ fontSize: "2em",  fontWeight: "bold" }}>
         {count}
-      </span>
+      </a>
     );
   };
 
@@ -60,7 +60,7 @@ export default function Facts() {
     <div
       ref={sectionRef}
       className="counter-area"
-      style={{ marginTop: "-150px", marginBottom: "-160px", overflow: "hidden" }}
+      style={{ marginTop: "-55px", marginBottom: "-160px", overflow: "hidden" }}
     >
       <div className="container" style={{ padding: "20px",maxWidth:"98%",textAlign:"-webkit-center"}}>
         <div className="counter-wrap" style={{ width:"100%", justifyContent: "space-around", flexWrap: "wrap" }}>
@@ -79,9 +79,9 @@ export default function Facts() {
               </div>
               <div style={{  alignItems: "center" }}>
                 <Counter max={box.number} animate={inView} />
-                <span style={{ fontSize: "2em", marginLeft: "4px" }}>+</span>
+                <a style={{ fontSize: "2em", marginLeft: "4px" }}>+</a>
               </div>
-              <span style={{ fontSize: "1em",  marginTop: "10px" }}>{box.label}</span>
+              <p style={{ fontSize: "1em",  marginTop: "10px" }}>{box.label}</p>
             </div>
           ))}
         </div>

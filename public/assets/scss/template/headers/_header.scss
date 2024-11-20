@@ -143,8 +143,8 @@
 
 .gt-btn {
   font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
+  // font-weight: 600;
+  // text-transform: uppercase;
 }
 
 
@@ -178,7 +178,7 @@
 /* Overlay styles */
 .menu-overlay {
   position: fixed;
-  top: 80px; /* Adjust to appear right below the header */
+  top: 78px; /* Adjust to appear right below the header */
   left: 0;
   right: 0;
   bottom: 0;
