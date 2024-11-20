@@ -47,7 +47,7 @@ export default function Footer1() {
   return (
     <footer
       className="footer-area"
-      style={{ backgroundImage: "url(/assets/img/bg/footerBg1.png)", textAlign: 'center' }}
+      style={{ backgroundImage: "url(/assets/img/bg/footerBg1.png)", textAlign: 'center', position:'relative', zIndex: 8 }}
     >
       <div className="widget-area style1 pb-80">
         <div className="shape2_1">
@@ -139,10 +139,10 @@ export default function Footer1() {
                     <ul className="menu">
                       {footerLinks.map((item, index) => (
                         <li key={index}>
-                          <Link scroll={false} href={item.href}>
+                          <a href={item.href} target="_blank">
                             <i className="fa-solid fa-chevrons-right" />
                             {item.text}
-                          </Link>
+                          </a>
                         </li>
                       ))}
                     </ul>
@@ -162,9 +162,9 @@ export default function Footer1() {
                       <li className="text-white" style={{ display: 'flex', gap: '12px ', alignItems: 'center', justifyContent: 'center' }}>
 
                         <i className="fa-thin fa-envelope" />
-                        <Link className="text-white" href="mailto:operations@dotsito.com">
+                        <a className="text-white" href="mailto:operations@dotsito.com">
                           operations@dotsito.com
-                        </Link>
+                        </a>
 
                       </li>
 
@@ -173,13 +173,13 @@ export default function Footer1() {
 
                         <i className="fa-light fa-phone-volume" />
                         <div>
-                          <Link href="tel:+914257358130" style={{ color: "white" }}>
+                          <a href="tel:+914257358130" style={{ color: "white" }}>
                             +91 4257358130
-                          </Link>
+                          </a>
                           <br />
-                          <Link href="tel:+914257299473" style={{ color: "white" }}>
+                          <a href="tel:+914257299473" style={{ color: "white" }}>
                             +91 4257299473
-                          </Link>
+                          </a>
                         </div>
 
 

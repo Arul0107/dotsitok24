@@ -644,7 +644,8 @@ export const serviceData = [
   },
 
 
-  { category: 'ServiceNow',
+  {
+    category: 'ServiceNow',
     category_title: "IT Asset Management",
     category_content: "Effectively manage and optimize the lifecycle of IT assets throughout the organization. ITAM provides a structured approach to acquire, deploy, maintain, and retire IT assets, such as hardware, software, licenses, and related resources.",
     category_image: "it_asset_management.jpg",
@@ -720,11 +721,12 @@ export const serviceData = [
       }
     ]
   },
-  
 
 
 
-  { category: 'ServiceNow',
+
+  {
+    category: 'ServiceNow',
     category_title: "ServiceNow Managed Service",
     category_content: "To provide comprehensive, ongoing support and management of the ServiceNow platform for the organization and its clients. ServiceNow managed services ensure that the platform is optimized, well-maintained, and aligned with the evolving needs of the business.",
     category_image: "service_now_managed_service.webp",
@@ -798,7 +800,7 @@ export const serviceData = [
         answer: "While implementation depends on organizational size and vendor complexity, adopting structured frameworks and tools simplifies the process significantly."
       }
     ]
-  },    
+  },
 
   {
     category: "ServiceNow",
@@ -950,46 +952,11 @@ export const serviceData = [
         answer: "With the right tools and strategies, implementing Cloud Cost Management can be straightforward. ServiceNow and other platforms provide pre-built solutions to simplify the process."
       }
     ]
-  }, 
-  
-  {
-    category: "SNOW Software",
-    category_title: "Snow Implementation and Support",
-    category_content: "Optimize and manage your IT assets throughout their lifecycle with SNOW Software. This solution enables organizations to track, manage, and ensure compliance of hardware, software, and licenses, all while improving efficiency and reducing costs.",
-    category_image: "snow_software_it_asset_management.jpg",
-    category_video: "",
-    category_video_thumbnail: "snow_software_it_asset_management_thumbnail",
-    benefits: [
-      "Comprehensive visibility across all IT assets",
-      "Improved compliance with software licensing regulations",
-      "Maximized asset utilization and reduced unnecessary purchases",
-      "Streamlined procurement and asset tracking with automation",
-      "Enhanced control over hardware, software, and cloud resources"
-    ],
-    questions: [
-      {
-        question: "What is IT Asset Management (ITAM) with SNOW Software?",
-        answer: "IT Asset Management with SNOW Software involves the management of IT assets from procurement to disposal, ensuring efficient usage, compliance, and reduced costs through automated workflows."
-      },
-      {
-        question: "How does SNOW Software help with software license compliance?",
-        answer: "SNOW Software provides detailed insights into software usage and license compliance, helping organizations avoid legal or financial penalties by ensuring they are properly licensed."
-      },
-      {
-        question: "How can SNOW Software help reduce IT asset costs?",
-        answer: "By tracking and optimizing asset utilization, SNOW Software helps organizations identify underused assets, reduce unnecessary purchases, and extend the lifecycle of existing hardware and software."
-      },
-      {
-        question: "What features does SNOW Software offer for ITAM?",
-        answer: "SNOW Software provides features like automated license management, software metering, hardware tracking, procurement integration, and powerful reporting tools to optimize IT asset management."
-      },
-      {
-        question: "Is it difficult to implement SNOW Software for ITAM?",
-        answer: "SNOW Software is designed for easy integration with existing systems and can be implemented with minimal disruption. Its user-friendly interface and automation simplify the deployment process."
-      }
-    ]
   },
-    {category: 'Flexera',
+
+
+  {
+    category: 'Flexera',
     category_title: "Flexera Implementation and Support",
     category_content: "Enhance IT asset management, license compliance, and cloud cost management by configuring Flexera solutions to align with organizational requirements. Ensures seamless data transfer, system integration, and ongoing assistance to improve asset visibility and compliance when transitioning from legacy systems to Flexera.",
     category_image: "flexera_implementation_and_support.png",
@@ -1028,9 +995,47 @@ export const serviceData = [
 
     ]
   },
+  {
+    category: "Flexera",
+    category_title: "Snow Implementation and Migration",
+    category_content: "Optimize and manage your IT assets throughout their lifecycle with SNOW Software. This solution enables organizations to track, manage, and ensure compliance of hardware, software, and licenses, all while improving efficiency and reducing costs.",
+    category_image: "snow_software_it_asset_management.jpg",
+    category_video: "",
+    category_video_thumbnail: "snow_software_it_asset_management_thumbnail",
+    benefits: [
+      "Comprehensive visibility across all IT assets",
+      "Improved compliance with software licensing regulations",
+      "Maximized asset utilization and reduced unnecessary purchases",
+      "Streamlined procurement and asset tracking with automation",
+      "Enhanced control over hardware, software, and cloud resources"
+    ],
+    questions: [
+      {
+        question: "What is IT Asset Management (ITAM) with SNOW Software?",
+        answer: "IT Asset Management with SNOW Software involves the management of IT assets from procurement to disposal, ensuring efficient usage, compliance, and reduced costs through automated workflows."
+      },
+      {
+        question: "How does SNOW Software help with software license compliance?",
+        answer: "SNOW Software provides detailed insights into software usage and license compliance, helping organizations avoid legal or financial penalties by ensuring they are properly licensed."
+      },
+      {
+        question: "How can SNOW Software help reduce IT asset costs?",
+        answer: "By tracking and optimizing asset utilization, SNOW Software helps organizations identify underused assets, reduce unnecessary purchases, and extend the lifecycle of existing hardware and software."
+      },
+      {
+        question: "What features does SNOW Software offer for ITAM?",
+        answer: "SNOW Software provides features like automated license management, software metering, hardware tracking, procurement integration, and powerful reporting tools to optimize IT asset management."
+      },
+      {
+        question: "Is it difficult to implement SNOW Software for ITAM?",
+        answer: "SNOW Software is designed for easy integration with existing systems and can be implemented with minimal disruption. Its user-friendly interface and automation simplify the deployment process."
+      }
+    ]
+  },
 
 
-  { category: 'Atlassian',
+  {
+    category: 'Atlassian',
     category_title: "Jira",
     category_content: "Elevate efficiency with our tailored JIRA implementation. From configuration and data migration to process automation and integrations, we streamline workflows and enhance productivity. Benefit from expert onboarding and continuous support to fully leverage your JIRA environment.",
     category_image: "jira_implementation_support.png",
@@ -1069,7 +1074,8 @@ export const serviceData = [
     ]
   },
 
-  {category: 'Atlassian',
+  {
+    category: 'Atlassian',
     category_title: "Confluence",
     category_content: "Transform your team's workflow with our expert Confluence integration and support. We enhance document management, knowledge sharing, and project collaboration by seamlessly integrating Confluence with your existing systems. Benefit from tailored setup, continuous support, and improved productivity through seamless information exchange across your organization.",
     category_image: "confluence_integration_and_support.png",
@@ -1108,7 +1114,8 @@ export const serviceData = [
     ]
   },
 
-  {category: 'ServiceNow',
+  {
+    category: 'ServiceNow',
     category_title: "GenAI",
     category_content: "Leverage the power of generative AI with our specialized tooling implementations. We assist in deploying advanced AI models, integrating them seamlessly with your existing systems, and customizing them to fit your specific needs. Our services enhance content creation, automate processes, and drive innovation across various business functions, ensuring ongoing support and optimization for maximum efficiency.",
     category_image: "gen_ai_dynamics.jpg",
@@ -1146,7 +1153,8 @@ export const serviceData = [
 
     ]
   },
-  {category: 'Dotspot',
+  {
+    category: 'Dotspot',
     category_title: "Next-Gen Object Detection",
     category_content: "Enhance operational intelligence with our cutting-edge machine learning solution. Achieve precise, real-time object detection and categorization across multiple camera feeds, seamlessly integrating with your systems to optimize efficiency, inventory management, and quality control.",
     category_image: "next_gen_object_detection.png",
@@ -1183,7 +1191,8 @@ export const serviceData = [
       },
     ]
   },
-  {category: 'SAP',
+  {
+    category: 'SAP',
     category_title: "SAP Implementation and Support",
     category_content: "Empower your organization with our specialized SAP implementation support. From system configuration and data migration to process optimization and seamless integrations, we enhance operational efficiency and drive business growth. Benefit from expert onboarding, continuous support, and tailored solutions to fully leverage your SAP environment.",
     category_image: "sap_implementation_support.webp",
@@ -1219,7 +1228,8 @@ export const serviceData = [
       }
     ]
   },
-  {category: 'Salesforce',
+  {
+    category: 'Salesforce',
     category_title: "CRM and Marketing Cloud ",
     category_content: "Transform your customer engagement and business operations with our Salesforce implementation support. From system setup and data migration to automation and integrations, we ensure you get the most out of your Salesforce environment. Benefit from personalized configurations, expert guidance, and continuous support to drive sales and foster customer relationships.",
     category_image: "salesforce_implementation_support.jpg",

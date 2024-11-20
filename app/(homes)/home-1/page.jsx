@@ -19,10 +19,17 @@ import Services2 from "@/components/homes/home-1/Services2";
 import Team from "@/components/homes/home-1/Team";
 import HeroModule from "@/components/common/HeroModule";
 import { insights } from "@/data/insights";
+import Head from "next/head";
 
 export const metadata = {
-  title: "Home || Dotsito Technologies",
+  title: "Home1 || Dotsito Technologies",
   description: "Dotsito Technologies",
+  icons: {
+    icon: '/favicon.ico',
+    // Optional: Add more favicon sizes
+    // apple: '/apple-touch-icon.png',
+    // shortcut: '/favicon-32x32.png',
+  },
 };
 
 export default function Home1() {

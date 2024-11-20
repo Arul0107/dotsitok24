@@ -171,90 +171,96 @@ h5,
 h6,
 small,
 a,
-li, label {
-    font-family: 'Poppins' !important;
-    padding: 0;
-    margin: 0;
+li,
+label {
+  font-family: 'Poppins' !important;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  font-family: 'Poppins' !important;
 }
 
 :root {
-    /* Mobile Font Sizes */
-    --font-size-title-mobile: 22px;
-    --font-size-subtitle-mobile: 18px;
-    --font-size-body-mobile: 16px;
-    --font-size-small-mobile: 14px;
-  
-    /* Tablet Font Sizes */
-    --font-size-title-tablet: 24px;
-    --font-size-subtitle-tablet: 18px;
-    --font-size-body-tablet: 14px;
-    --font-size-small-tablet: 10px;
-  
-    /* Desktop Font Sizes */
-    --font-size-title-desktop: 30px;
-    --font-size-subtitle-desktop: 24px;
-    --font-size-body-desktop: 20px;
-    --font-size-small-desktop: 16px;
-  }
-  
-  /* Mobile Defaults */
+  /* Mobile Font Sizes */
+  --font-size-title-mobile: 22px;
+  --font-size-subtitle-mobile: 18px;
+  --font-size-body-mobile: 16px;
+  --font-size-small-mobile: 14px;
+
+  /* Tablet Font Sizes */
+  --font-size-title-tablet: 24px;
+  --font-size-subtitle-tablet: 18px;
+  --font-size-body-tablet: 14px;
+  --font-size-small-tablet: 10px;
+
+  /* Desktop Font Sizes */
+  --font-size-title-desktop: 30px;
+  --font-size-subtitle-desktop: 24px;
+  --font-size-body-desktop: 20px;
+  --font-size-small-desktop: 16px;
+}
+
+/* Mobile Defaults */
+:root {
+  --font-size-title: var(--font-size-title-mobile);
+  --font-size-subtitle: var(--font-size-subtitle-mobile);
+  --font-size-body: var(--font-size-body-mobile);
+  --font-size-small: var(--font-size-small-mobile);
+}
+
+/* Tablet: 768px - 959px */
+@media (min-width: 768px) and (max-width: 959px) {
   :root {
-    --font-size-title: var(--font-size-title-mobile);
-    --font-size-subtitle: var(--font-size-subtitle-mobile);
-    --font-size-body: var(--font-size-body-mobile);
-    --font-size-small: var(--font-size-small-mobile);
+    --font-size-title: var(--font-size-title-tablet);
+    --font-size-subtitle: var(--font-size-subtitle-tablet);
+    --font-size-body: var(--font-size-body-tablet);
+    --font-size-small: var(--font-size-small-tablet);
   }
-  
-  /* Tablet: 768px - 959px */
-  @media (min-width: 768px) and (max-width: 959px) {
-    :root {
-      --font-size-title: var(--font-size-title-tablet);
-      --font-size-subtitle: var(--font-size-subtitle-tablet);
-      --font-size-body: var(--font-size-body-tablet);
-      --font-size-small: var(--font-size-small-tablet);
-    }
-  }
-  
-  /* Desktop: 960px and above */
-  @media (min-width: 960px) {
-    :root {
-      --font-size-title: var(--font-size-title-desktop);
-      --font-size-subtitle: var(--font-size-subtitle-desktop);
-      --font-size-body: var(--font-size-body-desktop);
-      --font-size-small: var(--font-size-small-desktop);
-    }
-  }
-  
-  h1,
-  h2,
-  h3 {
-    font-size: var(--font-size-title) !important;
-    line-height: 35px !important;
-  }
-  
-  h4,
-  h5,
-  h6 {
-    font-size: var(--font-size-subtitle) !important;
-    line-height: 35px !important;
-  }
-  
-  p,
+}
 
-  li,label {
-    line-height: 1.5;
-    font-size: var(--font-size-body) !important;
+/* Desktop: 960px and above */
+@media (min-width: 960px) {
+  :root {
+    --font-size-title: var(--font-size-title-desktop);
+    --font-size-subtitle: var(--font-size-subtitle-desktop);
+    --font-size-body: var(--font-size-body-desktop);
+    --font-size-small: var(--font-size-small-desktop);
   }
-  
-  small,
-  a,
-  button,
-  span {
-    font-size: var(--font-size-small) !important;
-  }
-  
+}
 
-  $background-color: hsl(0, 0, 15);
+h1,
+h2,
+h3 {
+  font-size: var(--font-size-title) !important;
+  line-height: 35px !important;
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-subtitle) !important;
+  line-height: 35px !important;
+}
+
+p,
+
+li,
+label {
+  line-height: 1.5;
+  font-size: var(--font-size-body) !important;
+}
+
+small,
+a,
+button,
+span {
+  font-size: var(--font-size-small) !important;
+}
+
+
+$background-color: hsl(0, 0, 15);
 
 
 $loader-size: 40px;
@@ -303,10 +309,15 @@ $item-rotation: 0deg;
     }
 
     @keyframes anim-#{$i} {
-      0%, 60%, 100% {
+
+      0%,
+      60%,
+      100% {
         transform: rotate($item-rotation) translateX($loader-size) scale(1);
       }
-      10%, 50% {
+
+      10%,
+      50% {
         transform: rotate($item-rotation) translateX(0) scale(1.5);
       }
     }
@@ -314,18 +325,105 @@ $item-rotation: 0deg;
 }
 
 @keyframes center {
-  0%, 10%, 90%, 100% {
+
+  0%,
+  10%,
+  90%,
+  100% {
     transform: scale(0.7);
   }
-  45%, 55% {
+
+  45%,
+  55% {
     transform: scale(1);
   }
 }
 
-nextjs-portal{
+nextjs-portal {
   visibility: hidden;
 }
 
-.ant-collapse-content-box{
+.ant-collapse-content-box {
   padding: 0 !important;
+}
+
+.ant-collapse {
+  border: none !important;
+}
+
+/* Assistive Touch Container */
+.assistive-touch-container {
+  position: relative;
+}
+
+/* Assistive Button */
+.assistive-touch-bubble {
+  position: fixed;
+  top: 100px;
+  right: 22px;
+  width: 50px;
+  height: 50px;
+  background: #1890ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 3;
+    padding: 12px;
+    // margin-left: 10px;
+}
+
+/* Floating Overlay */
+.floating-overlay {
+  position: fixed;
+  top: 79px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1100;
+  overflow-y: auto;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.floating-overlay.open {
+  transform: translateY(0);
+}
+
+.floating-overlay.close {
+  transform: translateY(-100%);
+}
+
+/* Overlay Header */
+.overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Close Button */
+.close-button {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Overlay Content */
+.overlay-content {
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* Service List Styles */
+.service-list {
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.service-list-active {
+  background-color: #e6f7ff;
+  color: #1890ff;
 }

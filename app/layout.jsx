@@ -9,6 +9,8 @@ import { usePathname } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 import PopupSearch from "@/components/headers/PopupSearch";
 import { Toaster } from "react-hot-toast";
+// import Head from "next/head";
+
 
 export default function RootLayout({ children }) {
   const path = usePathname();
@@ -64,6 +66,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="bg-white">
       <head>
+        <link rel="icon" href="/favicon.ico" />
+        {/* Optional: Add more favicons */}
+        {/* <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" /> */}
+
         <link
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
           rel="stylesheet"

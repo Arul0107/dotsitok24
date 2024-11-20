@@ -21,7 +21,7 @@ export default function Page() {
       <Loader>
         <Header1 />
         <main className="main position-relative" id="mains">
-          <HeroModule title={'Careers'} subtitle={`Step into a world where innovation meets purpose, creating technology driven, human centered experiences that leave a lasting impact. Our careers are built around moments that matter opportunities to shape the future, achieve ambitious goals, and drive meaningful change. Be part of a team that values creativity, collaboration, and a relentless pursuit of excellence, where your ideas and passion are the foundation of transformative success.`} videoPath={`/assets/videos/careers.mp4`} customText={`A year with Dotsito is equivalent to three years of learning`} />
+          <HeroModule title={'Careers'} subtitle={`Fostering intellectual growth through a superior learning environment`} videoPath={`/assets/videos/careers.mp4`} customText={`Let’s help you Rise to new heights`} />
 
 
           <HeroModule title={'Join Dotsito'} subtitle={`Your aspirations, your career, your path. \n Dotsito invites you.`} imagePath={`/assets/img/careers/bannerbg.jpg`} customButton customButtonLink={`/careers/jobs`} customButtonText={`Join now`} customHTMLBanner={`<br/>Or share your resume at <br/><strong><a style="color: white" href='mailto:operations@dotsito.com'>operations@dotsito.com</a></strong>`}/>

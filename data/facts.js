@@ -1,13 +1,13 @@
 export const counterBoxes = [
   {
     icon: "/assets/img/icon/counterIcon1_1.png",
-    number: 100,
+    number: 25,
     label: "Satisfied Clients",
     delay: ".3s",
   },
   {
     icon: "/assets/img/icon/counterIcon1_2.png",
-    number: 20,
+    number: 50,
     label: "Finished Projects",
     delay: ".6s",
   },

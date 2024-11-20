@@ -23,6 +23,7 @@ export default function Page({ params }) {
       <Header1 />
       <main className="main position-relative" id="mains">
         <HeroModule title={'Services'} subtitle={`We deliver a spectrum of cutting edge services designed to empower businesses in an ever evolving digital landscape. Through innovative solutions, specialized expertise, and adaptable strategies, we address the unique challenges of modern enterprises. Our offerings span diverse domains, seamlessly aligning with client objectives to drive impactful results. From advanced application services to transformative digital solutions, we are committed to crafting value driven experiences that inspire growth, foster innovation, and ensure long term success.`} videoPath={'/assets/videos/services1.mp4'}/>
+        {/* <div id="service-content"></div> */}
         <ServiceDetails />
         {/* <ChatGPTWidget/> */}
         {/* <Cta /> */}

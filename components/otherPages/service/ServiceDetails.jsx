@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Collapse, Select } from "antd";
 import Faq1 from "../faq/Faq1";
 import { serviceData } from "@/data/services";
+import AssistiveTouchServices from "./AssistiveTouch";
 
 const { Panel } = Collapse;
 
@@ -15,7 +16,7 @@ export default function ServiceDetails() {
   // Detect screen size
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 320);
+      setIsMobile(window.innerWidth < 768);
     };
 
     handleResize(); // Initial check
@@ -39,8 +40,53 @@ export default function ServiceDetails() {
     return acc;
   }, {});
 
+
+
+
   return (
     <section className="service-details-section pb-425 fix" style={{ paddingBottom: "24px", paddingTop: "24px" }}>
+      {isMobile && (
+        // <div className="col-12" style={{ marginLeft: '1rem', marginBottom: '1rem' }}>
+        //   <div className="mobile-category-interactive">
+        //     <Collapse accordion>
+        //       {/* Loop through categories */}
+        //       {Object.entries(categorizedServices).map(([category, items], index) => (
+        //         <Panel header={category} key={index} style={{ textAlign: 'left', fontWeight: 'bold' }}>
+        //           <Collapse accordion bordered={false} style={{ marginLeft: '1rem' }}>
+        //             {/* Loop through services within each category */}
+        //             {items.map((item) => (
+        //               <Panel
+        //                 header={item.category_title}
+        //                 key={item.label}
+        //                 style={{
+        //                   fontSize: '14px',
+        //                   fontWeight: selectedService.label === item.label ? 'bold' : 'normal',
+        //                   color: selectedService.label === item.label ? '#1890ff' : '#000',
+        //                 }}
+        //               >
+        //                 <div
+        //                   onClick={() => handleServiceClick(item)}
+        //                   style={{
+        //                     padding: '10px',
+        //                     cursor: 'pointer',
+        //                     background: selectedService.label === item.label ? '#e6f7ff' : 'white',
+        //                     borderRadius: '4px',
+        //                     textAlign: 'justify',
+        //                   }}
+        //                 >
+        //                   {item.category_content}
+        //                 </div>
+        //               </Panel>
+        //             ))}
+        //           </Collapse>
+        //         </Panel>
+        //       ))}
+        //     </Collapse>
+        //   </div>
+        // </div>
+        <></>
+      )}
+
       <div className="container">
         <div className="service-details-wrapper">
           <div className="row g-4">
@@ -48,7 +94,7 @@ export default function ServiceDetails() {
             {!isMobile && (
               <div className="col-12 col-lg-4 order-1 order-md-1">
                 <div className="main-sidebar">
-                  <div className="single-sidebar-widget" style={{ padding: 0 }}>
+                  <div className="single-sidebar-widget" style={{ padding: 0, marginLeft: '1rem' }}>
                     <div className="wid-title">
                       <h3>Offerings</h3>
                     </div>
@@ -106,33 +152,20 @@ export default function ServiceDetails() {
               </div>
             )}
 
-            {/* Dropdown for mobile screens */}
-            {isMobile && (
-              <div className="col-12">
-                <div className="">
-                  <Select
-                    value={selectedService.label}
-                    onChange={(value) => {
-                      const selected = serviceData.find((item) => item.label === value);
-                      setSelectedService(selected);
-                    }}
-                    style={{ width: "100%", borderRadius: "8px" }}
-                  >
-                    {serviceData.map((item) => (
-                      <Select.Option key={item.label} value={item.label}>
-                        {item.category_title}
-                      </Select.Option>
-                    ))}
-                  </Select>
-                </div>
-              </div>
-            )}
 
-            {/* Service Details Content */}
-            <div className="col-12 col-lg-8 order-1 order-md-2 servicedesign" style={{ paddingLeft: "20px" }}>
-              <div className="service-details-items">
+
+
+            {/* Service Details Content inside this division that assistive should be shown*/}
+            <div className="col-12 col-lg-8 order-1 order-md-2 servicedesign" style={{ marginLeft: isMobile ? '1rem' : 0, paddingLeft: "20px", textAlign: 'justify', paddingRight: '18px' }}>
+              <div className="service-details-items" style={{ position: 'relative' }}>
+                {isMobile && (< AssistiveTouchServices
+                  categorizedServices={categorizedServices}
+                  handleServiceClick={handleServiceClick}
+                  selectedService={selectedService}
+                />)}
+
                 <div className="details-content">
-                  <h3>{selectedService.category_title}</h3>
+                  <h3 style={{textAlign: 'left'}}>{selectedService.category_title}</h3>
                   <p className="mt-3 mb-3">{selectedService.category_content}</p>
                   <div
                     className="details-image"
@@ -146,7 +179,7 @@ export default function ServiceDetails() {
                   ></div>
                   <div className="details-video-items">
                     <div className="content">
-                      <h4>Benefits With Our Service</h4>
+                      <h4 style={{textAlign: 'left'}}>Benefits With Our Service</h4>
                       <ul className="list ps-0">
                         {selectedService.benefits.map((benefit, index) => (
                           <li key={index}>

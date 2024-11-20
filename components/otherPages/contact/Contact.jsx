@@ -125,35 +125,30 @@ export default function Contact() {
     try {
       const res = await fetch(lambdaEndpoint, {
         method: 'POST',
-        // body: {
-        //   toEmail,
-        //   subject: 'New Contact Us Form Submission',
-        //   ...values
-        // }
-        body: {
-          email: "pradeep.sivakumar@dotsito.com",
-          subject: "hii pradeep",
-          message: JSON.stringify(values, null, 2)
-        }
-      })
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          toEmail,
+          subject: 'New Contact Us Form Submission',
+          body: { ...values }
+        })
+      });
 
-      if (res.status === 200) {
-        // console.log("Message sent successfully!");
+      if (res.ok) {
         toast.success("Message Sent successfully!");
         form.resetFields();
-      }
-      else {
+      } else {
         toast.error("Failed to send the message. Try again later.");
       }
     } catch (error) {
       toast.error("Something went wrong. Try again later.");
-      // console.error("Failed to send message. Please try again later.", error);
-    }
-    finally {
+      console.error("Error in ",error);
+      
+    } finally {
       setLoading(false);
     }
   }
-
 
 
 

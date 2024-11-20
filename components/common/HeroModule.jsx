@@ -94,6 +94,7 @@ export default function HeroModule({ videoPath, title, subtitle, customButton, c
       >
         Posted on {job.postedOn}.
       </small>)}
+      <div id="service-content"></div>
     </section>
   );
 }
